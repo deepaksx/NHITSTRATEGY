@@ -182,43 +182,11 @@ body {
     transition: width 0.3s ease;
 }
 
-/* Toggle Button */
+/* Toggle Button - Hidden (sidebar always on) */
 .toc-toggle {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 28px;
-    height: 28px;
-    border: none;
-    background: var(--gray-200);
-    color: var(--gray-500);
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-fast);
-    z-index: 10;
+    display: none;
 }
-.toc-toggle:hover { background: var(--gray-300); color: var(--gray-700); }
-.toc-toggle .toggle-icon-expand { display: none; }
-.toc-toggle .toggle-icon-collapse { display: block; }
-
-/* Collapsed State */
-.toc-left.collapsed { width: 50px; }
-.toc-left.collapsed .toc-toggle { right: 11px; }
-.toc-left.collapsed .toc-toggle .toggle-icon-expand { display: block; }
-.toc-left.collapsed .toc-toggle .toggle-icon-collapse { display: none; }
-.toc-left.collapsed .toc-section-title { display: none; }
-.toc-left.collapsed .toc-text { display: none; }
-.toc-left.collapsed .toc-item { justify-content: center; padding: 0.5rem; }
-.toc-left.collapsed .toc-number { margin: 0; }
-
-/* Adjust layout when sidebar collapsed */
-body.sidebar-collapsed .progress-bar { left: 50px; }
-body.sidebar-collapsed .slides-container { margin-left: 50px; width: calc(100% - 50px); }
-body.sidebar-collapsed .keyboard-hints { left: 50px; }
-.toc-left .toc-content { flex: 1; overflow-y: auto; padding: 44px 0.5rem 0.5rem; }
+.toc-left .toc-content { flex: 1; overflow-y: auto; padding: 0.5rem; }
 .toc-left .toc-content::-webkit-scrollbar { width: 3px; }
 .toc-left .toc-content::-webkit-scrollbar-track { background: transparent; }
 .toc-left .toc-content::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 2px; }
@@ -1850,14 +1818,9 @@ body.panel-resizing * {
 }
 
 @media (max-width: 768px) {
-    .toc-left { width: 50px; }
-    .toc-left .toc-section-title { display: none; }
-    .toc-left .toc-text { display: none; }
-    .toc-left .toc-item { justify-content: center; padding: 0.5rem; }
-    .toc-left .toc-number { margin: 0; }
-    .toc-toggle { display: none; }
-    .progress-bar { left: 50px; }
-    .slides-container { margin-left: 50px; width: calc(100% - 50px); }
+    .toc-left { width: 160px; }
+    .progress-bar { left: 160px; }
+    .slides-container { margin-left: 160px; width: calc(100% - 160px); }
     .keyboard-hints { display: none; }
     .breadcrumbs { display: none; }
     .slide { padding: 56px 1rem 0.5rem; }
