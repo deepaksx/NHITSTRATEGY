@@ -544,6 +544,43 @@ class SidePanelHandler {
                     <span class="ref-badge">Deloitte Assessment</span>
                 </div>`
             },
+            'tech-vendors': {
+                title: '28 IT Vendors',
+                content: `<div class="section-header">Vendor Distribution by Category</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Count</th><th>Examples</th></tr>
+                    <tr><td>Infrastructure</td><td class="impact-col">8</td><td>Dell, HPE, Cisco, NetApp</td></tr>
+                    <tr><td>Software/Apps</td><td class="impact-col">6</td><td>Oracle, Microsoft, SAP</td></tr>
+                    <tr><td>Security</td><td class="impact-col">4</td><td>Fortinet, Palo Alto, CrowdStrike</td></tr>
+                    <tr><td>Cloud/Hosting</td><td class="impact-col">3</td><td>AWS, Azure, Local DC</td></tr>
+                    <tr><td>Telecom/Network</td><td class="impact-col">4</td><td>Etisalat, du, Cisco</td></tr>
+                    <tr><td>Support/Services</td><td class="impact-col">3</td><td>Outsourced IT, Consultants</td></tr>
+                </table>
+
+                <div class="section-header">Key Vendor Challenges</div>
+                <table class="panel-table">
+                    <tr><th>Issue</th><th>Impact</th></tr>
+                    <tr><td>No centralized vendor management</td><td><span class="risk-critical">High</span></td></tr>
+                    <tr><td>Duplicate contracts across entities</td><td><span class="risk-high">Medium</span></td></tr>
+                    <tr><td>Inconsistent SLAs</td><td><span class="risk-high">Medium</span></td></tr>
+                    <tr><td>No vendor performance tracking</td><td><span class="risk-critical">High</span></td></tr>
+                    <tr><td>Fragmented procurement</td><td><span class="risk-high">Medium</span></td></tr>
+                </table>
+
+                <div class="section-header">Target State (2028)</div>
+                <table class="panel-table">
+                    <tr><th>KPI</th><th>Current</th><th>Target</th></tr>
+                    <tr><td>Total Vendors</td><td class="impact-col">28</td><td class="impact-col">15</td></tr>
+                    <tr><td>Strategic Partners</td><td class="impact-col">0</td><td class="impact-col">5</td></tr>
+                    <tr><td>SLA Compliance</td><td class="impact-col">N/A</td><td class="impact-col">95%</td></tr>
+                    <tr><td>Cost Savings</td><td class="impact-col">-</td><td class="impact-col">15%</td></tr>
+                </table>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">Deloitte Assessment</span>
+                    <span class="ref-category">Vendor Consolidation Roadmap</span>
+                </div>`
+            },
             // ===== Slide 4: Technology - Categories =====
             'tech-erp': {
                 title: 'Legacy ERP Systems',
