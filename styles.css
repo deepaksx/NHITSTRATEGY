@@ -575,6 +575,101 @@ body.panel-resizing * {
     font-weight: 600;
 }
 
+/* Side panel tables for appendices */
+.side-panel-content .panel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
+.side-panel-content .panel-table th {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.4rem 0.5rem;
+    border-bottom: 2px solid var(--gray-300);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.side-panel-content .panel-table td {
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-600);
+    vertical-align: top;
+}
+.side-panel-content .panel-table tr:hover {
+    background: var(--gray-50);
+}
+.side-panel-content .panel-table .code-col {
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    width: 40px;
+}
+.side-panel-content .panel-table .priority-col {
+    text-align: center;
+    width: 50px;
+}
+.side-panel-content .panel-table .priority-y1 {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.side-panel-content .panel-table .priority-y2 {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.side-panel-content .panel-table .priority-y3 {
+    background: #f3e8ff;
+    color: #7c3aed;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.side-panel-content .panel-table .risk-critical {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.side-panel-content .panel-table .risk-high {
+    background: #ffedd5;
+    color: #9a3412;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+.side-panel-content .panel-table .impact-col {
+    text-align: center;
+    width: 45px;
+    font-weight: 600;
+}
+.side-panel-content .section-header {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+    color: white;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0.75rem 0 0.5rem 0;
+    border-radius: 4px;
+}
+.side-panel-content .section-header:first-child {
+    margin-top: 0;
+}
+
 /* Citations section at bottom */
 .citations-section {
     margin-top: 1.25rem;

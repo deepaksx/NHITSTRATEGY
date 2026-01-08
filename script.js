@@ -3432,110 +3432,195 @@ class SidePanelHandler {
             },
             // ===== Slide 21: Appendices =====
             'appendix-a': {
-                title: 'Appendix A: Initiative Catalog & KPIs',
-                content: `<div class="detail-reference">
+                title: 'Appendix A: Initiative Catalog',
+                content: `<div class="section-header">H = Hiring & People (4 Initiatives)</div>
+                <table class="panel-table">
+                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
+                    <tr><td class="code-col">H1</td><td>Cyber & IT Team Hirings (11 roles)</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td class="code-col">H2</td><td>Team Skilling & Reskilling</td><td class="priority-col"><span class="priority-y1">Y1-3</span></td></tr>
+                    <tr><td class="code-col">H3</td><td>In-house Security Team Enablement</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">H4</td><td>IT Performance Assessment & KPIs</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                </table>
+
+                <div class="section-header">P = Process (6 Initiatives)</div>
+                <table class="panel-table">
+                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
+                    <tr><td class="code-col">P1</td><td>Cyber & IT Governance Framework</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P2</td><td>Data Governance & Data Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P3</td><td>IT & Security Architecture Definition</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P4</td><td>Physical Security</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">P5</td><td>Process & Workflow Optimization</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P6</td><td>SharePoint Legacy Data Cleansing</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                </table>
+
+                <div class="section-header">T = Technology (15 Initiatives)</div>
+                <table class="panel-table">
+                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
+                    <tr><td class="code-col">T1</td><td>Document Management System</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T2</td><td>HR Application System (HRMS)</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">T3</td><td>Ticketing System Rollout</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T4</td><td>Inventory/Asset Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T5</td><td>L&D Platform</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T6</td><td>IAM Solution (Identity & Access)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T7</td><td>Finance Analytics/EPM</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T8</td><td>Audit Platform/Automation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T9</td><td>IT Knowledge Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T10</td><td>IT Compliance Automation (GRC)</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">T11</td><td>Network Performance Monitoring</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T12</td><td>Integrated SOC and NOC</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td class="code-col">T13</td><td>Network Segmentation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T14</td><td>Full/Hybrid Cloud Migration</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td class="code-col">T15</td><td>ERP Strategy Implementation</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                </table>
+
+                <div class="section-header">E = ERP Solutions (4 Modules)</div>
+                <table class="panel-table">
+                    <tr><th>Code</th><th>Module</th><th>Year</th></tr>
+                    <tr><td class="code-col">E1</td><td>Oracle EPM (Finance Analytics)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">E2</td><td>S/4 HANA (Core ERP)</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td class="code-col">E3</td><td>Treasury Management (KYRIBA)</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td class="code-col">E4</td><td>Procurement (SAP Ariba)</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                </table>
+
+                <div class="detail-reference">
                     <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">PMO Reference</span>
-                </div>
-                <p><strong>33 Initiatives by Category:</strong></p>
-                <div class="detail-metrics" style="margin: 8px 0;">
-                    <span class="metric">H: 4 People</span>
-                    <span class="metric">P: 3 Process</span>
-                    <span class="metric">T: 15 Technology</span>
-                    <span class="metric">E: 11 ERP</span>
-                </div>
-                <p><strong>Priority Distribution:</strong></p>
-                <p>• MUST DO (Year 1): 12 initiatives</p>
-                <p>• SHOULD DO (Year 2): 13 initiatives</p>
-                <p>• NICE TO HAVE (Year 3): 8 initiatives</p>
-                <p><strong>Key Initiative KPIs:</strong></p>
-                <p>• <strong>H1 Hiring:</strong> 11 roles filled by Q3 2027</p>
-                <p>• <strong>T6 IAM:</strong> 100% user coverage, SSO enabled</p>
-                <p>• <strong>T12 SOC:</strong> 24/7 monitoring, &lt;15min response</p>
-                <p>• <strong>T15 ERP:</strong> S/4 HANA Go-Live Q3 2028</p>
-                <p>• <strong>P1 Governance:</strong> Monthly steering committee</p>
-                <p><strong>Program Success Metrics:</strong></p>
-                <p>• 90% on-time initiative delivery</p>
-                <p>• &lt;10% budget variance per initiative</p>
-                <p>• 100% critical dependencies tracked</p>`
+                    <span class="ref-category">33 Initiatives | 3-Year Roadmap</span>
+                </div>`
             },
             'appendix-b': {
                 title: 'Appendix B: Technical Architecture',
-                content: `<div class="detail-reference">
+                content: `<div class="section-header">Current State Assessment</div>
+                <table class="panel-table">
+                    <tr><th>Domain</th><th>Current State</th><th>Gap</th></tr>
+                    <tr><td>ERP</td><td>Oracle EBS (aging)</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Identity</td><td>No centralized IAM</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Security</td><td>Manual monitoring</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Cloud</td><td>0% workloads</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>Network</td><td>Flat, unsegmented</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>DR/BCP</td><td>No formal plan</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Vendors</td><td>28 across 4 entities</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                </table>
+
+                <div class="section-header">Target State Architecture (2028)</div>
+                <table class="panel-table">
+                    <tr><th>Domain</th><th>Target</th><th>KPI</th></tr>
+                    <tr><td>ERP</td><td>S/4 HANA (Single Instance)</td><td>100% modules live</td></tr>
+                    <tr><td>Identity</td><td>SSO + MFA + PAM</td><td>100% user coverage</td></tr>
+                    <tr><td>Security</td><td>24/7 SOC/NOC</td><td>&lt;15min response</td></tr>
+                    <tr><td>Cloud</td><td>Hybrid Cloud</td><td>70% migrated</td></tr>
+                    <tr><td>Network</td><td>Segmented + NAC</td><td>Zero Trust enabled</td></tr>
+                    <tr><td>DR/BCP</td><td>Active-Passive</td><td>RTO 4hr, RPO 1hr</td></tr>
+                    <tr><td>Vendors</td><td>Consolidated</td><td>28 → 15 vendors</td></tr>
+                    <tr><td>Availability</td><td>Critical Systems</td><td>99.9% uptime</td></tr>
+                </table>
+
+                <div class="section-header">Architecture Milestones</div>
+                <table class="panel-table">
+                    <tr><th>Quarter</th><th>Milestone</th><th>Status</th></tr>
+                    <tr><td>Q2 2026</td><td>Governance & Architecture Defined</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q4 2026</td><td>IAM & SSO Deployed</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q2 2027</td><td>SOC/NOC 24/7 Operational</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q4 2027</td><td>Cloud Migration Started</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q3 2028</td><td>S/4 HANA Go-Live</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td>Q4 2028</td><td>Full Cloud Migration</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                </table>
+
+                <div class="detail-reference">
                     <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">Technical Reference</span>
-                </div>
-                <p><strong>Current State Metrics:</strong></p>
-                <p>• 28 vendors across 4 entities</p>
-                <p>• 80+ users supported</p>
-                <p>• Legacy ERP: Oracle EBS (aging)</p>
-                <p>• No centralized IAM or SSO</p>
-                <p>• Manual security monitoring</p>
-                <p><strong>Target State KPIs (2028):</strong></p>
-                <p>• <strong>Cloud:</strong> 70% workloads migrated</p>
-                <p>• <strong>ERP:</strong> Single S/4 HANA instance</p>
-                <p>• <strong>Security:</strong> Zero Trust architecture</p>
-                <p>• <strong>Integration:</strong> API-first, &lt;50 point-to-point</p>
-                <p>• <strong>Availability:</strong> 99.9% for critical systems</p>
-                <p><strong>Architecture Milestones:</strong></p>
-                <p>• Q4 2026: IAM & SSO deployed</p>
-                <p>• Q2 2027: SOC/NOC 24/7 operational</p>
-                <p>• Q4 2027: Cloud migration started</p>
-                <p>• Q3 2028: S/4 HANA Go-Live</p>`
+                    <span class="ref-category">Enterprise Architecture Roadmap</span>
+                </div>`
             },
             'appendix-c': {
                 title: 'Appendix C: Risk Register',
-                content: `<div class="detail-reference">
+                content: `<div class="section-header">Risk Summary (60 Total)</div>
+                <table class="panel-table">
+                    <tr><th>Priority</th><th>Count</th><th>Status</th></tr>
+                    <tr><td><span class="risk-critical">P0 Critical</span></td><td class="impact-col">13</td><td>Immediate action</td></tr>
+                    <tr><td><span class="risk-high">P1 High</span></td><td class="impact-col">16</td><td>Year 1 priority</td></tr>
+                    <tr><td><span class="priority-y2">P2 Medium</span></td><td class="impact-col">22</td><td>Year 2 addressed</td></tr>
+                    <tr><td><span class="priority-y3">P3 Low</span></td><td class="impact-col">9</td><td>Monitored</td></tr>
+                </table>
+
+                <div class="section-header">Critical Risks (P0) - Top 13</div>
+                <table class="panel-table">
+                    <tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+                    <tr><td>No Cybersecurity Lead</td><td class="impact-col">10</td><td>H1: Hire by Q2'26</td></tr>
+                    <tr><td>Missing IT Governance</td><td class="impact-col">9.5</td><td>P1: Framework Q1'26</td></tr>
+                    <tr><td>Single Points of Failure</td><td class="impact-col">9</td><td>H1: Key roles backup</td></tr>
+                    <tr><td>No Disaster Recovery</td><td class="impact-col">9</td><td>T14: DR by Q4'27</td></tr>
+                    <tr><td>Aging ERP (Oracle EBS)</td><td class="impact-col">8.5</td><td>T15: S/4 HANA</td></tr>
+                    <tr><td>No IAM/SSO</td><td class="impact-col">8.5</td><td>T6: IAM by Q4'26</td></tr>
+                    <tr><td>Manual Security Monitoring</td><td class="impact-col">8</td><td>T12: SOC by Q2'27</td></tr>
+                    <tr><td>Flat Network Architecture</td><td class="impact-col">8</td><td>T13: Segment Q4'26</td></tr>
+                    <tr><td>No Data Classification</td><td class="impact-col">7.5</td><td>P2: Policy Q2'26</td></tr>
+                    <tr><td>Vendor Sprawl (28)</td><td class="impact-col">7</td><td>Consolidate to 15</td></tr>
+                    <tr><td>No Security Architecture</td><td class="impact-col">7</td><td>P3: Define Q1'26</td></tr>
+                    <tr><td>Knowledge Loss Risk</td><td class="impact-col">7</td><td>T9: KM System</td></tr>
+                    <tr><td>No BCP Testing</td><td class="impact-col">6.5</td><td>Annual DR drills</td></tr>
+                </table>
+
+                <div class="section-header">Risk Mitigation KPIs</div>
+                <table class="panel-table">
+                    <tr><th>KPI</th><th>Current</th><th>Target</th></tr>
+                    <tr><td>Critical risks mitigated</td><td class="impact-col">0/13</td><td>13/13 by Q4'27</td></tr>
+                    <tr><td>Risk review frequency</td><td class="impact-col">Ad-hoc</td><td>Bi-weekly</td></tr>
+                    <tr><td>Avg time to mitigation</td><td class="impact-col">N/A</td><td>&lt;90 days</td></tr>
+                    <tr><td>Risk escalation rate</td><td class="impact-col">N/A</td><td>&lt;10%</td></tr>
+                    <tr><td>Controls effectiveness</td><td class="impact-col">40%</td><td>95%</td></tr>
+                </table>
+
+                <div class="detail-reference">
                     <span class="ref-badge">Deloitte Assessment</span>
-                    <span class="ref-category">Governance Tool</span>
-                </div>
-                <p><strong>60 Risks Identified:</strong></p>
-                <div class="detail-metrics" style="margin: 8px 0;">
-                    <span class="metric critical">Critical (P0): 13</span>
-                    <span class="metric high">High (P1): 16</span>
-                </div>
-                <div class="detail-metrics" style="margin: 8px 0;">
-                    <span class="metric medium">Medium (P2): 22</span>
-                    <span class="metric">Low (P3): 9</span>
-                </div>
-                <p><strong>Top 5 Critical Risks:</strong></p>
-                <p>• No Cybersecurity Lead (Impact: 10)</p>
-                <p>• Missing IT Governance (Impact: 9.5)</p>
-                <p>• Single Points of Failure (Impact: 9)</p>
-                <p>• No Disaster Recovery (Impact: 9)</p>
-                <p>• Aging ERP System (Impact: 8.5)</p>
-                <p><strong>Risk KPIs:</strong></p>
-                <p>• Critical risks mitigated: 0/13 → 13/13 by Q4 2027</p>
-                <p>• Risk review frequency: Bi-weekly</p>
-                <p>• Average time to mitigation: &lt;90 days</p>
-                <p>• Risk escalation rate: &lt;10%</p>`
+                    <span class="ref-category">60 Risks | Bi-weekly Review</span>
+                </div>`
             },
             'appendix-d': {
                 title: 'Appendix D: Budget Details',
-                content: `<div class="detail-reference">
+                content: `<div class="section-header">Investment by Category</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Allocation</th><th>Key Items</th></tr>
+                    <tr><td class="code-col">H</td><td>~25%</td><td>11 roles: Cyber Lead, Data Lead, PMO, Engineers</td></tr>
+                    <tr><td class="code-col">P</td><td>~5%</td><td>Governance, Policies, Training</td></tr>
+                    <tr><td class="code-col">T</td><td>~45%</td><td>IAM, SOC/NOC, Cloud, Network</td></tr>
+                    <tr><td class="code-col">E</td><td>~25%</td><td>S/4 HANA, Treasury, Procurement</td></tr>
+                </table>
+
+                <div class="section-header">3-Year Investment Phasing</div>
+                <table class="panel-table">
+                    <tr><th>Year</th><th>Phase</th><th>Focus Areas</th></tr>
+                    <tr><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Foundation</td><td>Hiring, Governance, Security Basics</td></tr>
+                    <tr><td class="priority-col"><span class="priority-y2">Y2</span></td><td>Transform</td><td>ERP Build, Cloud Migration, SOC</td></tr>
+                    <tr><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Optimize</td><td>ERP Go-Live, Automation, AI</td></tr>
+                </table>
+
+                <div class="section-header">Major Investment Items</div>
+                <table class="panel-table">
+                    <tr><th>Initiative</th><th>Category</th><th>Year</th></tr>
+                    <tr><td>S/4 HANA Implementation</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td>SOC/NOC Setup & Operations</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td>Cloud Migration (Hybrid)</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td>IAM/SSO Platform</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Cybersecurity Team (5 FTE)</td><td class="code-col">H</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td>Treasury (KYRIBA)</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td>Procurement (SAP Ariba)</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                </table>
+
+                <div class="section-header">Financial KPIs</div>
+                <table class="panel-table">
+                    <tr><th>KPI</th><th>Target</th><th>Benefit</th></tr>
+                    <tr><td>Budget Variance</td><td>&lt;10%</td><td>Cost control</td></tr>
+                    <tr><td>CapEx/OpEx Ratio</td><td>60/40</td><td>Cash flow balance</td></tr>
+                    <tr><td>Contingency Reserve</td><td>15%</td><td>Risk buffer</td></tr>
+                    <tr><td>ROI Timeline</td><td>3-5 years</td><td>Value realization</td></tr>
+                    <tr><td>Vendor Consolidation</td><td>28→15</td><td>15% cost reduction</td></tr>
+                    <tr><td>Automation Savings</td><td>60%</td><td>Manual process reduction</td></tr>
+                    <tr><td>Security Incidents</td><td>-80%</td><td>Risk cost avoidance</td></tr>
+                </table>
+
+                <div class="detail-reference">
                     <span class="ref-badge">Financial Planning</span>
-                    <span class="ref-category">Confidential</span>
-                </div>
-                <p><strong>3-Year Investment Summary:</strong></p>
-                <div class="detail-metrics" style="margin: 8px 0;">
-                    <span class="metric">Year 1: Foundation</span>
-                    <span class="metric">Year 2: Transform</span>
-                    <span class="metric">Year 3: Optimize</span>
-                </div>
-                <p><strong>Budget by Category:</strong></p>
-                <p>• <strong>People (H):</strong> ~25% - Hiring 11 roles</p>
-                <p>• <strong>Technology (T):</strong> ~45% - Infrastructure & Security</p>
-                <p>• <strong>ERP (E):</strong> ~25% - S/4 HANA & modules</p>
-                <p>• <strong>Process (P):</strong> ~5% - Governance setup</p>
-                <p><strong>Financial KPIs:</strong></p>
-                <p>• Budget variance target: &lt;10%</p>
-                <p>• CapEx/OpEx ratio: 60/40</p>
-                <p>• Contingency reserve: 15%</p>
-                <p>• ROI timeline: 3-5 years</p>
-                <p><strong>Cost Avoidance Targets:</strong></p>
-                <p>• Security incidents: -80% by Year 3</p>
-                <p>• Manual processes: -60% with automation</p>
-                <p>• Vendor consolidation: 28 → 15 vendors</p>`
+                    <span class="ref-category">Confidential | 3-Year Investment</span>
+                </div>`
             }
         };
         this.init();
@@ -3653,7 +3738,8 @@ class SidePanelHandler {
         // Check if content has special elements - if so, return as-is
         const ganttChart = temp.querySelector('.gantt-container');
         const initiativeDetails = temp.querySelector('.initiative-detail');
-        if (ganttChart || initiativeDetails) {
+        const panelTable = temp.querySelector('.panel-table');
+        if (ganttChart || initiativeDetails || panelTable) {
             return html;
         }
 
