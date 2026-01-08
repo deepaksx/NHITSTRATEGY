@@ -3469,194 +3469,272 @@ class SidePanelHandler {
             },
             // ===== Slide 20: Appendices =====
             'appendix-a': {
-                title: 'Appendix A: Initiative Catalog',
+                title: 'Appendix A: Full Initiative Catalog (33 Initiatives)',
                 content: `<div class="section-header">H = Hiring & People (4 Initiatives)</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
-                    <tr><td class="code-col">H1</td><td>Cyber & IT Team Hirings (11 roles)</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td class="code-col">H2</td><td>Team Skilling & Reskilling</td><td class="priority-col"><span class="priority-y1">Y1-3</span></td></tr>
-                    <tr><td class="code-col">H3</td><td>In-house Security Team Enablement</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">H4</td><td>IT Performance Assessment & KPIs</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
+                    <tr><td class="code-col">H1</td><td>Cyber & IT Team Hirings</td><td>11 roles: Cyber Lead, Data Lead, PMO Lead, IT Auditor, Solutions Architects (2), DevOps (2), Security Engineers (2), Support</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td class="code-col">H2</td><td>Team Skilling & Reskilling</td><td>Certifications: CISSP, CISM, Azure, AWS, SAP. Training budget per FTE.</td><td class="priority-col"><span class="priority-y1">Y1-3</span></td></tr>
+                    <tr><td class="code-col">H3</td><td>In-house Security Team</td><td>Build internal SOC capability, reduce dependency on MSSPs</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">H4</td><td>IT Performance & KPIs</td><td>Define SLAs, OKRs, performance metrics for IT team</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
                 </table>
 
-                <div class="section-header">P = Process (6 Initiatives)</div>
+                <div class="section-header">P = Process & Governance (6 Initiatives)</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
-                    <tr><td class="code-col">P1</td><td>Cyber & IT Governance Framework</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P2</td><td>Data Governance & Data Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P3</td><td>IT & Security Architecture Definition</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P4</td><td>Physical Security</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">P5</td><td>Process & Workflow Optimization</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P6</td><td>SharePoint Legacy Data Cleansing</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
+                    <tr><td class="code-col">P1</td><td>Cyber & IT Governance</td><td>IT Steering Committee, RACI, ITIL/COBIT frameworks, decision rights</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P2</td><td>Data Governance</td><td>Data classification, ownership, retention, privacy (PDPL compliance)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P3</td><td>Security Architecture</td><td>Enterprise security architecture, Zero Trust roadmap, reference designs</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P4</td><td>Physical Security</td><td>DC access controls, CCTV, biometrics, visitor management</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">P5</td><td>Process Optimization</td><td>IT workflows automation, service catalog, change management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">P6</td><td>SharePoint Cleansing</td><td>Legacy data cleanup, migration to modern DMS, archival policies</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
                 </table>
 
-                <div class="section-header">T = Technology (15 Initiatives)</div>
+                <div class="section-header">T = Technology (19 Initiatives)</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Year</th></tr>
-                    <tr><td class="code-col">T1</td><td>Document Management System</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T2</td><td>HR Application System (HRMS)</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">T3</td><td>Ticketing System Rollout</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T4</td><td>Inventory/Asset Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T5</td><td>L&D Platform</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T6</td><td>IAM Solution (Identity & Access)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T7</td><td>Finance Analytics/EPM</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T8</td><td>Audit Platform/Automation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T9</td><td>IT Knowledge Management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T10</td><td>IT Compliance Automation (GRC)</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">T11</td><td>Network Performance Monitoring</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T12</td><td>Integrated SOC and NOC</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td class="code-col">T13</td><td>Network Segmentation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T14</td><td>Full/Hybrid Cloud Migration</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td class="code-col">T15</td><td>ERP Strategy Implementation</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
+                    <tr><td class="code-col">T1</td><td>Document Management</td><td>Enterprise DMS with versioning, workflow, e-signatures</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T2</td><td>HRMS System</td><td>Core HR, payroll, time & attendance, employee self-service</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">T3</td><td>Ticketing System</td><td>ITSM platform: incidents, requests, problems, changes</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T4</td><td>Asset Management</td><td>IT asset lifecycle, inventory, software licensing, CMDB</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T5</td><td>L&D Platform</td><td>Learning management system, skills tracking, certifications</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T6</td><td>IAM Solution</td><td>SSO, MFA, PAM, lifecycle management, access reviews</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T7</td><td>Finance Analytics/EPM</td><td>Oracle EPM for budgeting, forecasting, consolidation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T8</td><td>Audit Platform</td><td>Internal audit automation, risk assessment, compliance tracking</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T9</td><td>Knowledge Management</td><td>IT wiki, runbooks, documentation repository, search</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T10</td><td>GRC Platform</td><td>IT compliance automation, policy management, audit trails</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td class="code-col">T11</td><td>Network Monitoring</td><td>NPM tools, traffic analysis, bandwidth management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T12</td><td>SOC/NOC Integration</td><td>24/7 security operations, SIEM, incident response</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td class="code-col">T13</td><td>Network Segmentation</td><td>VLANs, microsegmentation, NAC, firewall zones</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T14</td><td>Cloud Migration</td><td>Hybrid cloud strategy, Azure/AWS, lift-and-shift, modernization</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td class="code-col">T15</td><td>ERP Strategy</td><td>S/4 HANA implementation planning and execution</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td class="code-col">T16</td><td>Backup & DR</td><td>Backup modernization, DR site, RTO/RPO targets</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
+                    <tr><td class="code-col">T17</td><td>Endpoint Security</td><td>EDR/XDR, device management, encryption, DLP</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T18</td><td>Email Security</td><td>Advanced threat protection, anti-phishing, DMARC</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">T19</td><td>Vulnerability Mgmt</td><td>Scanning, patching, remediation tracking, reporting</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
                 </table>
 
-                <div class="section-header">E = ERP Solutions (4 Modules)</div>
+                <div class="section-header">E = ERP & Enterprise Apps (4 Modules)</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Module</th><th>Year</th></tr>
-                    <tr><td class="code-col">E1</td><td>Oracle EPM (Finance Analytics)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">E2</td><td>S/4 HANA (Core ERP)</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td class="code-col">E3</td><td>Treasury Management (KYRIBA)</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td class="code-col">E4</td><td>Procurement (SAP Ariba)</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><th>Code</th><th>Module</th><th>Description</th><th>Year</th></tr>
+                    <tr><td class="code-col">E1</td><td>Oracle EPM</td><td>Finance analytics, planning, budgeting, consolidation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td class="code-col">E2</td><td>SAP S/4 HANA</td><td>Core ERP: Finance, HR, Supply Chain, single instance</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
+                    <tr><td class="code-col">E3</td><td>KYRIBA Treasury</td><td>Cash management, bank connectivity, forecasting</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td class="code-col">E4</td><td>SAP Ariba</td><td>Procurement, supplier management, contract lifecycle</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
                 </table>
 
                 <div class="detail-reference">
                     <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">33 Initiatives | 3-Year Roadmap</span>
+                    <span class="ref-category">33 Initiatives | Full Catalog | 3-Year Roadmap</span>
                 </div>`
             },
             'appendix-b': {
-                title: 'Appendix B: Technical Architecture',
-                content: `<div class="section-header">Current State Assessment</div>
+                title: 'Appendix B: Technical Architecture (Full Detail)',
+                content: `<div class="section-header">Current State Assessment (All Domains)</div>
                 <table class="panel-table">
-                    <tr><th>Domain</th><th>Current State</th><th>Gap</th></tr>
-                    <tr><td>ERP</td><td>Oracle EBS (aging)</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Identity</td><td>No centralized IAM</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Security</td><td>Manual monitoring</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Cloud</td><td>0% workloads</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>Network</td><td>Flat, unsegmented</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>DR/BCP</td><td>No formal plan</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Vendors</td><td>28 across 4 entities</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><th>Domain</th><th>Current State</th><th>Issues</th><th>Gap</th></tr>
+                    <tr><td>ERP</td><td>Oracle EBS R12</td><td>End-of-life, no support, performance issues</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Identity (IAM)</td><td>Manual AD only</td><td>No SSO, no MFA, manual provisioning</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Security Ops</td><td>No SOC/NOC</td><td>Manual monitoring, reactive only</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Cloud</td><td>0% cloud</td><td>100% on-premise, no cloud strategy</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>Network</td><td>Flat network</td><td>No segmentation, no NAC, no ZTNA</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>DR/BCP</td><td>No DR site</td><td>No tested plan, no replication</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Backup</td><td>Basic backup</td><td>No offsite, untested restores</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>Endpoint</td><td>Basic AV only</td><td>No EDR/XDR, no DLP, unencrypted</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>Email</td><td>O365 basic</td><td>No ATP, no anti-phishing, no DMARC</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><td>SIEM</td><td>None</td><td>No log aggregation, no correlation</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
+                    <tr><td>Vendors</td><td>28 vendors</td><td>Fragmented, no consolidation strategy</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
                 </table>
 
                 <div class="section-header">Target State Architecture (2028)</div>
                 <table class="panel-table">
-                    <tr><th>Domain</th><th>Target</th><th>KPI</th></tr>
-                    <tr><td>ERP</td><td>S/4 HANA (Single Instance)</td><td>100% modules live</td></tr>
-                    <tr><td>Identity</td><td>SSO + MFA + PAM</td><td>100% user coverage</td></tr>
-                    <tr><td>Security</td><td>24/7 SOC/NOC</td><td>&lt;15min response</td></tr>
-                    <tr><td>Cloud</td><td>Hybrid Cloud</td><td>70% migrated</td></tr>
-                    <tr><td>Network</td><td>Segmented + NAC</td><td>Zero Trust enabled</td></tr>
-                    <tr><td>DR/BCP</td><td>Active-Passive</td><td>RTO 4hr, RPO 1hr</td></tr>
-                    <tr><td>Vendors</td><td>Consolidated</td><td>28 → 15 vendors</td></tr>
-                    <tr><td>Availability</td><td>Critical Systems</td><td>99.9% uptime</td></tr>
+                    <tr><th>Domain</th><th>Target Solution</th><th>Target KPI</th></tr>
+                    <tr><td>ERP</td><td>SAP S/4 HANA (Single Instance)</td><td>100% modules live by Q3'28</td></tr>
+                    <tr><td>Identity</td><td>Azure AD + Okta SSO + MFA + PAM</td><td>100% users, 100% apps covered</td></tr>
+                    <tr><td>Security Ops</td><td>24/7 SOC + NOC (Hybrid model)</td><td>&lt;15 min MTTR, &lt;5 min detection</td></tr>
+                    <tr><td>Cloud</td><td>Hybrid Cloud (Azure primary)</td><td>70% workloads migrated</td></tr>
+                    <tr><td>Network</td><td>Segmented + NAC + ZTNA</td><td>Zero Trust architecture</td></tr>
+                    <tr><td>DR/BCP</td><td>Active-Passive DR site</td><td>RTO: 4 hours, RPO: 1 hour</td></tr>
+                    <tr><td>Backup</td><td>3-2-1 strategy, immutable backups</td><td>Daily backups, monthly tests</td></tr>
+                    <tr><td>Endpoint</td><td>Microsoft Defender XDR + Intune</td><td>100% managed, 100% encrypted</td></tr>
+                    <tr><td>Email</td><td>M365 ATP + DMARC/DKIM/SPF</td><td>99.9% spam blocked</td></tr>
+                    <tr><td>SIEM</td><td>Microsoft Sentinel or Splunk</td><td>All logs ingested, 90-day retention</td></tr>
+                    <tr><td>Vendors</td><td>Consolidated vendor portfolio</td><td>28 → 15 vendors (-46%)</td></tr>
+                    <tr><td>Availability</td><td>N+1 redundancy for critical</td><td>99.9% uptime SLA</td></tr>
                 </table>
 
-                <div class="section-header">Architecture Milestones</div>
+                <div class="section-header">Architecture Milestones Timeline</div>
                 <table class="panel-table">
-                    <tr><th>Quarter</th><th>Milestone</th><th>Status</th></tr>
-                    <tr><td>Q2 2026</td><td>Governance & Architecture Defined</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q4 2026</td><td>IAM & SSO Deployed</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q2 2027</td><td>SOC/NOC 24/7 Operational</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q4 2027</td><td>Cloud Migration Started</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q3 2028</td><td>S/4 HANA Go-Live</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td>Q4 2028</td><td>Full Cloud Migration</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><th>Quarter</th><th>Milestone</th><th>Deliverables</th><th>Year</th></tr>
+                    <tr><td>Q1 2026</td><td>Architecture Definition</td><td>EA docs, security architecture, standards</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q2 2026</td><td>Governance Framework</td><td>ITIL processes, RACI, service catalog</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q3 2026</td><td>IAM Phase 1</td><td>SSO for top 10 apps, MFA rollout</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q4 2026</td><td>Network Segmentation</td><td>VLANs, firewall rules, NAC pilot</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><td>Q1 2027</td><td>SOC Foundation</td><td>SIEM deployed, use cases, playbooks</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q2 2027</td><td>SOC 24/7 Operations</td><td>Full SOC/NOC coverage, incident response</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q3 2027</td><td>Cloud Migration Start</td><td>Pilot workloads, Azure landing zone</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q4 2027</td><td>DR Site Operational</td><td>Active-passive, tested failover</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
+                    <tr><td>Q1 2028</td><td>S/4 HANA Build</td><td>Development, configuration, testing</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td>Q3 2028</td><td>S/4 HANA Go-Live</td><td>Production cutover, hypercare</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><td>Q4 2028</td><td>Full Cloud Migration</td><td>70% workloads in cloud</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
                 </table>
 
                 <div class="detail-reference">
                     <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">Enterprise Architecture Roadmap</span>
+                    <span class="ref-category">Enterprise Architecture | Full Technical Roadmap</span>
                 </div>`
             },
             'appendix-c': {
-                title: 'Appendix C: Risk Register',
-                content: `<div class="section-header">Risk Summary (60 Total)</div>
+                title: 'Appendix C: Full Risk Register (60 Risks)',
+                content: `<div class="section-header">Risk Summary by Priority</div>
                 <table class="panel-table">
-                    <tr><th>Priority</th><th>Count</th><th>Status</th></tr>
-                    <tr><td><span class="risk-critical">P0 Critical</span></td><td class="impact-col">13</td><td>Immediate action</td></tr>
-                    <tr><td><span class="risk-high">P1 High</span></td><td class="impact-col">16</td><td>Year 1 priority</td></tr>
-                    <tr><td><span class="priority-y2">P2 Medium</span></td><td class="impact-col">22</td><td>Year 2 addressed</td></tr>
-                    <tr><td><span class="priority-y3">P3 Low</span></td><td class="impact-col">9</td><td>Monitored</td></tr>
+                    <tr><th>Priority</th><th>Count</th><th>Impact Range</th><th>Action Required</th></tr>
+                    <tr><td><span class="risk-critical">P0 Critical</span></td><td class="impact-col">13</td><td>8.0 - 10.0</td><td>Immediate action required</td></tr>
+                    <tr><td><span class="risk-high">P1 High</span></td><td class="impact-col">16</td><td>6.0 - 7.9</td><td>Year 1 priority</td></tr>
+                    <tr><td><span class="priority-y2">P2 Medium</span></td><td class="impact-col">22</td><td>4.0 - 5.9</td><td>Year 2 addressed</td></tr>
+                    <tr><td><span class="priority-y3">P3 Low</span></td><td class="impact-col">9</td><td>1.0 - 3.9</td><td>Monitored</td></tr>
                 </table>
 
-                <div class="section-header">Critical Risks (P0) - Top 13</div>
+                <div class="section-header">P0 Critical Risks (13)</div>
                 <table class="panel-table">
-                    <tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
-                    <tr><td>No Cybersecurity Lead</td><td class="impact-col">10</td><td>H1: Hire by Q2'26</td></tr>
-                    <tr><td>Missing IT Governance</td><td class="impact-col">9.5</td><td>P1: Framework Q1'26</td></tr>
-                    <tr><td>Single Points of Failure</td><td class="impact-col">9</td><td>H1: Key roles backup</td></tr>
-                    <tr><td>No Disaster Recovery</td><td class="impact-col">9</td><td>T14: DR by Q4'27</td></tr>
-                    <tr><td>Aging ERP (Oracle EBS)</td><td class="impact-col">8.5</td><td>T15: S/4 HANA</td></tr>
-                    <tr><td>No IAM/SSO</td><td class="impact-col">8.5</td><td>T6: IAM by Q4'26</td></tr>
-                    <tr><td>Manual Security Monitoring</td><td class="impact-col">8</td><td>T12: SOC by Q2'27</td></tr>
-                    <tr><td>Flat Network Architecture</td><td class="impact-col">8</td><td>T13: Segment Q4'26</td></tr>
-                    <tr><td>No Data Classification</td><td class="impact-col">7.5</td><td>P2: Policy Q2'26</td></tr>
-                    <tr><td>Vendor Sprawl (28)</td><td class="impact-col">7</td><td>Consolidate to 15</td></tr>
-                    <tr><td>No Security Architecture</td><td class="impact-col">7</td><td>P3: Define Q1'26</td></tr>
-                    <tr><td>Knowledge Loss Risk</td><td class="impact-col">7</td><td>T9: KM System</td></tr>
-                    <tr><td>No BCP Testing</td><td class="impact-col">6.5</td><td>Annual DR drills</td></tr>
+                    <tr><th>#</th><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+                    <tr><td>1</td><td>No Cybersecurity Leadership</td><td class="impact-col">10.0</td><td>H1: Hire Cyber Lead Q2'26</td></tr>
+                    <tr><td>2</td><td>Missing IT Governance</td><td class="impact-col">9.5</td><td>P1: Framework Q1'26</td></tr>
+                    <tr><td>3</td><td>Single Points of Failure</td><td class="impact-col">9.0</td><td>H1: Cross-training, backups</td></tr>
+                    <tr><td>4</td><td>No Disaster Recovery Plan</td><td class="impact-col">9.0</td><td>T16: DR site by Q4'27</td></tr>
+                    <tr><td>5</td><td>Aging ERP (Oracle EBS)</td><td class="impact-col">8.5</td><td>E2: S/4 HANA migration</td></tr>
+                    <tr><td>6</td><td>No IAM/SSO Solution</td><td class="impact-col">8.5</td><td>T6: IAM deploy Q4'26</td></tr>
+                    <tr><td>7</td><td>No Security Monitoring</td><td class="impact-col">8.0</td><td>T12: SOC by Q2'27</td></tr>
+                    <tr><td>8</td><td>Flat Network Architecture</td><td class="impact-col">8.0</td><td>T13: Segmentation Q4'26</td></tr>
+                    <tr><td>9</td><td>No SIEM/Log Management</td><td class="impact-col">8.0</td><td>T12: SIEM with SOC</td></tr>
+                    <tr><td>10</td><td>No Data Classification</td><td class="impact-col">7.5</td><td>P2: Policy Q2'26</td></tr>
+                    <tr><td>11</td><td>No Security Architecture</td><td class="impact-col">7.0</td><td>P3: Define Q1'26</td></tr>
+                    <tr><td>12</td><td>Knowledge Loss Risk</td><td class="impact-col">7.0</td><td>T9: KM System</td></tr>
+                    <tr><td>13</td><td>No BCP Testing</td><td class="impact-col">6.5</td><td>Annual DR drills</td></tr>
                 </table>
 
-                <div class="section-header">Risk Mitigation KPIs</div>
+                <div class="section-header">P1 High Risks (16)</div>
                 <table class="panel-table">
-                    <tr><th>KPI</th><th>Current</th><th>Target</th></tr>
-                    <tr><td>Critical risks mitigated</td><td class="impact-col">0/13</td><td>13/13 by Q4'27</td></tr>
-                    <tr><td>Risk review frequency</td><td class="impact-col">Ad-hoc</td><td>Bi-weekly</td></tr>
-                    <tr><td>Avg time to mitigation</td><td class="impact-col">N/A</td><td>&lt;90 days</td></tr>
-                    <tr><td>Risk escalation rate</td><td class="impact-col">N/A</td><td>&lt;10%</td></tr>
-                    <tr><td>Controls effectiveness</td><td class="impact-col">40%</td><td>95%</td></tr>
+                    <tr><th>#</th><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+                    <tr><td>14</td><td>Vendor Sprawl (28 vendors)</td><td class="impact-col">7.0</td><td>Consolidate to 15</td></tr>
+                    <tr><td>15</td><td>No Endpoint Protection (EDR)</td><td class="impact-col">6.5</td><td>T17: Deploy XDR</td></tr>
+                    <tr><td>16</td><td>Unpatched Systems</td><td class="impact-col">6.5</td><td>T19: Vuln mgmt program</td></tr>
+                    <tr><td>17</td><td>No Email Security (ATP)</td><td class="impact-col">6.5</td><td>T18: M365 ATP</td></tr>
+                    <tr><td>18</td><td>No MFA Enforcement</td><td class="impact-col">6.5</td><td>T6: MFA with IAM</td></tr>
+                    <tr><td>19</td><td>Manual IT Processes</td><td class="impact-col">6.0</td><td>P5: Workflow automation</td></tr>
+                    <tr><td>20</td><td>No IT Asset Inventory</td><td class="impact-col">6.0</td><td>T4: CMDB implementation</td></tr>
+                    <tr><td>21</td><td>No Change Management</td><td class="impact-col">6.0</td><td>P1: ITIL CAB process</td></tr>
+                    <tr><td>22</td><td>No Incident Response Plan</td><td class="impact-col">6.0</td><td>T12: IR with SOC</td></tr>
+                    <tr><td>23</td><td>Outdated Backup Strategy</td><td class="impact-col">6.0</td><td>T16: 3-2-1 backup</td></tr>
+                    <tr><td>24</td><td>No PAM Solution</td><td class="impact-col">6.0</td><td>T6: PAM with IAM</td></tr>
+                    <tr><td>25</td><td>Shadow IT Risk</td><td class="impact-col">6.0</td><td>T4: Discovery tools</td></tr>
+                    <tr><td>26</td><td>No Security Awareness</td><td class="impact-col">5.5</td><td>H2: Training program</td></tr>
+                    <tr><td>27</td><td>Compliance Gaps (NCA)</td><td class="impact-col">5.5</td><td>T10: GRC platform</td></tr>
+                    <tr><td>28</td><td>No Penetration Testing</td><td class="impact-col">5.5</td><td>Annual pentests</td></tr>
+                    <tr><td>29</td><td>Third-Party Risk</td><td class="impact-col">5.5</td><td>Vendor assessments</td></tr>
+                </table>
+
+                <div class="section-header">P2 Medium Risks (22)</div>
+                <table class="panel-table">
+                    <tr><th>Risk Category</th><th>Count</th><th>Examples</th></tr>
+                    <tr><td>Process Gaps</td><td class="impact-col">8</td><td>No SLAs, No service catalog, No RACI</td></tr>
+                    <tr><td>Technology Debt</td><td class="impact-col">6</td><td>Legacy apps, Technical debt, EOL systems</td></tr>
+                    <tr><td>Documentation</td><td class="impact-col">4</td><td>No runbooks, No architecture docs</td></tr>
+                    <tr><td>Skills Gaps</td><td class="impact-col">4</td><td>Cloud skills, Security certs, SAP expertise</td></tr>
+                </table>
+
+                <div class="section-header">P3 Low Risks (9)</div>
+                <table class="panel-table">
+                    <tr><th>Risk Category</th><th>Count</th><th>Examples</th></tr>
+                    <tr><td>Nice-to-Have Features</td><td class="impact-col">5</td><td>Advanced analytics, AI/ML, Automation</td></tr>
+                    <tr><td>Future Planning</td><td class="impact-col">4</td><td>Capacity planning, Tech refresh cycles</td></tr>
+                </table>
+
+                <div class="section-header">Risk Management KPIs</div>
+                <table class="panel-table">
+                    <tr><th>KPI</th><th>Current</th><th>Y1 Target</th><th>Y3 Target</th></tr>
+                    <tr><td>Critical risks mitigated</td><td class="impact-col">0/13</td><td>8/13</td><td>13/13</td></tr>
+                    <tr><td>High risks mitigated</td><td class="impact-col">0/16</td><td>6/16</td><td>16/16</td></tr>
+                    <tr><td>Risk review frequency</td><td class="impact-col">Ad-hoc</td><td>Bi-weekly</td><td>Weekly</td></tr>
+                    <tr><td>Avg mitigation time</td><td class="impact-col">N/A</td><td>&lt;120 days</td><td>&lt;60 days</td></tr>
+                    <tr><td>Controls effectiveness</td><td class="impact-col">40%</td><td>70%</td><td>95%</td></tr>
+                    <tr><td>Risk escalation rate</td><td class="impact-col">N/A</td><td>&lt;15%</td><td>&lt;5%</td></tr>
                 </table>
 
                 <div class="detail-reference">
                     <span class="ref-badge">Deloitte Assessment</span>
-                    <span class="ref-category">60 Risks | Bi-weekly Review</span>
+                    <span class="ref-category">60 Risks | Full Register | Bi-weekly Review</span>
                 </div>`
             },
             'appendix-d': {
-                title: 'Appendix D: Budget Details',
-                content: `<div class="section-header">Investment by Category</div>
+                title: 'Appendix D: Full Budget Details',
+                content: `<div class="section-header">Investment Summary by Category</div>
                 <table class="panel-table">
-                    <tr><th>Category</th><th>Allocation</th><th>Key Items</th></tr>
-                    <tr><td class="code-col">H</td><td>~25%</td><td>11 roles: Cyber Lead, Data Lead, PMO, Engineers</td></tr>
-                    <tr><td class="code-col">P</td><td>~5%</td><td>Governance, Policies, Training</td></tr>
-                    <tr><td class="code-col">T</td><td>~45%</td><td>IAM, SOC/NOC, Cloud, Network</td></tr>
-                    <tr><td class="code-col">E</td><td>~25%</td><td>S/4 HANA, Treasury, Procurement</td></tr>
+                    <tr><th>Category</th><th>Code</th><th>Allocation</th><th>Key Items</th></tr>
+                    <tr><td>Hiring & People</td><td class="code-col">H</td><td>~25%</td><td>11 FTE: Cyber Lead, Data Lead, PMO, Architects, Engineers</td></tr>
+                    <tr><td>Process & Governance</td><td class="code-col">P</td><td>~5%</td><td>Governance framework, Policies, Training, Consulting</td></tr>
+                    <tr><td>Technology</td><td class="code-col">T</td><td>~45%</td><td>IAM, SOC/NOC, Cloud, Network, Security tools</td></tr>
+                    <tr><td>ERP & Enterprise</td><td class="code-col">E</td><td>~25%</td><td>S/4 HANA, EPM, Treasury, Procurement</td></tr>
                 </table>
 
                 <div class="section-header">3-Year Investment Phasing</div>
                 <table class="panel-table">
-                    <tr><th>Year</th><th>Phase</th><th>Focus Areas</th></tr>
-                    <tr><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Foundation</td><td>Hiring, Governance, Security Basics</td></tr>
-                    <tr><td class="priority-col"><span class="priority-y2">Y2</span></td><td>Transform</td><td>ERP Build, Cloud Migration, SOC</td></tr>
-                    <tr><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Optimize</td><td>ERP Go-Live, Automation, AI</td></tr>
+                    <tr><th>Year</th><th>Phase</th><th>% of Total</th><th>Focus Areas</th></tr>
+                    <tr><td class="priority-col"><span class="priority-y1">Y1 (2026)</span></td><td>Foundation</td><td>~35%</td><td>Hiring, Governance, IAM, Security basics, Quick wins</td></tr>
+                    <tr><td class="priority-col"><span class="priority-y2">Y2 (2027)</span></td><td>Transform</td><td>~40%</td><td>ERP build, Cloud migration, SOC 24/7, Major systems</td></tr>
+                    <tr><td class="priority-col"><span class="priority-y3">Y3 (2028)</span></td><td>Optimize</td><td>~25%</td><td>ERP go-live, Automation, AI, Optimization</td></tr>
                 </table>
 
-                <div class="section-header">Major Investment Items</div>
+                <div class="section-header">Hiring Budget (H) - 11 Roles</div>
                 <table class="panel-table">
-                    <tr><th>Initiative</th><th>Category</th><th>Year</th></tr>
-                    <tr><td>S/4 HANA Implementation</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td>SOC/NOC Setup & Operations</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td>Cloud Migration (Hybrid)</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td>IAM/SSO Platform</td><td class="code-col">T</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Cybersecurity Team (5 FTE)</td><td class="code-col">H</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td>Treasury (KYRIBA)</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td>Procurement (SAP Ariba)</td><td class="code-col">E</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
+                    <tr><th>Role</th><th>Count</th><th>Year</th><th>Type</th></tr>
+                    <tr><td>Cybersecurity Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
+                    <tr><td>Data & Analytics Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
+                    <tr><td>PMO Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
+                    <tr><td>IT Auditor</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
+                    <tr><td>Solutions Architects</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>FTE</td></tr>
+                    <tr><td>DevOps Engineers</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y2">Y2</span></td><td>FTE</td></tr>
+                    <tr><td>Security Engineers</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>FTE</td></tr>
+                    <tr><td>IT Support Specialist</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
                 </table>
 
-                <div class="section-header">Financial KPIs</div>
+                <div class="section-header">Technology Budget (T) - Major Items</div>
                 <table class="panel-table">
-                    <tr><th>KPI</th><th>Target</th><th>Benefit</th></tr>
-                    <tr><td>Budget Variance</td><td>&lt;10%</td><td>Cost control</td></tr>
-                    <tr><td>CapEx/OpEx Ratio</td><td>60/40</td><td>Cash flow balance</td></tr>
-                    <tr><td>Contingency Reserve</td><td>15%</td><td>Risk buffer</td></tr>
-                    <tr><td>ROI Timeline</td><td>3-5 years</td><td>Value realization</td></tr>
-                    <tr><td>Vendor Consolidation</td><td>28→15</td><td>15% cost reduction</td></tr>
-                    <tr><td>Automation Savings</td><td>60%</td><td>Manual process reduction</td></tr>
-                    <tr><td>Security Incidents</td><td>-80%</td><td>Risk cost avoidance</td></tr>
+                    <tr><th>Initiative</th><th>Type</th><th>Year</th><th>Notes</th></tr>
+                    <tr><td>IAM/SSO Platform</td><td>License + Impl</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Okta or Azure AD P2</td></tr>
+                    <tr><td>SOC/NOC Setup</td><td>MSSP + Tools</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>Hybrid model, SIEM</td></tr>
+                    <tr><td>Cloud Migration</td><td>Azure/AWS</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td><td>70% workloads target</td></tr>
+                    <tr><td>Network Security</td><td>Hardware + SW</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Firewalls, NAC, Segmentation</td></tr>
+                    <tr><td>Endpoint Security</td><td>License</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Microsoft Defender XDR</td></tr>
+                    <tr><td>Backup & DR</td><td>Infrastructure</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>DR site, replication</td></tr>
+                    <tr><td>ITSM Platform</td><td>SaaS</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>ServiceNow or similar</td></tr>
+                </table>
+
+                <div class="section-header">ERP Budget (E) - Enterprise Apps</div>
+                <table class="panel-table">
+                    <tr><th>Module</th><th>Vendor</th><th>Year</th><th>Scope</th></tr>
+                    <tr><td>Finance Analytics</td><td>Oracle EPM</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Budgeting, forecasting, consolidation</td></tr>
+                    <tr><td>Core ERP</td><td>SAP S/4 HANA</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td><td>Finance, HR, Supply Chain, single instance</td></tr>
+                    <tr><td>Treasury</td><td>KYRIBA</td><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Cash management, bank connectivity</td></tr>
+                    <tr><td>Procurement</td><td>SAP Ariba</td><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Supplier mgmt, contracts, sourcing</td></tr>
+                </table>
+
+                <div class="section-header">Financial Controls & KPIs</div>
+                <table class="panel-table">
+                    <tr><th>KPI</th><th>Target</th><th>Measurement</th><th>Benefit</th></tr>
+                    <tr><td>Budget Variance</td><td>&lt;10%</td><td>Monthly tracking</td><td>Cost control</td></tr>
+                    <tr><td>CapEx/OpEx Ratio</td><td>60/40</td><td>Quarterly review</td><td>Cash flow balance</td></tr>
+                    <tr><td>Contingency Reserve</td><td>15%</td><td>Held in reserve</td><td>Risk buffer</td></tr>
+                    <tr><td>ROI Timeline</td><td>3-5 years</td><td>Business case tracking</td><td>Value realization</td></tr>
+                    <tr><td>Vendor Consolidation</td><td>28→15</td><td>Annual review</td><td>~15% cost reduction</td></tr>
+                    <tr><td>Automation Savings</td><td>60%</td><td>Process metrics</td><td>FTE efficiency</td></tr>
+                    <tr><td>Security Incidents</td><td>-80%</td><td>Incident tracking</td><td>Risk cost avoidance</td></tr>
+                    <tr><td>System Availability</td><td>99.9%</td><td>Uptime monitoring</td><td>Productivity gains</td></tr>
                 </table>
 
                 <div class="detail-reference">
                     <span class="ref-badge">Financial Planning</span>
-                    <span class="ref-category">Confidential | 3-Year Investment</span>
+                    <span class="ref-category">Confidential | Full 3-Year Investment Plan</span>
                 </div>`
             }
         };
@@ -3934,19 +4012,20 @@ function generatePDF() {
 <html>
 <head>
     <title>NH IT Strategy 2026-2028</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
 :root {
-    --primary: #1e40af;
-    --accent: #1e40af;
-    --accent-light: #3b82f6;
+    --primary: #082471;
+    --accent: #082471;
+    --accent-light: #0a3499;
+    --accent-secondary: #c10230;
     --success: #059669;
     --warning: #d97706;
-    --danger: #dc2626;
+    --danger: #c10230;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
+    --gray-200: #e4dfdf;
+    --gray-300: #d9d8d8;
     --gray-400: #94a3b8;
     --gray-500: #64748b;
     --gray-600: #475569;
@@ -3958,7 +4037,7 @@ function generatePDF() {
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     background: white;
     color: var(--gray-800);
     line-height: 1.5;
@@ -3987,7 +4066,9 @@ body {
 .slide-subtitle { font-size: 0.9rem; color: var(--gray-500); font-style: italic; }
 
 /* Title slide */
-.title-slide { text-align: center; padding-top: 20vh; }
+.title-slide { text-align: center; padding-top: 15vh; }
+.title-logo { height: 80px; width: auto; object-fit: contain; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto; }
+.nav-logo-img { height: 28px; width: auto; object-fit: contain; }
 .title-divider { width: 60px; height: 4px; background: var(--accent); margin: 1rem auto; border-radius: 2px; }
 .main-title { font-size: 2.75rem; font-weight: 800; color: var(--gray-800); line-height: 1.2; }
 .year-badge { display: inline-block; background: white; border: 2px solid var(--accent); color: var(--accent); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; }
@@ -4061,7 +4142,7 @@ body {
 /* SWOT colors */
 .swot-card.strength { border-left: 4px solid #10b981; }
 .swot-card.weakness { border-left: 4px solid #ef4444; }
-.swot-card.opportunity { border-left: 4px solid #3b82f6; }
+.swot-card.opportunity { border-left: 4px solid #082471; }
 .swot-card.threat { border-left: 4px solid #f59e0b; }
 .swot-title { font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
 
@@ -4235,6 +4316,28 @@ svg { vertical-align: middle; }
 .doc-pages { font-size: 0.6rem; color: var(--gray-500); background: var(--gray-100); padding: 0.1rem 0.375rem; border-radius: 50px; }
 
 /* Vision */
+/* Vision Slide Complete Styles */
+.vision-slide { position: relative; overflow: hidden; }
+.vision-bg-effects { display: none; }
+.vision-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 1rem; text-align: center; gap: 0.75rem; }
+.vision-hero { margin-bottom: 0.5rem; }
+.vision-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); padding: 0.5rem 1rem; border-radius: 50px; margin-bottom: 1rem; }
+.vision-badge .badge-icon { color: #8b5cf6; font-size: 0.75rem; }
+.vision-badge span { color: #7c3aed; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.vision-title { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #1e293b 0%, #6d28d9 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0; letter-spacing: -0.02em; }
+.vision-divider { width: 80px; height: 4px; background: linear-gradient(90deg, #8b5cf6, #6366f1); border-radius: 2px; margin: 1rem auto 0; }
+.vision-statement-container { max-width: 800px; margin-bottom: 0.75rem; }
+.vision-statement { position: relative; background: linear-gradient(135deg, #ffffff, #f8fafc); border: 2px solid rgba(139, 92, 246, 0.2); border-radius: 16px; padding: 1.5rem 2.5rem; box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.15); }
+.quote-icon-left, .quote-icon-right { font-family: Georgia, serif; font-size: 4rem; line-height: 1; color: #8b5cf6; opacity: 0.35; position: absolute; }
+.quote-icon-left { top: 0rem; left: 0.5rem; }
+.quote-icon-right { bottom: -1rem; right: 0.5rem; }
+.vision-text { font-size: 1.125rem; font-weight: 400; line-height: 1.6; color: #334155; margin: 0; position: relative; z-index: 1; }
+.vision-text .highlight { color: #7c3aed; font-weight: 600; }
+.mission-statement { max-width: 650px; background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid rgba(16, 185, 129, 0.2); border-left: 4px solid #10b981; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+.mission-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.mission-icon { color: #10b981; font-size: 1rem; }
+.mission-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #059669; }
+.mission-statement p { font-size: 0.9375rem; line-height: 1.6; color: #475569; margin: 0; }
 .vision-container { text-align: center; }
 .vision-quote { font-size: 1.25rem; font-style: italic; color: var(--gray-700); max-width: 700px; margin: 0 auto 1.5rem; }
 .quote-mark { font-size: 3rem; color: var(--accent); opacity: 0.3; line-height: 0; }
@@ -4265,7 +4368,7 @@ svg { vertical-align: middle; }
 .pillar-desc { font-size: 0.8rem; color: var(--gray-600); }
 
 /* Additional Misc */
-.gradient-accent { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
+.gradient-accent { background: linear-gradient(135deg, #082471 0%, #0a3499 100%); }
 .text-accent { color: var(--accent); }
 .text-success { color: var(--success); }
 .text-warning { color: var(--warning); }
@@ -4279,27 +4382,37 @@ svg { vertical-align: middle; }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
 
-/* Agenda Slide */
-.agenda-slide { display: flex; flex-direction: column; align-items: center; }
-.agenda-slide .slide-title { margin-bottom: 1.5rem; }
-.agenda-container { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 700px; }
-.agenda-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: #ffffff; border-radius: 10px; border: 1px solid var(--gray-200); border-left: 4px solid var(--accent); }
-.agenda-item[data-section="1"] { border-left-color: #3b82f6; }
-.agenda-item[data-section="2"] { border-left-color: #8b5cf6; }
-.agenda-item[data-section="3"] { border-left-color: #10b981; }
-.agenda-item[data-section="4"] { border-left-color: #f59e0b; }
-.agenda-item[data-section="5"] { border-left-color: #06b6d4; }
-.agenda-number { display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--accent); color: white; border-radius: 50%; font-size: 0.875rem; font-weight: 700; flex-shrink: 0; }
-.agenda-item[data-section="1"] .agenda-number { background: #3b82f6; }
-.agenda-item[data-section="2"] .agenda-number { background: #8b5cf6; }
-.agenda-item[data-section="3"] .agenda-number { background: #10b981; }
-.agenda-item[data-section="4"] .agenda-number { background: #f59e0b; }
-.agenda-item[data-section="5"] .agenda-number { background: #06b6d4; }
-.agenda-content { flex: 1; }
-.agenda-content h3 { font-size: 1rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.375rem; }
-.agenda-subitems { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
-.agenda-subitems li { font-size: 0.75rem; color: var(--gray-500); position: relative; padding-left: 0.75rem; }
-.agenda-subitems li::before { content: "•"; position: absolute; left: 0; color: var(--gray-400); }
+/* Professional Agenda Slide */
+.agenda-slide-pro { display: flex; flex-direction: column; align-items: center; padding: 1.5rem 2rem; }
+.agenda-header { text-align: center; margin-bottom: 2rem; }
+.agenda-title { font-size: 2rem; font-weight: 700; color: var(--gray-800); margin: 0 0 0.5rem 0; letter-spacing: -0.02em; }
+.agenda-subtitle { font-size: 0.875rem; color: var(--gray-500); margin: 0; font-weight: 400; }
+.agenda-timeline { display: flex; gap: 1rem; width: 100%; max-width: 1100px; position: relative; padding-top: 2rem; }
+.agenda-track { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: calc(100% - 100px); height: 3px; background: linear-gradient(90deg, #082471 0%, #0a3499 50%, #082471 100%); }
+.agenda-card { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+.agenda-card-marker { width: 48px; height: 48px; background: #082471; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; position: relative; z-index: 2; box-shadow: 0 4px 12px rgba(8, 36, 113, 0.3); }
+.marker-num { font-size: 1rem; font-weight: 700; color: white; letter-spacing: 0.05em; }
+.agenda-card-content { background: white; border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.25rem; text-align: center; width: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+.agenda-card-content h3 { font-size: 0.9375rem; font-weight: 600; color: #082471; margin: 0 0 0.25rem 0; line-height: 1.3; }
+.agenda-card-content p { font-size: 0.75rem; color: var(--gray-500); margin: 0 0 0.75rem 0; font-style: italic; }
+.agenda-card-content ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+.agenda-card-content li { font-size: 0.75rem; color: var(--gray-600); padding: 0.25rem 0; padding-left: 1rem; position: relative; line-height: 1.4; }
+.agenda-card-content li::before { content: ""; position: absolute; left: 0; top: 0.6rem; width: 4px; height: 4px; background: #082471; border-radius: 50%; }
+.agenda-card[data-section="1"] .agenda-card-marker { background: #082471; }
+.agenda-card[data-section="2"] .agenda-card-marker { background: #6d28d9; }
+.agenda-card[data-section="3"] .agenda-card-marker { background: #059669; }
+.agenda-card[data-section="4"] .agenda-card-marker { background: #c10230; }
+.agenda-card[data-section="5"] .agenda-card-marker { background: #0891b2; }
+.agenda-card[data-section="1"] .agenda-card-content h3 { color: #082471; }
+.agenda-card[data-section="2"] .agenda-card-content h3 { color: #6d28d9; }
+.agenda-card[data-section="3"] .agenda-card-content h3 { color: #059669; }
+.agenda-card[data-section="4"] .agenda-card-content h3 { color: #c10230; }
+.agenda-card[data-section="5"] .agenda-card-content h3 { color: #0891b2; }
+.agenda-card[data-section="1"] .agenda-card-content li::before { background: #082471; }
+.agenda-card[data-section="2"] .agenda-card-content li::before { background: #6d28d9; }
+.agenda-card[data-section="3"] .agenda-card-content li::before { background: #059669; }
+.agenda-card[data-section="4"] .agenda-card-content li::before { background: #c10230; }
+.agenda-card[data-section="5"] .agenda-card-content li::before { background: #0891b2; }
 
 /* Executive Summary */
 .exec-summary .slide-title { margin-bottom: 0.75rem; }
@@ -4328,7 +4441,7 @@ svg { vertical-align: middle; }
 .exec-categories { display: flex; flex-direction: column; gap: 0.375rem; height: 100%; }
 .exec-category { display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 0.75rem; background: #ffffff; border-radius: 8px; border: 1px solid var(--gray-200); flex: 1; }
 .cat-icon { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; }
-.cat-icon.people { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.cat-icon.people { background: linear-gradient(135deg, #082471, #051850); }
 .cat-icon.process { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
 .cat-icon.technology { background: linear-gradient(135deg, #06b6d4, #0891b2); }
 .cat-icon.erp { background: linear-gradient(135deg, #f59e0b, #d97706); }
@@ -4395,7 +4508,7 @@ svg { vertical-align: middle; }
 .vision-pillars-preview { display: flex; gap: 1.5rem; justify-content: center; }
 .pillar-preview { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 .pillar-icon { width: 48px; height: 48px; border-radius: 12px; }
-.pillar-icon.governance { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.pillar-icon.governance { background: linear-gradient(135deg, #082471, #051850); }
 .pillar-icon.digital { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
 .pillar-icon.security { background: linear-gradient(135deg, #ef4444, #b91c1c); }
 .pillar-icon.data { background: linear-gradient(135deg, #10b981, #047857); }
@@ -4418,7 +4531,7 @@ svg { vertical-align: middle; }
 .legend-category { background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--gray-200); }
 .legend-category.technology-full { grid-column: span 2; }
 .legend-category-header { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--gray-200); }
-.legend-category-header.hiring { background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.02)); border-left: 3px solid #3b82f6; }
+.legend-category-header.hiring { background: linear-gradient(90deg, rgba(8, 36, 113, 0.1), rgba(8, 36, 113, 0.02)); border-left: 3px solid #082471; }
 .legend-category-header.process { background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.02)); border-left: 3px solid #8b5cf6; }
 .legend-category-header.technology { background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02)); border-left: 3px solid #10b981; }
 .legend-category-header.erp { background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.02)); border-left: 3px solid #f59e0b; }
@@ -4478,26 +4591,38 @@ svg { vertical-align: middle; }
 .priority-flag { display: inline-flex; align-items: center; justify-content: center; padding: 0.125rem 0.375rem; border-radius: 3px; font-size: 0.625rem; font-weight: 700; background: var(--danger); color: white; flex-shrink: 0; }
 .priority-flag.p1 { background: var(--warning); color: var(--gray-900); }
 .priority-flag.p2 { background: var(--gray-600); color: white; }
-.decision-cta { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border-radius: 8px; padding: 0.875rem 1.25rem; text-align: center; }
+.decision-cta { background: linear-gradient(135deg, #082471 0%, #0a3499 100%); border-radius: 8px; padding: 0.875rem 1.25rem; text-align: center; }
 .cta-text { font-size: 0.9375rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
 .cta-sub { font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); }
 
 /* Gantt Chart */
-.gantt-container { margin-top: 0.5rem; }
+.gantt-container { margin-top: 0.5rem; overflow: visible; width: 100%; }
 .gantt-header { display: grid; grid-template-columns: 130px repeat(12, 1fr); gap: 2px; margin-bottom: 0.375rem; padding-bottom: 0.375rem; border-bottom: 1px solid var(--gray-200); }
 .gantt-header-label { font-size: 0.5625rem; color: var(--gray-500); text-align: center; font-weight: 500; }
 .gantt-header-label:first-child { text-align: left; }
 .gantt-quarter { font-size: 0.5625rem; color: var(--gray-500); text-align: center; font-weight: 500; }
 .gantt-year-labels { display: grid; grid-template-columns: 1fr repeat(3, 4fr); gap: 2px; margin-bottom: 0.5rem; }
 .gantt-year { font-size: 0.625rem; color: var(--accent); text-align: center; font-weight: 600; }
-.gantt-row { display: grid; grid-template-columns: 130px repeat(12, 1fr); gap: 2px; margin-bottom: 0.375rem; align-items: center; }
+.gantt-row { display: grid; grid-template-columns: 130px repeat(12, 1fr); gap: 2px; margin-bottom: 0.375rem; align-items: center; overflow: visible; }
 .gantt-section-header { grid-column: 1 / -1; font-size: 0.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); padding: 0.5rem 0 0.25rem 0; margin-top: 0.25rem; border-bottom: 1px solid var(--gray-200); }
-.gantt-container.quarterly .gantt-header, .gantt-container.quarterly .gantt-row { grid-template-columns: 130px repeat(4, 1fr); }
-.gantt-container.quarterly .gantt-year-labels { grid-template-columns: 130px 1fr; }
+.gantt-container.quarterly .gantt-header, .gantt-container.quarterly .gantt-row { grid-template-columns: 180px repeat(4, minmax(80px, 1fr)); }
+.gantt-container.quarterly .gantt-year-labels { grid-template-columns: 180px 1fr; }
 .gantt-task { font-size: 0.6875rem; color: var(--gray-600); white-space: nowrap; padding-right: 0.5rem; }
-.gantt-bar-cell { height: 18px; position: relative; }
-.gantt-bar { position: absolute; height: 14px; top: 2px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.5rem; font-weight: 600; color: white; text-shadow: 0 1px 1px rgba(0,0,0,0.3); }
-.gantt-bar.hiring { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.gantt-bar-cell { height: 18px; position: relative; overflow: visible; }
+.gantt-bar { height: 18px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.5rem; font-weight: 600; color: white; text-shadow: 0 1px 1px rgba(0,0,0,0.3); }
+/* Grid-based bar positioning */
+.gantt-row .gantt-bar { grid-row: 1; justify-self: stretch; align-self: center; min-width: 0; }
+.gantt-row .gantt-bar.q1-1 { grid-column: 2 / span 1; }
+.gantt-row .gantt-bar.q1-2 { grid-column: 2 / span 2; }
+.gantt-row .gantt-bar.q1-3 { grid-column: 2 / span 3; }
+.gantt-row .gantt-bar.q1-4 { grid-column: 2 / span 4; }
+.gantt-row .gantt-bar.q2-1 { grid-column: 3 / span 1; }
+.gantt-row .gantt-bar.q2-2 { grid-column: 3 / span 2; }
+.gantt-row .gantt-bar.q2-3 { grid-column: 3 / span 3; }
+.gantt-row .gantt-bar.q3-1 { grid-column: 4 / span 1; }
+.gantt-row .gantt-bar.q3-2 { grid-column: 4 / span 2; }
+.gantt-row .gantt-bar.q4-1 { grid-column: 5 / span 1; }
+.gantt-bar.hiring { background: linear-gradient(90deg, #082471, #0a3499); }
 .gantt-bar.implementation { background: linear-gradient(90deg, #10b981, #34d399); }
 .gantt-bar.planning { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
 .gantt-bar.deployment { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
@@ -4520,7 +4645,7 @@ svg { vertical-align: middle; }
 .gantt-legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--gray-200); }
 .gantt-legend-item { display: flex; align-items: center; gap: 0.25rem; font-size: 0.5625rem; color: var(--gray-500); }
 .gantt-legend-color { width: 12px; height: 8px; border-radius: 2px; }
-.gantt-legend-color.hiring { background: #3b82f6; }
+.gantt-legend-color.hiring { background: #082471; }
 .gantt-legend-color.implementation { background: #10b981; }
 .gantt-legend-color.planning { background: #8b5cf6; }
 .gantt-legend-color.deployment { background: #f59e0b; }
@@ -4539,7 +4664,7 @@ svg { vertical-align: middle; }
 .additional-icon { font-size: 1rem; }
 
 /* End Slide CTA */
-.end-slide-cta { text-align: center; padding: 1.25rem; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border-radius: 10px; }
+.end-slide-cta { text-align: center; padding: 1.25rem; background: linear-gradient(135deg, #082471 0%, #0a3499 100%); border-radius: 10px; }
 .end-slide-cta p { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
 .cta-subtitle { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.8); }
 
@@ -4564,12 +4689,12 @@ svg { vertical-align: middle; }
 
 /* Org chart simple */
 .org-chart-simple { display: flex; flex-direction: column; align-items: center; margin-bottom: 1rem; width: 100%; }
-.org-box.cio { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border: none; }
+.org-box.cio { background: linear-gradient(135deg, #082471 0%, #0a3499 100%); border: none; }
 .org-box.cio .org-title { color: white; }
 .org-box.cio .org-name { color: rgba(255, 255, 255, 0.8); }
 
 /* Role badges */
-.role-badge.leadership { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; }
+.role-badge.leadership { background: linear-gradient(135deg, #082471 0%, #0a3499 100%); color: white; }
 .role-badge.new { background: rgba(5, 150, 105, 0.1); color: var(--success); border: 1px solid rgba(5, 150, 105, 0.25); }
 .role-badge.expanded { background: var(--gray-100); color: var(--gray-600); }
 .role-category h4 { font-size: 0.6875rem; font-weight: 600; color: var(--gray-500); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -4595,6 +4720,73 @@ svg { vertical-align: middle; }
 .decision-category.urgent .decision-icon { background: var(--danger); color: white; }
 .decision-category.budget .decision-icon { background: var(--success); color: white; }
 .decision-category.pending .decision-icon { background: var(--warning); color: var(--gray-900); }
+
+/* ===== Pillars Architecture (Minimalist) ===== */
+.pillars-architecture { width: 100%; max-width: 100%; }
+.pillars-roof, .roof-text { display: none; }
+.pillars-row { display: flex; gap: 1px; background: #e2e8f0; }
+.arch-pillar { flex: 1; display: flex; flex-direction: column; cursor: pointer; background: white; }
+.arch-capital { height: 4px; background: #1e293b; }
+.arch-capital::before, .arch-capital::after { display: none; }
+.arch-shaft { flex: 1; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; text-align: left; background: white; }
+.arch-shaft::before, .arch-shaft::after { display: none; }
+.arch-number { font-size: 0.6875rem; font-weight: 600; color: #94a3b8; margin-bottom: 0.75rem; }
+.arch-shaft h4 { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin: 0 0 1.5rem 0; line-height: 1.2; }
+.arch-shaft ul { list-style: none; padding: 0; margin: 0; width: 100%; }
+.arch-shaft li { font-size: 0.8125rem; color: #64748b; padding: 0.625rem 0; position: relative; line-height: 1.5; }
+.arch-shaft li::before { display: none; }
+.arch-base { display: none; }
+.pillars-foundation { padding: 1.5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; }
+.pillars-foundation span { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: #64748b; text-transform: uppercase; }
+
+/* ===== Metrics Table ===== */
+.metrics-table-container { width: 100%; overflow-x: auto; }
+.metrics-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.metrics-table thead { background: #1e293b; }
+.metrics-table th { padding: 0.875rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+.metrics-table th:nth-child(2), .metrics-table th:nth-child(3), .metrics-table th:nth-child(4) { text-align: center; }
+.metrics-table tbody tr { border-bottom: 1px solid #f1f5f9; }
+.metrics-table tbody tr:last-child { border-bottom: none; }
+.metrics-table td { padding: 0.875rem 1rem; font-size: 0.875rem; }
+.metric-name { font-weight: 600; color: #1e293b; }
+.metric-current { text-align: center; color: #64748b; font-weight: 500; }
+.metric-arrow { text-align: center; color: #10b981; font-weight: 700; font-size: 1rem; }
+.metric-target { text-align: center; color: #059669; font-weight: 700; background: #ecfdf5; border-radius: 4px; }
+.metric-why { color: #64748b; font-size: 0.8125rem; }
+
+/* ===== Target Operating Model ===== */
+.tom-container { width: 100%; }
+.tom-comparison { display: flex; align-items: stretch; gap: 1rem; margin-bottom: 1.5rem; }
+.tom-column { flex: 1; padding: 1.5rem; border-radius: 12px; background: white; border: 1px solid #e2e8f0; }
+.tom-current { background: #f8fafc; border-color: #e2e8f0; }
+.tom-target { background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-color: #10b981; border-width: 2px; }
+.tom-header { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 0.75rem; }
+.tom-target .tom-header { color: #059669; }
+.tom-stat { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0; }
+.tom-target .tom-stat { border-bottom-color: #a7f3d0; }
+.tom-number { font-size: 2.5rem; font-weight: 700; color: #1e293b; line-height: 1; }
+.tom-target .tom-number { color: #059669; }
+.tom-label { font-size: 0.875rem; color: #64748b; }
+.tom-list { list-style: none; padding: 0; margin: 0; }
+.tom-list li { font-size: 0.8125rem; color: #475569; padding: 0.375rem 0; border-bottom: 1px solid #f1f5f9; }
+.tom-target .tom-list li { border-bottom-color: #d1fae5; }
+.tom-list li:last-child { border-bottom: none; }
+.tom-list li strong { color: #1e293b; }
+.tom-gaps { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+.tom-gap-tag { font-size: 0.6875rem; padding: 0.25rem 0.625rem; background: #fef2f2; color: #dc2626; border-radius: 4px; font-weight: 500; }
+.tom-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 0.5rem; min-width: 80px; }
+.tom-arrow-line { width: 2px; height: 30px; background: #cbd5e1; }
+.tom-arrow-text { font-size: 0.6875rem; font-weight: 600; color: #059669; text-align: center; padding: 0.5rem 0; line-height: 1.4; }
+.tom-arrow-head { font-size: 1.5rem; color: #059669; line-height: 1; }
+.tom-changes { display: flex; gap: 1rem; }
+.tom-change-item { flex: 1; display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; }
+.tom-change-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+.tom-change-icon.new { background: #dbeafe; color: #2563eb; }
+.tom-change-icon.expand { background: #fef3c7; color: #d97706; }
+.tom-change-icon.outsource { background: #ede9fe; color: #7c3aed; }
+.tom-change-text { display: flex; flex-direction: column; gap: 0.125rem; }
+.tom-change-text strong { font-size: 0.8125rem; color: #1e293b; }
+.tom-change-text span { font-size: 0.75rem; color: #64748b; }
 
 @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
