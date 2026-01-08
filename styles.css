@@ -231,7 +231,17 @@ body.sidebar-collapsed .keyboard-hints { left: 50px; }
     color: var(--gray-500);
     padding: 0.5rem 0.5rem 0.25rem;
     margin-top: 0.125rem;
+    border-left: 3px solid transparent;
+    margin-left: -0.5rem;
+    padding-left: calc(0.5rem + 0.25rem);
 }
+/* Section color accents for TOC */
+.toc-section[data-section="1"] .toc-section-title { border-left-color: #3b82f6; color: #3b82f6; }
+.toc-section[data-section="2"] .toc-section-title { border-left-color: #8b5cf6; color: #8b5cf6; }
+.toc-section[data-section="3"] .toc-section-title { border-left-color: #10b981; color: #10b981; }
+.toc-section[data-section="4"] .toc-section-title { border-left-color: #f59e0b; color: #f59e0b; }
+.toc-section[data-section="5"] .toc-section-title { border-left-color: #06b6d4; color: #06b6d4; }
+.toc-section[data-section="6"] .toc-section-title { border-left-color: #64748b; color: #64748b; }
 .toc-item {
     display: flex;
     align-items: center;
@@ -795,8 +805,24 @@ body.panel-resizing * {
 
 /* ===== Section Tag ===== */
 .section-tag {
-    display: none; /* Hidden - redundant with breadcrumbs */
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    background: var(--gray-100);
+    color: var(--gray-600);
 }
+/* Section tag colors matching agenda */
+.section-tag[data-section="1"] { background: rgba(59, 130, 246, 0.1); color: #3b82f6; border-left: 3px solid #3b82f6; }
+.section-tag[data-section="2"] { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border-left: 3px solid #8b5cf6; }
+.section-tag[data-section="3"] { background: rgba(16, 185, 129, 0.1); color: #10b981; border-left: 3px solid #10b981; }
+.section-tag[data-section="4"] { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-left: 3px solid #f59e0b; }
+.section-tag[data-section="5"] { background: rgba(6, 182, 212, 0.1); color: #06b6d4; border-left: 3px solid #06b6d4; }
+.section-tag[data-section="6"] { background: rgba(100, 116, 139, 0.1); color: #64748b; border-left: 3px solid #64748b; }
 
 /* ===== Slide Title ===== */
 .slide-title {
