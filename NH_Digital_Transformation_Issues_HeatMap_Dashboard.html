@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NH Digital Transformation - Issues Heat Map Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .dashboard-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #333;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .health-score {
+            display: inline-block;
+            background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        
+        .score-label {
+            font-size: 14px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid;
+        }
+        
+        .stat-card.critical { border-left-color: #d32f2f; }
+        .stat-card.high { border-left-color: #f57c00; }
+        .stat-card.medium { border-left-color: #fbc02d; }
+        .stat-card.low { border-left-color: #7cb342; }
+        .stat-card.total { border-left-color: #1976d2; }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+        
+        .heatmap-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            font-size: 11px;
+            overflow-x: auto;
+        }
+        
+        .heatmap-table th {
+            background: #37474f;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .heatmap-table th:first-child {
+            border-top-left-radius: 8px;
+        }
+        
+        .heatmap-table th:last-child {
+            border-top-right-radius: 8px;
+        }
+        
+        .heatmap-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+        
+        .heatmap-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .category-header {
+            background: #263238 !important;
+            color: white !important;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .category-header td {
+            padding: 12px 8px !important;
+        }
+        
+        /* Heat map color coding for Impact */
+        .impact-10 { background: #b71c1c; color: white; font-weight: bold; }
+        .impact-9 { background: #c62828; color: white; font-weight: bold; }
+        .impact-8 { background: #e64a19; color: white; font-weight: bold; }
+        .impact-7 { background: #f57c00; color: white; }
+        .impact-6 { background: #fbc02d; color: #333; }
+        .impact-5 { background: #ffeb3b; color: #333; }
+        .impact-4 { background: #cddc39; color: #333; }
+        .impact-3 { background: #9ccc65; color: #333; }
+        .impact-2 { background: #66bb6a; color: white; }
+        .impact-1 { background: #43a047; color: white; }
+        
+        /* Effort color coding */
+        .effort-high { background: #ffcdd2; color: #c62828; font-weight: bold; }
+        .effort-medium { background: #fff9c4; color: #f57f17; }
+        .effort-low { background: #c8e6c9; color: #2e7d32; }
+        
+        .score-cell {
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+            min-width: 45px;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .priority-p0 { background: #d32f2f; color: white; }
+        .priority-p1 { background: #f57c00; color: white; }
+        .priority-p2 { background: #fbc02d; color: #333; }
+        .priority-p3 { background: #7cb342; color: white; }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
+        .status-not-started { background: #ffebee; color: #c62828; }
+        .status-in-progress { background: #fff3e0; color: #ef6c00; }
+        .status-completed { background: #e8f5e9; color: #2e7d32; }
+        
+        .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .legend h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .legend-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+        }
+        
+        .legend-color {
+            width: 40px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .filter-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .filter-section label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .filter-section select {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .filter-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>🎯 NH Digital Transformation Strategy</h1>
+            <div class="subtitle">Current State Issues - Heat Map Dashboard</div>
+            <div class="subtitle" style="font-size: 13px; color: #999;">April 2025 | Prepared by Deloitte</div>
+            <div style="margin-top: 20px;">
+                <div class="health-score">
+                    <span class="score-label">Portfolio Health Score: </span>32/100
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-stats">
+            <div class="stat-card critical">
+                <div class="stat-number">10</div>
+                <div class="stat-label">🔴 Critical Issues</div>
+            </div>
+            <div class="stat-card high">
+                <div class="stat-number">16</div>
+                <div class="stat-label">🟠 High Impact</div>
+            </div>
+            <div class="stat-card medium">
+                <div class="stat-number">25</div>
+                <div class="stat-label">🟡 Medium Impact</div>
+            </div>
+            <div class="stat-card low">
+                <div class="stat-number">9</div>
+                <div class="stat-label">🟢 Low-Medium</div>
+            </div>
+            <div class="stat-card total">
+                <div class="stat-number">60</div>
+                <div class="stat-label">📊 Total Issues</div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <label>Filter by Category:</label>
+            <select id="categoryFilter" onchange="filterTable()">
+                <option value="all">All Categories</option>
+                <option value="people">People (10)</option>
+                <option value="process">Process (9)</option>
+                <option value="technology">Technology (20)</option>
+                <option value="erp">ERP Systems (15)</option>
+                <option value="data">Data & AI (6)</option>
+            </select>
+            
+            <label>Filter by Impact:</label>
+            <select id="impactFilter" onchange="filterTable()">
+                <option value="all">All Levels</option>
+                <option value="critical">Critical (9-10)</option>
+                <option value="high">High (7-8)</option>
+                <option value="medium">Medium (5-6)</option>
+                <option value="low">Low (3-4)</option>
+            </select>
+            
+            <label>Filter by Priority:</label>
+            <select id="priorityFilter" onchange="filterTable()">
+                <option value="all">All Priorities</option>
+                <option value="P0">P0 - Critical</option>
+                <option value="P1">P1 - High</option>
+                <option value="P2">P2 - Medium</option>
+                <option value="P3">P3 - Low</option>
+            </select>
+        </div>
+
+        <table class="heatmap-table" id="heatmapTable">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">#</th>
+                    <th style="width: 12%;">Category</th>
+                    <th style="width: 30%;">Issue Description</th>
+                    <th style="width: 8%;">Impact</th>
+                    <th style="width: 8%;">Effort</th>
+                    <th style="width: 8%;">Priority</th>
+                    <th style="width: 12%;">Status</th>
+                    <th style="width: 17%;">Target Resolution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- PEOPLE CATEGORY -->
+                <tr class="category-header">
+                    <td colspan="8">👥 PEOPLE ISSUES (10 Total)</td>
+                </tr>
+                <tr data-category="people" data-impact="critical" data-priority="P0">
+                    <td>1</td>
+                    <td>People</td>
+                    <td>Missing Cybersecurity/PMO/BA Roles</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">9.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="critical" data-priority="P0">
+                    <td>2</td>
+                    <td>People</td>
+                    <td>Single Points of Failure (Multiple Critical Roles by 1 Person)</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q4 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="high" data-priority="P1">
+                    <td>3</td>
+                    <td>People</td>
+                    <td>No KPIs/Performance Metrics Defined</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="high" data-priority="P1">
+                    <td>4</td>
+                    <td>People</td>
+                    <td>Unclear Roles & Responsibilities</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="high" data-priority="P1">
+                    <td>5</td>
+                    <td>People</td>
+                    <td>No Career Growth Planning / Succession Framework</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="medium" data-priority="P2">
+                    <td>6</td>
+                    <td>People</td>
+                    <td>No Training Budget / Certifications Program</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="medium" data-priority="P2">
+                    <td>7</td>
+                    <td>People</td>
+                    <td>No Structured Skill Gap Assessment</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-low">4.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="medium" data-priority="P2">
+                    <td>8</td>
+                    <td>People</td>
+                    <td>Misaligned Job Designations vs Responsibilities</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="medium" data-priority="P2">
+                    <td>9</td>
+                    <td>People</td>
+                    <td>Cybersecurity Function Not Well-Defined</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="people" data-impact="low" data-priority="P3">
+                    <td>10</td>
+                    <td>People</td>
+                    <td>Current Skillset Inadequate for Transformation</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3-Q4 2025</td>
+                </tr>
+
+                <!-- PROCESS CATEGORY -->
+                <tr class="category-header">
+                    <td colspan="8">⚙️ PROCESS ISSUES (9 Total)</td>
+                </tr>
+                <tr data-category="process" data-impact="critical" data-priority="P0">
+                    <td>11</td>
+                    <td>Process</td>
+                    <td>No Documented IT Governance Framework</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">9.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-in-progress">In Progress</span></td>
+                    <td>Q2 2025 (ISO 27001)</td>
+                </tr>
+                <tr data-category="process" data-impact="critical" data-priority="P0">
+                    <td>12</td>
+                    <td>Process</td>
+                    <td>No Data Governance & Management Framework</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="high" data-priority="P1">
+                    <td>13</td>
+                    <td>Process</td>
+                    <td>Heavy Manual Processes Across Functions</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3-Q4 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="high" data-priority="P1">
+                    <td>14</td>
+                    <td>Process</td>
+                    <td>Lack of Structured Business Processes</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="high" data-priority="P1">
+                    <td>15</td>
+                    <td>Process</td>
+                    <td>No IT Budget Tracking Tools/Processes</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="medium" data-priority="P2">
+                    <td>16</td>
+                    <td>Process</td>
+                    <td>Inconsistent Policy Application & Monitoring</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="medium" data-priority="P2">
+                    <td>17</td>
+                    <td>Process</td>
+                    <td>Limited Process Standardization Across Group</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3-Q4 2025</td>
+                </tr>
+                <tr data-category="process" data-impact="low" data-priority="P3">
+                    <td>18</td>
+                    <td>Process</td>
+                    <td>Potential Resistance to Change</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr data-category="process" data-impact="low" data-priority="P3">
+                    <td>19</td>
+                    <td>Process</td>
+                    <td>Business Requirements Not Communicated to IT</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+
+                <!-- TECHNOLOGY CATEGORY -->
+                <tr class="category-header">
+                    <td colspan="8">💻 TECHNOLOGY ISSUES (20 Total)</td>
+                </tr>
+                <tr data-category="technology" data-impact="critical" data-priority="P0">
+                    <td>20</td>
+                    <td>Technology</td>
+                    <td>Legacy ERP System Requires Replacement</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">10.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q1 2026 - Q3 2026</td>
+                </tr>
+                <tr data-category="technology" data-impact="critical" data-priority="P0">
+                    <td>21</td>
+                    <td>Technology</td>
+                    <td>Missing Treasury/Procurement/GRC Systems</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">9.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2026 - Q3 2027</td>
+                </tr>
+                <tr data-category="technology" data-impact="critical" data-priority="P0">
+                    <td>22</td>
+                    <td>Technology</td>
+                    <td>No Disaster Recovery (DR) Service</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="critical" data-priority="P0">
+                    <td>23</td>
+                    <td>Technology</td>
+                    <td>Limited System Integration (Siloed Systems)</td>
+                    <td class="score-cell impact-9">9.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025 - Q2 2026</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>24</td>
+                    <td>Technology</td>
+                    <td>Limited Automation Capabilities</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025 - Q4 2026</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>25</td>
+                    <td>Technology</td>
+                    <td>Missing Business Applications (HRMS, Service Mgmt)</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025 - Q1 2027</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>26</td>
+                    <td>Technology</td>
+                    <td>Heavy Third-Party Vendor Dependency (Cybersecurity)</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">9.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q4 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>27</td>
+                    <td>Technology</td>
+                    <td>Inadequate Network Segmentation</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>28</td>
+                    <td>Technology</td>
+                    <td>Outsourced Security Monitoring (SOC/NOC)</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025 - Q1 2026</td>
+                </tr>
+                <tr data-category="technology" data-impact="high" data-priority="P1">
+                    <td>29</td>
+                    <td>Technology</td>
+                    <td>Infrastructure Single Point of Failure</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>30</td>
+                    <td>Technology</td>
+                    <td>No Data Classification & Labelling</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>31</td>
+                    <td>Technology</td>
+                    <td>Manual Asset/Inventory Management</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-low">4.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>32</td>
+                    <td>Technology</td>
+                    <td>No IT Knowledge Management System</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>33</td>
+                    <td>Technology</td>
+                    <td>Limited Service Desk Rollout (IT Admins Only)</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-low">3.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>34</td>
+                    <td>Technology</td>
+                    <td>Limited Cloud Adoption (Hybrid Not Optimized)</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025 - 2027</td>
+                </tr>
+                <tr data-category="technology" data-impact="medium" data-priority="P2">
+                    <td>35</td>
+                    <td>Technology</td>
+                    <td>Legacy Data on SharePoint (No Retention Policy)</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="low" data-priority="P3">
+                    <td>36</td>
+                    <td>Technology</td>
+                    <td>Delayed IT Solution Adoption</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr data-category="technology" data-impact="low" data-priority="P3">
+                    <td>37</td>
+                    <td>Technology</td>
+                    <td>Limited Physical Security Controls</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="low" data-priority="P3">
+                    <td>38</td>
+                    <td>Technology</td>
+                    <td>Lack of Tools for Various Departments</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3-Q4 2025</td>
+                </tr>
+                <tr data-category="technology" data-impact="low" data-priority="P3">
+                    <td>39</td>
+                    <td>Technology</td>
+                    <td>Manual Order Processing (FoodQuest)</td>
+                    <td class="score-cell impact-5">5.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+
+                <!-- ERP SYSTEMS CATEGORY -->
+                <tr class="category-header">
+                    <td colspan="8">📊 ERP SYSTEMS ISSUES (15 Total)</td>
+                </tr>
+                <tr data-category="erp" data-impact="critical" data-priority="P0">
+                    <td>40</td>
+                    <td>ERP - Core</td>
+                    <td>Legacy ERP Core System (SAP ECC)</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">10.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q1-Q3 2026</td>
+                </tr>
+                <tr data-category="erp" data-impact="critical" data-priority="P0">
+                    <td>41</td>
+                    <td>ERP - HRMS</td>
+                    <td>Fragmented HRMS Solutions (Ad-hoc, Multiple Vendors)</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2026 - Q1 2027</td>
+                </tr>
+                <tr data-category="erp" data-impact="critical" data-priority="P0">
+                    <td>42</td>
+                    <td>ERP - Finance</td>
+                    <td>Missing Finance EPM System</td>
+                    <td class="score-cell impact-10">10.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q1-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="high" data-priority="P1">
+                    <td>43</td>
+                    <td>ERP - Finance</td>
+                    <td>Poor Master Data Management (No COA Standardization)</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="high" data-priority="P1">
+                    <td>44</td>
+                    <td>ERP - Finance</td>
+                    <td>No Real-Time Data Access & Reporting</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q1-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="high" data-priority="P1">
+                    <td>45</td>
+                    <td>ERP - Support</td>
+                    <td>Single ERP Support Engineer (FoodQuest)</td>
+                    <td class="score-cell impact-8">8.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p1">P1</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>46</td>
+                    <td>ERP - Finance</td>
+                    <td>No Self-Service Reporting / BI Tools</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>47</td>
+                    <td>ERP - Finance</td>
+                    <td>Data Inconsistency & Quality Issues</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>48</td>
+                    <td>ERP - HR</td>
+                    <td>Transaction-Driven vs Value-Adding Culture</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>49</td>
+                    <td>ERP - Finance</td>
+                    <td>Limited Finance Process Automation</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>50</td>
+                    <td>ERP - Finance</td>
+                    <td>Excel-Driven Finance Processes</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>51</td>
+                    <td>ERP - Finance</td>
+                    <td>Manual Reconciliations</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>52</td>
+                    <td>ERP - Finance</td>
+                    <td>Slow Financial Close Processes</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="medium" data-priority="P2">
+                    <td>53</td>
+                    <td>ERP - All</td>
+                    <td>No KPI Tracking Capabilities</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3-Q4 2025</td>
+                </tr>
+                <tr data-category="erp" data-impact="low" data-priority="P3">
+                    <td>54</td>
+                    <td>ERP - HR</td>
+                    <td>Antiquated HRMS Platforms (Excel-Based)</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2026</td>
+                </tr>
+
+                <!-- DATA & AI CATEGORY -->
+                <tr class="category-header">
+                    <td colspan="8">🤖 DATA & AI ISSUES (6 Total)</td>
+                </tr>
+                <tr data-category="data" data-impact="critical" data-priority="P0">
+                    <td>55</td>
+                    <td>Data & AI</td>
+                    <td>No AI Strategy Defined</td>
+                    <td class="score-cell impact-9">9.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="data" data-impact="critical" data-priority="P0">
+                    <td>56</td>
+                    <td>Data & AI</td>
+                    <td>No AI Governance Framework</td>
+                    <td class="score-cell impact-9">9.0</td>
+                    <td class="score-cell effort-high">7.0</td>
+                    <td><span class="priority-badge priority-p0">P0</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q2-Q3 2025</td>
+                </tr>
+                <tr data-category="data" data-impact="medium" data-priority="P2">
+                    <td>57</td>
+                    <td>Data & AI</td>
+                    <td>Absence of Data Lakes/Data Warehouses</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-high">8.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025 - Q2 2026</td>
+                </tr>
+                <tr data-category="data" data-impact="medium" data-priority="P2">
+                    <td>58</td>
+                    <td>Data & AI</td>
+                    <td>No Analytics/BI Capabilities (Robust)</td>
+                    <td class="score-cell impact-6">6.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p2">P2</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025 - Q1 2026</td>
+                </tr>
+                <tr data-category="data" data-impact="low" data-priority="P3">
+                    <td>59</td>
+                    <td>Data & AI</td>
+                    <td>No IT Maturity Assessment Framework</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">5.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q3 2025</td>
+                </tr>
+                <tr data-category="data" data-impact="low" data-priority="P3">
+                    <td>60</td>
+                    <td>Data & AI</td>
+                    <td>No OT Lifecycle Management (Exeed Industries)</td>
+                    <td class="score-cell impact-4">4.0</td>
+                    <td class="score-cell effort-medium">6.0</td>
+                    <td><span class="priority-badge priority-p3">P3</span></td>
+                    <td><span class="status-badge status-not-started">Not Started</span></td>
+                    <td>Q4 2025</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="legend">
+            <h3>📋 Legend & Color Coding Guide</h3>
+            <div class="legend-grid">
+                <div class="legend-section">
+                    <h4 style="font-size: 13px; margin-bottom: 10px;">Impact Score</h4>
+                    <div class="legend-item">
+                        <div class="legend-color impact-10"></div>
+                        <span>10.0 - Critical (Severe Impact)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-9"></div>
+                        <span>9.0 - Critical</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-8"></div>
+                        <span>8.0 - High Impact</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-7"></div>
+                        <span>7.0 - High</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-6"></div>
+                        <span>6.0 - Medium Impact</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-5"></div>
+                        <span>5.0 - Medium</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-4"></div>
+                        <span>4.0 - Low-Medium</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color impact-3"></div>
+                        <span>3.0 - Low</span>
+                    </div>
+                </div>
+                
+                <div class="legend-section">
+                    <h4 style="font-size: 13px; margin-bottom: 10px;">Priority Levels</h4>
+                    <div class="legend-item">
+                        <span class="priority-badge priority-p0">P0</span>
+                        <span>Critical - Immediate Action Required</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="priority-badge priority-p1">P1</span>
+                        <span>High - Address in Q2-Q4 2025</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="priority-badge priority-p2">P2</span>
+                        <span>Medium - Plan for 2025-2026</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="priority-badge priority-p3">P3</span>
+                        <span>Low - Monitor & Address as Needed</span>
+                    </div>
+                    <br>
+                    <h4 style="font-size: 13px; margin-bottom: 10px; margin-top: 10px;">Status</h4>
+                    <div class="legend-item">
+                        <span class="status-badge status-not-started">Not Started</span>
+                        <span>No activity initiated</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="status-badge status-in-progress">In Progress</span>
+                        <span>Currently being addressed</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="status-badge status-completed">Completed</span>
+                        <span>Successfully resolved</span>
+                    </div>
+                </div>
+                
+                <div class="legend-section">
+                    <h4 style="font-size: 13px; margin-bottom: 10px;">Effort Level</h4>
+                    <div class="legend-item">
+                        <div class="legend-color effort-high"></div>
+                        <span>7.0-10.0 - High Effort (6+ months)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color effort-medium"></div>
+                        <span>4.0-6.9 - Medium Effort (3-6 months)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color effort-low"></div>
+                        <span>1.0-3.9 - Low Effort (&lt;3 months)</span>
+                    </div>
+                    <br>
+                    <h4 style="font-size: 13px; margin-bottom: 10px; margin-top: 10px;">Issue Categories</h4>
+                    <div class="legend-item">
+                        <span>👥 People Issues (10)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span>⚙️ Process Issues (9)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span>💻 Technology Issues (20)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span>📊 ERP Systems Issues (15)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span>🤖 Data & AI Issues (6)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #fff3e0; border-left: 4px solid #f57c00; border-radius: 8px;">
+            <h3 style="color: #e65100; margin-bottom: 10px; font-size: 16px;">⚠️ Key Insights & Recommendations</h3>
+            <ul style="margin-left: 20px; color: #555; font-size: 12px; line-height: 1.8;">
+                <li><strong>Critical Priority:</strong> 10 issues rated Critical (9-10 impact) require immediate attention in Q2-Q3 2025</li>
+                <li><strong>People Foundation:</strong> Missing key roles (Cybersecurity, PMO, Data & AI Lead) must be filled by Q2-Q3 2025</li>
+                <li><strong>Governance Gap:</strong> No IT or Data Governance frameworks in place - foundational requirement for transformation</li>
+                <li><strong>ERP Urgency:</strong> Legacy ERP and fragmented HRMS are major blockers to operational efficiency</li>
+                <li><strong>AI Readiness:</strong> No AI strategy or governance - must be established before AI implementation</li>
+                <li><strong>Quick Wins:</strong> Service desk rollout, asset management, and skill gap assessment can be completed in Q2 2025</li>
+                <li><strong>Resource Constraint:</strong> Current 6-person IT team cannot support transformation without strategic hiring</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; padding: 15px; background: #f5f5f5; border-radius: 8px; font-size: 11px; color: #666;">
+            <p><strong>Document:</strong> NH Digital Transformation Strategy v3.1 | <strong>Date:</strong> April 2025 | <strong>Prepared by:</strong> Deloitte Consulting</p>
+            <p style="margin-top: 5px;">📄 Source: NH- Detailed Digital Transformation Strategy v3.1 2025.pdf (227 pages)</p>
+        </div>
+    </div>
+
+    <script>
+        function filterTable() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const impactFilter = document.getElementById('impactFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            
+            const table = document.getElementById('heatmapTable');
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                
+                // Skip category headers
+                if (row.classList.contains('category-header')) {
+                    continue;
+                }
+                
+                const category = row.getAttribute('data-category');
+                const impact = row.getAttribute('data-impact');
+                const priority = row.getAttribute('data-priority');
+                
+                let showRow = true;
+                
+                // Category filter
+                if (categoryFilter !== 'all' && category !== categoryFilter) {
+                    showRow = false;
+                }
+                
+                // Impact filter
+                if (impactFilter !== 'all' && impact !== impactFilter) {
+                    showRow = false;
+                }
+                
+                // Priority filter
+                if (priorityFilter !== 'all' && priority !== priorityFilter) {
+                    showRow = false;
+                }
+                
+                row.style.display = showRow ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

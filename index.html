@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Holding - IT Strategy 2026-2028</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <span class="logo-text">NH</span>
+                <span class="logo-divider">|</span>
+                <span class="logo-subtitle">IT Strategy</span>
+            </div>
+            <div class="breadcrumbs">
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-section" id="breadcrumbSection">Executive Summary</span>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-slide" id="breadcrumbSlide">Overview</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" title="Previous (Left Arrow)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">21</span></span>
+            <button class="nav-btn" id="nextBtn" title="Next (Right Arrow)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <div class="nav-divider"></div>
+            <button class="nav-btn download-btn" id="downloadPdfBtn" title="Download as PDF">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="btn-label">PDF</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Left Sidebar TOC -->
+    <aside class="toc-left" id="tocSidebar">
+        <button class="toc-toggle" id="tocToggle" title="Toggle Sidebar (B)">
+            <svg class="toggle-icon-collapse" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <svg class="toggle-icon-expand" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="toc-content">
+            <div class="toc-section">
+                <div class="toc-item" data-slide="1" data-section="" data-title="Title">
+                    <span class="toc-number">0</span>
+                    <span class="toc-text">Title</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-item" data-slide="2" data-section="Agenda" data-title="Agenda">
+                    <span class="toc-number">1</span>
+                    <span class="toc-text">Agenda</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">1. Where We Are Today</div>
+                <div class="toc-item" data-slide="3" data-section="Where We Are Today" data-title="Current Team">
+                    <span class="toc-number">2</span>
+                    <span class="toc-text">Current Team</span>
+                </div>
+                <div class="toc-item" data-slide="4" data-section="Where We Are Today" data-title="Current Technology">
+                    <span class="toc-number">3</span>
+                    <span class="toc-text">Current Technology</span>
+                </div>
+                <div class="toc-item" data-slide="5" data-section="Where We Are Today" data-title="Current Problems">
+                    <span class="toc-number">4</span>
+                    <span class="toc-text">Current Problems</span>
+                </div>
+                <div class="toc-item" data-slide="6" data-section="Where We Are Today" data-title="Current SWOT">
+                    <span class="toc-number">5</span>
+                    <span class="toc-text">Current SWOT</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">2. Where We Need to Be</div>
+                <div class="toc-item" data-slide="7" data-section="Where We Need to Be" data-title="Future Vision">
+                    <span class="toc-number">6</span>
+                    <span class="toc-text">Future Vision</span>
+                </div>
+                <div class="toc-item" data-slide="8" data-section="Where We Need to Be" data-title="Future Pillars">
+                    <span class="toc-number">7</span>
+                    <span class="toc-text">Future Pillars</span>
+                </div>
+                <div class="toc-item" data-slide="9" data-section="Where We Need to Be" data-title="Future Target Model">
+                    <span class="toc-number">8</span>
+                    <span class="toc-text">Future Model</span>
+                </div>
+                <div class="toc-item" data-slide="10" data-section="Where We Need to Be" data-title="Future Metrics">
+                    <span class="toc-number">9</span>
+                    <span class="toc-text">Future Metrics</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">3. How We Get There</div>
+                <div class="toc-item" data-slide="11" data-section="How We Get There" data-title="People & Hiring">
+                    <span class="toc-number">10</span>
+                    <span class="toc-text">People & Hiring</span>
+                </div>
+                <div class="toc-item" data-slide="12" data-section="How We Get There" data-title="Year 1 - Must Do">
+                    <span class="toc-number">11</span>
+                    <span class="toc-text">Year 1 - Must Do</span>
+                </div>
+                <div class="toc-item" data-slide="13" data-section="How We Get There" data-title="Year 2 - Should Do">
+                    <span class="toc-number">12</span>
+                    <span class="toc-text">Year 2 - Should Do</span>
+                </div>
+                <div class="toc-item" data-slide="14" data-section="How We Get There" data-title="Year 3 - Nice to Have">
+                    <span class="toc-number">13</span>
+                    <span class="toc-text">Year 3 - Nice to Have</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">4. What We Need</div>
+                <div class="toc-item" data-slide="15" data-section="What We Need" data-title="Leadership Decisions">
+                    <span class="toc-number">14</span>
+                    <span class="toc-text">Leadership Decisions</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">5. Tracking Progress</div>
+                <div class="toc-item" data-slide="16" data-section="Tracking Progress" data-title="Governance & Accountability">
+                    <span class="toc-number">15</span>
+                    <span class="toc-text">Governance</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-section-title">Supporting Documents</div>
+                <div class="toc-item" data-slide="17" data-section="Supporting Documents" data-title="Appendices">
+                    <span class="toc-number">17</span>
+                    <span class="toc-text">Appendices A-E</span>
+                </div>
+                <div class="toc-item" data-slide="18" data-section="Supporting Documents" data-title="Recommended Approach">
+                    <span class="toc-number">18</span>
+                    <span class="toc-text">Recommended Approach</span>
+                </div>
+                <div class="toc-item" data-slide="19" data-section="Supporting Documents" data-title="Subsidiary Strategies">
+                    <span class="toc-number">19</span>
+                    <span class="toc-text">Subsidiary Strategies</span>
+                </div>
+                <div class="toc-item" data-slide="20" data-section="Supporting Documents" data-title="Initiative Codes Legend">
+                    <span class="toc-number">20</span>
+                    <span class="toc-text">Initiative Codes Legend</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Slides Container -->
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- Slide 1: Title -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <div class="title-decoration"></div>
+                <div class="title-badge">2026-2028</div>
+                <h1 class="main-title">Digital Transformation<br>Strategy</h1>
+                <div class="subtitle">National Holding IT Department</div>
+                <div class="title-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Version</span>
+                        <span class="meta-value">3.1</span>
+                    </div>
+                    <div class="meta-divider"></div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value status-draft">For Review</span>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Press <kbd>→</kbd> or click to continue</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Agenda -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content agenda-slide">
+                <h2 class="slide-title">Agenda</h2>
+
+                <div class="agenda-container">
+                    <div class="agenda-item" data-section="1">
+                        <div class="agenda-number">1</div>
+                        <div class="agenda-content">
+                            <h3>Where We Are Today</h3>
+                            <ul class="agenda-subitems">
+                                <li>Current Team & Structure</li>
+                                <li>Technology Landscape</li>
+                                <li>Key Problems</li>
+                                <li>SWOT Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="agenda-item" data-section="2">
+                        <div class="agenda-number">2</div>
+                        <div class="agenda-content">
+                            <h3>Where We Need to Be</h3>
+                            <ul class="agenda-subitems">
+                                <li>Vision Statement</li>
+                                <li>Strategic Pillars</li>
+                                <li>Target Operating Model</li>
+                                <li>Success Metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="agenda-item" data-section="3">
+                        <div class="agenda-number">3</div>
+                        <div class="agenda-content">
+                            <h3>How We Get There</h3>
+                            <ul class="agenda-subitems">
+                                <li>People & Hiring Roadmap</li>
+                                <li>Year 1-3 Initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="agenda-item" data-section="4">
+                        <div class="agenda-number">4</div>
+                        <div class="agenda-content">
+                            <h3>What We Need from You</h3>
+                            <ul class="agenda-subitems">
+                                <li>Leadership Decisions Required</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="agenda-item" data-section="5">
+                        <div class="agenda-number">5</div>
+                        <div class="agenda-content">
+                            <h3>How We'll Track Progress</h3>
+                            <ul class="agenda-subitems">
+                                <li>Governance & Accountability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Team & Structure -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <div class="section-tag">1. Where We Are Today</div>
+                <h2 class="slide-title">Current Team & Structure</h2>
+
+                <div class="org-chart-simple">
+                    <div class="org-level">
+                        <div class="org-box cio">
+                            <div class="org-title">CIO/IT Director</div>
+                            <div class="org-name">Current Leadership</div>
+                        </div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level team-level">
+                        <div class="org-box">
+                            <div class="org-title">Infrastructure</div>
+                            <div class="org-count">2 Staff</div>
+                        </div>
+                        <div class="org-box">
+                            <div class="org-title">Applications</div>
+                            <div class="org-count">1 Staff</div>
+                        </div>
+                        <div class="org-box">
+                            <div class="org-title">Support</div>
+                            <div class="org-count">1 Staff</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-gaps">
+                    <h3>Skill Gaps Analysis</h3>
+                    <p class="click-hint">Click any item for details</p>
+                    <div class="skills-grid">
+                        <div class="skill-item missing clickable-item" data-detail="cybersecurity">
+                            <span class="skill-status"></span>
+                            <span class="skill-name">Cybersecurity</span>
+                            <span class="skill-badge">Missing</span>
+                        </div>
+                        <div class="skill-item missing clickable-item" data-detail="data-ai">
+                            <span class="skill-status"></span>
+                            <span class="skill-name">Data & AI</span>
+                            <span class="skill-badge">Missing</span>
+                        </div>
+                        <div class="skill-item partial clickable-item" data-detail="cloud">
+                            <span class="skill-status"></span>
+                            <span class="skill-name">Cloud Architecture</span>
+                            <span class="skill-badge">Partial</span>
+                        </div>
+                        <div class="skill-item partial clickable-item" data-detail="enterprise">
+                            <span class="skill-status"></span>
+                            <span class="skill-name">Enterprise Architecture</span>
+                            <span class="skill-badge">Partial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Technology Landscape -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <div class="section-tag">1. Where We Are Today</div>
+                <h2 class="slide-title">Current Technology Landscape</h2>
+
+                <div class="tech-stats">
+                    <div class="tech-stat clickable-item" data-detail="tech-26-list">
+                        <div class="stat-number">26</div>
+                        <div class="stat-label">Technologies</div>
+                        <div class="stat-hint">Click to view list</div>
+                    </div>
+                    <div class="tech-stat clickable-item" data-detail="tech-datacenters">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Data Centers</div>
+                        <div class="stat-hint">Click for details</div>
+                    </div>
+                    <div class="tech-stat clickable-item" data-detail="tech-entities">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Subsidiaries</div>
+                        <div class="stat-hint">Click for details</div>
+                    </div>
+                </div>
+
+                <p class="click-hint">Click any category for details</p>
+                <div class="tech-categories">
+                    <div class="tech-category clickable-item" data-detail="tech-infra">
+                        <h4>Infrastructure</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">On-Premise Servers</span>
+                            <span class="tech-tag">Network Equipment</span>
+                            <span class="tech-tag">Storage Systems</span>
+                        </div>
+                    </div>
+                    <div class="tech-category clickable-item" data-detail="tech-erp">
+                        <h4>Applications</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">ERP (Enterprise Resource Planning)</span>
+                            <span class="tech-tag">Office 365</span>
+                            <span class="tech-tag">Legacy Apps</span>
+                        </div>
+                    </div>
+                    <div class="tech-category clickable-item" data-detail="tech-security">
+                        <h4>Security</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag warning">Basic Firewall</span>
+                            <span class="tech-tag warning">Antivirus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Key Problems -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <div class="section-tag">1. Where We Are Today</div>
+                <h2 class="slide-title">Current Key Problems</h2>
+                <p class="click-hint">Click any problem for more details</p>
+
+                <div class="problems-detailed">
+                    <div class="problem-row clickable-item" data-detail="problem-pmo">
+                        <div class="problem-header">
+                            <span class="problem-priority p0">P0</span>
+                            <h4>No PMO (Project Management Office)</h4>
+                        </div>
+                        <ul class="problem-items">
+                            <li>No centralized project governance or standards</li>
+                            <li>Projects delivered late and over budget</li>
+                            <li>No resource allocation visibility</li>
+                            <li>No project portfolio management</li>
+                        </ul>
+                        <span class="problem-ref">Deloitte #1, #11, #16, #17</span>
+                    </div>
+
+                    <div class="problem-row clickable-item" data-detail="problem-spof">
+                        <div class="problem-header">
+                            <span class="problem-priority p0">P0</span>
+                            <h4>Single Points of Failure</h4>
+                        </div>
+                        <ul class="problem-items">
+                            <li>Critical IT functions depend on individual staff</li>
+                            <li>No backup personnel or cross-training</li>
+                            <li>Knowledge loss risk if key staff depart</li>
+                            <li>Business continuity at severe risk</li>
+                        </ul>
+                        <span class="problem-ref">Deloitte #2, #45</span>
+                    </div>
+
+                    <div class="problem-row clickable-item" data-detail="problem-security">
+                        <div class="problem-header">
+                            <span class="problem-priority p0">P0</span>
+                            <h4>Security & Cybersecurity Gaps</h4>
+                        </div>
+                        <ul class="problem-items">
+                            <li>No dedicated Cybersecurity Lead role</li>
+                            <li>Security operations fully outsourced</li>
+                            <li>No internal SOC/NOC (Security/Network Operations Center) capability</li>
+                            <li>Inadequate network segmentation</li>
+                        </ul>
+                        <span class="problem-ref">Deloitte #1, #26, #27, #28</span>
+                    </div>
+
+                    <div class="problem-row clickable-item" data-detail="problem-governance">
+                        <div class="problem-header">
+                            <span class="problem-priority p0">P0</span>
+                            <h4>No IT Governance Framework</h4>
+                        </div>
+                        <ul class="problem-items">
+                            <li>No formal IT policies or procedures</li>
+                            <li>No IT Steering Committee</li>
+                            <li>No data governance framework</li>
+                            <li>Inconsistent practices across subsidiaries</li>
+                        </ul>
+                        <span class="problem-ref">Deloitte #7, #8, #9</span>
+                    </div>
+
+                    <div class="problem-row clickable-item" data-detail="problem-manual">
+                        <div class="problem-header">
+                            <span class="problem-priority p1">P1</span>
+                            <h4>Manual Processes & Legacy Systems</h4>
+                        </div>
+                        <ul class="problem-items">
+                            <li>Heavy reliance on manual, Excel-driven processes</li>
+                            <li>Limited automation capabilities</li>
+                            <li>Legacy ERP systems require modernization</li>
+                            <li>No Enterprise Performance Management (EPM)</li>
+                        </ul>
+                        <span class="problem-ref">Deloitte #12, #13, #20, #40</span>
+                    </div>
+                </div>
+
+                <div class="problems-legend">
+                    <span class="legend-label">Deloitte Priority Levels:</span>
+                    <span class="legend-p0">P0</span> Critical
+                    <span class="legend-p1">P1</span> High
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: SWOT Analysis -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <div class="section-tag">1. Where We Are Today</div>
+                <h2 class="slide-title">Current SWOT Analysis</h2>
+                <p class="click-hint">Click any quadrant for details</p>
+                <div class="swot-grid">
+                    <div class="swot-card strengths clickable-item" data-detail="swot-strengths">
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>Dedicated IT team</li>
+                            <li>Existing infrastructure</li>
+                            <li>Leadership commitment</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-card weaknesses clickable-item" data-detail="swot-weaknesses">
+                        <h4>Weaknesses</h4>
+                        <ul>
+                            <li>Understaffed (5 people)</li>
+                            <li>Missing skill sets</li>
+                            <li>Legacy dependencies</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-card opportunities clickable-item" data-detail="swot-opportunities">
+                        <h4>Opportunities</h4>
+                        <ul>
+                            <li>Cloud cost savings</li>
+                            <li>AI/ML automation</li>
+                            <li>Standardization</li>
+                        </ul>
+                    </div>
+
+                    <div class="swot-card threats clickable-item" data-detail="swot-threats">
+                        <h4>Threats</h4>
+                        <ul>
+                            <li>Cyber attack surface</li>
+                            <li>Regulatory compliance</li>
+                            <li>Technical debt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Vision Statement -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <div class="section-tag">2. Where We Need to Be</div>
+                <h2 class="slide-title">Future Vision Statement</h2>
+
+                <div class="vision-container">
+                    <div class="vision-quote">
+                        <div class="quote-mark">"</div>
+                        <p>To establish National Holding as a digitally-enabled organization with robust, secure, and scalable IT infrastructure that drives business growth, operational excellence, and competitive advantage across all subsidiaries.</p>
+                    </div>
+
+                    <div class="vision-pillars-preview">
+                        <div class="pillar-preview">
+                            <div class="pillar-icon governance"></div>
+                            <span>Governance</span>
+                        </div>
+                        <div class="pillar-preview">
+                            <div class="pillar-icon digital"></div>
+                            <span>Digital</span>
+                        </div>
+                        <div class="pillar-preview">
+                            <div class="pillar-icon security"></div>
+                            <span>Security</span>
+                        </div>
+                        <div class="pillar-preview">
+                            <div class="pillar-icon data"></div>
+                            <span>Data & AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Strategic Pillars -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <div class="section-tag">2. Where We Need to Be</div>
+                <h2 class="slide-title">Future Strategic Pillars</h2>
+                <p class="click-hint">Click any pillar for details</p>
+                <div class="pillars-grid">
+                    <div class="pillar-card clickable-item" data-detail="pillar-governance">
+                        <div class="pillar-header governance">
+                            <span class="pillar-number">01</span>
+                            <h4>Governance</h4>
+                        </div>
+                        <ul>
+                            <li>IT Steering Committee</li>
+                            <li>ITIL/COBIT frameworks</li>
+                            <li>Policies and standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="pillar-card clickable-item" data-detail="pillar-digital">
+                        <div class="pillar-header digital">
+                            <span class="pillar-number">02</span>
+                            <h4>Digital Transformation</h4>
+                        </div>
+                        <ul>
+                            <li>Modernize systems</li>
+                            <li>Cloud-first strategy</li>
+                            <li>Process automation</li>
+                        </ul>
+                    </div>
+
+                    <div class="pillar-card clickable-item" data-detail="pillar-security">
+                        <div class="pillar-header security">
+                            <span class="pillar-number">03</span>
+                            <h4>Security</h4>
+                        </div>
+                        <ul>
+                            <li>Security program</li>
+                            <li>SOC/NOC capabilities</li>
+                            <li>Compliance certifications</li>
+                        </ul>
+                    </div>
+
+                    <div class="pillar-card clickable-item" data-detail="pillar-data">
+                        <div class="pillar-header data">
+                            <span class="pillar-number">04</span>
+                            <h4>Data & AI</h4>
+                        </div>
+                        <ul>
+                            <li>Unified data platform</li>
+                            <li>Analytics capabilities</li>
+                            <li>AI-driven insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Target Operating Model -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <div class="section-tag">2. Where We Need to Be</div>
+                <h2 class="slide-title">Future Target Operating Model</h2>
+
+                <div class="transformation-visual">
+                    <div class="transform-box current">
+                        <div class="transform-label">Current State</div>
+                        <div class="transform-number">5</div>
+                        <div class="transform-desc">Team Members</div>
+                    </div>
+
+                    <div class="transform-arrow">
+                        <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                            <path d="M0 12H55M55 12L45 2M55 12L45 22" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>3-Year Journey</span>
+                    </div>
+
+                    <div class="transform-box target">
+                        <div class="transform-label">Target State</div>
+                        <div class="transform-number">16</div>
+                        <div class="transform-desc">Team Members</div>
+                    </div>
+                </div>
+
+                <div class="target-org">
+                    <div class="target-roles">
+                        <div class="role-category">
+                            <h4>Leadership</h4>
+                            <div class="role-items">
+                                <span class="role-badge leadership">Group CIO</span>
+                                <span class="role-badge leadership">Deputy CIO</span>
+                            </div>
+                        </div>
+                        <div class="role-category">
+                            <h4>New Roles</h4>
+                            <div class="role-items">
+                                <span class="role-badge new">Cybersecurity Lead</span>
+                                <span class="role-badge new">Data & AI Lead</span>
+                                <span class="role-badge new">Enterprise Architect</span>
+                                <span class="role-badge new">Cloud Engineer</span>
+                            </div>
+                        </div>
+                        <div class="role-category">
+                            <h4>Expanded Teams</h4>
+                            <div class="role-items">
+                                <span class="role-badge expanded">Infrastructure (4)</span>
+                                <span class="role-badge expanded">Applications (3)</span>
+                                <span class="role-badge expanded">Security (3)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Success Metrics -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <div class="section-tag">2. Where We Need to Be</div>
+                <h2 class="slide-title">Future Success Metrics</h2>
+                <p class="click-hint">Click any metric for details</p>
+                <div class="kpi-grid">
+                    <div class="kpi-card clickable-item" data-detail="kpi-health">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">IT Health Score</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">32</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">80+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card clickable-item" data-detail="kpi-uptime">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">System Uptime</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">95%</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">99.9%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card clickable-item" data-detail="kpi-incidents">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">Security Incidents</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">Unknown</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">&lt;5/year</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card clickable-item" data-detail="kpi-team">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">Team Size</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">5</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">16</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card clickable-item" data-detail="kpi-automation">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">Process Automation</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">10%</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card clickable-item" data-detail="kpi-cost">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-content">
+                            <div class="kpi-label">IT Cost/Revenue</div>
+                            <div class="kpi-values">
+                                <span class="kpi-current">TBD</span>
+                                <span class="kpi-arrow">→</span>
+                                <span class="kpi-target">&lt;3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: People & Hiring -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content">
+                <div class="section-tag">3. How We Get There</div>
+                <h2 class="slide-title">People & Hiring Roadmap</h2>
+
+                <p class="click-hint">Click any role for details</p>
+                <div class="hiring-timeline">
+                    <div class="timeline-period priority">
+                        <div class="period-header">
+                            <span class="period-label">Q1-Q2 2026</span>
+                            <span class="period-badge priority">Priority</span>
+                        </div>
+                        <div class="period-roles">
+                            <div class="hire-card critical clickable-item" data-detail="hire-pmo">
+                                <span class="hire-title">PMO Lead</span>
+                                <span class="hire-urgency">Critical</span>
+                            </div>
+                            <div class="hire-card critical clickable-item" data-detail="hire-cybersecurity">
+                                <span class="hire-title">Cybersecurity Lead</span>
+                                <span class="hire-urgency">Critical</span>
+                            </div>
+                            <div class="hire-card critical clickable-item" data-detail="hire-data-ai">
+                                <span class="hire-title">Data & AI Lead</span>
+                                <span class="hire-urgency">Critical</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-period">
+                        <div class="period-header">
+                            <span class="period-label">Q3-Q4 2026</span>
+                        </div>
+                        <div class="period-roles">
+                            <div class="hire-card clickable-item" data-detail="hire-architect">
+                                <span class="hire-title">Enterprise Architect</span>
+                            </div>
+                            <div class="hire-card clickable-item" data-detail="hire-cloud">
+                                <span class="hire-title">Cloud Engineer</span>
+                            </div>
+                            <div class="hire-card clickable-item" data-detail="hire-security-analyst">
+                                <span class="hire-title">Security Analyst</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-period">
+                        <div class="period-header">
+                            <span class="period-label">2027</span>
+                        </div>
+                        <div class="period-roles">
+                            <div class="hire-card clickable-item" data-detail="hire-infra">
+                                <span class="hire-title">Additional Infrastructure Staff</span>
+                            </div>
+                            <div class="hire-card clickable-item" data-detail="hire-developers">
+                                <span class="hire-title">Application Developers</span>
+                            </div>
+                            <div class="hire-card clickable-item" data-detail="hire-soc">
+                                <span class="hire-title">SOC Analysts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Year 1 - Must Do -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content">
+                <div class="section-tag">3. How We Get There</div>
+                <h2 class="slide-title clickable-item" data-detail="y1-overview">Year 1 (2026) - Must Do</h2>
+
+                <div class="year-badge must-do">MUST DO</div>
+                <p class="click-hint">Click title for timeline overview, or any initiative for details</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y1-hire-leads">People & Hiring (H1-H4)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">H1</span> Cyber Lead, Data/AI Lead, PMO Lead, Cloud Engineer, Business Analyst</li>
+                            <li><span class="init-code">H2</span> Team Skilling & Reskilling (continuous)</li>
+                            <li><span class="init-code">H4</span> IT Performance Assessment & KPIs</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y1-governance">Process (P1-P6)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">P1</span> Cyber & IT Governance Framework, Steering Committee</li>
+                            <li><span class="init-code">P2</span> Data Governance & Data Management</li>
+                            <li><span class="init-code">P3</span> IT & Security Architecture Definition</li>
+                            <li><span class="init-code">P5</span> Process & Workflow Optimization</li>
+                            <li><span class="init-code">P6</span> SharePoint Legacy Data Cleansing</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y1-security">Technology (T1-T13)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">T1</span> Document Management System</li>
+                            <li><span class="init-code">T3</span> Ticketing System Rollout</li>
+                            <li><span class="init-code">T4</span> Inventory/Asset Management</li>
+                            <li><span class="init-code">T5</span> L&D Platform</li>
+                            <li><span class="init-code">T6</span> IAM Solution (Identity & Access)</li>
+                            <li><span class="init-code">T7</span> Oracle EPM (Finance Analytics)</li>
+                            <li><span class="init-code">T8</span> Audit Platform/Automation</li>
+                            <li><span class="init-code">T9</span> IT Knowledge Management</li>
+                            <li><span class="init-code">T11</span> Network Performance Monitoring</li>
+                            <li><span class="init-code">T12</span> SOC/NOC Setup</li>
+                            <li><span class="init-code">T13</span> Network Segmentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y1-epm">ERP Strategy (E)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">E</span> ERP Planning & Vendor Selection</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Slide 13: Year 2 - Should Do -->
+        <section class="slide" data-slide="13">
+            <div class="slide-content">
+                <div class="section-tag">3. How We Get There</div>
+                <h2 class="slide-title clickable-item" data-detail="y2-overview">Year 2 (2027) - Should Do</h2>
+
+                <div class="year-badge should-do">SHOULD DO</div>
+                <p class="click-hint">Click title for timeline overview, or any initiative for details</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y2-hrms">People & Operations (H1-H3)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">H1</span> Cyber Engineer, GRC Specialist, IDAM Specialist operational</li>
+                            <li><span class="init-code">H2</span> Team Skilling & Certifications (continuous)</li>
+                            <li><span class="init-code">H3</span> In-house Security Team fully operational</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y2-erp">ERP & Applications (T2, T10, T15, E)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">T15</span> ERP Core Build & Data Migration (S/4 HANA)</li>
+                            <li><span class="init-code">T2</span> HRMS Configuration & Go-Live</li>
+                            <li><span class="init-code">E</span> Treasury Management Implementation</li>
+                            <li><span class="init-code">E</span> Procurement System (SAP Ariba)</li>
+                            <li><span class="init-code">T10</span> GRC Platform Deployment</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y2-soc-noc">Technology & Infrastructure (T12, T14)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">T12</span> SOC/NOC 24/7 Operations</li>
+                            <li><span class="init-code">T14</span> Cloud Strategy & Migration Start</li>
+                            <li><span class="init-code">NAC</span> Network Access Control Implementation</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y2-network">Data & AI</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">AI</span> GRC Analytics & BI</li>
+                            <li><span class="init-code">AI</span> Internal Audit Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Slide 14: Year 3 - Nice to Have -->
+        <section class="slide" data-slide="14">
+            <div class="slide-content">
+                <div class="section-tag">3. How We Get There</div>
+                <h2 class="slide-title clickable-item" data-detail="y3-overview">Year 3 (2028) - Nice to Have</h2>
+
+                <div class="year-badge nice-to-have">NICE TO HAVE</div>
+                <p class="click-hint">Click title for timeline overview, or any initiative for details</p>
+
+                <div class="initiatives-grid">
+                    <div class="initiative-category">
+                        <h4 class="category-header">People & Operations</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">H1</span> App Developer (On Demand)</li>
+                            <li><span class="init-code">H2</span> Team Skilling & Certifications (continuous)</li>
+                            <li><span class="init-code">Team</span> Full 16 FTE IT Team Operational</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y3-treasury">ERP & Applications (T10, T15, E)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">T15</span> ERP UAT & Go-Live (S/4 HANA)</li>
+                            <li><span class="init-code">E</span> NH Entities ERP Integration</li>
+                            <li><span class="init-code">E</span> Treasury Go-Live</li>
+                            <li><span class="init-code">E</span> Procurement Operations</li>
+                            <li><span class="init-code">T10</span> GRC Full Operations</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y3-cloud">Technology & Infrastructure (T12, T14)</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">T14</span> Full Cloud Migration Complete</li>
+                            <li><span class="init-code">T12</span> SOC/NOC Mature Operations (24/7)</li>
+                            <li><span class="init-code">ISO</span> ISO 27001 Certification</li>
+                        </ul>
+                    </div>
+
+                    <div class="initiative-category">
+                        <h4 class="category-header clickable-item" data-detail="y3-ai">Automation & AI</h4>
+                        <ul class="initiative-compact-list">
+                            <li><span class="init-code">RPA</span> Robotic Process Automation Deployment</li>
+                            <li><span class="init-code">AI</span> Hyper Automation (End-to-End)</li>
+                            <li><span class="init-code">AI</span> AI Use Case Scaling Enterprise-wide</li>
+                            <li><span class="init-code">AI</span> AI Governance & Controls</li>
+                            <li><span class="init-code">Tech</span> Emerging Technology Evaluation & Adoption</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Slide 15: Leadership Decisions -->
+        <section class="slide" data-slide="15">
+            <div class="slide-content">
+                <div class="section-tag">4. What We Need from You</div>
+                <h2 class="slide-title">Leadership Decisions Required</h2>
+
+                <div class="decisions-action-header">
+                    <span class="action-badge critical">3 Decisions Needed This Month</span>
+                    <span class="priority-legend">Deloitte Priority Levels: <span class="legend-p0">P0</span> Critical <span class="legend-p1">P1</span> High <span class="legend-p2">P2</span> Medium</span>
+                </div>
+
+                <div class="decisions-table">
+                    <div class="decision-row header">
+                        <span class="col-decision">Decision Required</span>
+                        <span class="col-owner">Decision Owner</span>
+                        <span class="col-deadline">Deadline</span>
+                        <span class="col-impact">If Delayed</span>
+                    </div>
+
+                    <div class="decision-row critical">
+                        <span class="col-decision">
+                            <span class="priority-flag">P0</span>
+                            Approve PMO Lead hiring
+                        </span>
+                        <span class="col-owner">CEO</span>
+                        <span class="col-deadline">Jan 2026</span>
+                        <span class="col-impact">Projects remain unmanaged, delays continue</span>
+                    </div>
+
+                    <div class="decision-row critical">
+                        <span class="col-decision">
+                            <span class="priority-flag">P0</span>
+                            Approve Cybersecurity Lead hiring
+                        </span>
+                        <span class="col-owner">CEO</span>
+                        <span class="col-deadline">Jan 2026</span>
+                        <span class="col-impact">Security risk increases, ISO 27001 blocked</span>
+                    </div>
+
+                    <div class="decision-row critical">
+                        <span class="col-decision">
+                            <span class="priority-flag">P0</span>
+                            Approve Data & AI Lead hiring
+                        </span>
+                        <span class="col-owner">CEO</span>
+                        <span class="col-deadline">Feb 2026</span>
+                        <span class="col-impact">No data strategy, AI initiatives blocked</span>
+                    </div>
+
+                    <div class="decision-row high">
+                        <span class="col-decision">
+                            <span class="priority-flag p1">P1</span>
+                            Approve Year 1 Budget (AED X.XM)
+                        </span>
+                        <span class="col-owner">CFO/Board</span>
+                        <span class="col-deadline">Q1 2026</span>
+                        <span class="col-impact">Hiring delayed, initiatives stalled</span>
+                    </div>
+
+                    <div class="decision-row">
+                        <span class="col-decision">
+                            <span class="priority-flag p2">P2</span>
+                            Approve 3-Year Investment Roadmap
+                        </span>
+                        <span class="col-owner">Board</span>
+                        <span class="col-deadline">Q2 2026</span>
+                        <span class="col-impact">Cannot plan long-term, vendor negotiations weakened</span>
+                    </div>
+                </div>
+
+                <div class="decision-cta">
+                    <div class="cta-text">Next Step: Schedule IT Strategy Approval Meeting</div>
+                    <div class="cta-sub">Recommended: Week of January 15, 2026 with CEO, CFO, and key stakeholders</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Governance & Reporting -->
+        <section class="slide" data-slide="16">
+            <div class="slide-content">
+                <div class="section-tag">5. How We'll Track Progress</div>
+                <h2 class="slide-title">Governance & Accountability</h2>
+
+                <div class="governance-layout">
+                    <!-- Left: Key Milestones -->
+                    <div class="milestones-section">
+                        <h3>Key Milestones - Next 12 Months</h3>
+                        <div class="milestone-list">
+                            <div class="milestone-item">
+                                <span class="milestone-date">Q1 2026</span>
+                                <span class="milestone-text">PMO, Cybersecurity & Data/AI Leads hired</span>
+                                <span class="milestone-owner">CEO</span>
+                            </div>
+                            <div class="milestone-item">
+                                <span class="milestone-date">Q1 2026</span>
+                                <span class="milestone-text">IT Steering Committee operational</span>
+                                <span class="milestone-owner">CIO</span>
+                            </div>
+                            <div class="milestone-item">
+                                <span class="milestone-date">Q2 2026</span>
+                                <span class="milestone-text">PMO established, governance framework live</span>
+                                <span class="milestone-owner">PMO Lead</span>
+                            </div>
+                            <div class="milestone-item">
+                                <span class="milestone-date">Q3 2026</span>
+                                <span class="milestone-text">Oracle EPM go-live</span>
+                                <span class="milestone-owner">CIO</span>
+                            </div>
+                            <div class="milestone-item">
+                                <span class="milestone-date">Q4 2026</span>
+                                <span class="milestone-text">Security tools deployed, ISO 27001 initiated</span>
+                                <span class="milestone-owner">Cyber Lead</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Reporting Cadence -->
+                    <div class="reporting-section">
+                        <h3>Reporting Cadence</h3>
+                        <div class="report-cards-compact">
+                            <div class="report-card-mini">
+                                <div class="report-header">
+                                    <span class="report-freq">Weekly</span>
+                                    <span class="report-to">CIO</span>
+                                </div>
+                                <div class="report-content">Project status, blockers, resource needs</div>
+                            </div>
+                            <div class="report-card-mini">
+                                <div class="report-header">
+                                    <span class="report-freq">Monthly</span>
+                                    <span class="report-to">CEO</span>
+                                </div>
+                                <div class="report-content">1-page dashboard: status, decisions, risks</div>
+                            </div>
+                            <div class="report-card-mini">
+                                <div class="report-header">
+                                    <span class="report-freq">Quarterly</span>
+                                    <span class="report-to">Board</span>
+                                </div>
+                                <div class="report-content">Health score, achievements, budget, decisions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Metrics -->
+                <div class="success-metrics-bar">
+                    <h3>Success Metrics - Year 1 Targets</h3>
+                    <div class="metrics-row">
+                        <div class="metric-box">
+                            <span class="metric-label">Health Score</span>
+                            <span class="metric-target">32 → 55</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Team Size</span>
+                            <span class="metric-target">5 → 10</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Critical Issues</span>
+                            <span class="metric-target">10 → 4</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-label">Projects On-Track</span>
+                            <span class="metric-target">0% → 80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Appendices -->
+        <section class="slide" data-slide="17">
+            <div class="slide-content">
+                <div class="section-tag">Supporting Documents</div>
+                <h2 class="slide-title">Appendices</h2>
+                <p class="click-hint">Click any appendix for details</p>
+
+                <div class="appendix-grid">
+                    <div class="appendix-card clickable-item" data-detail="appendix-a">
+                        <div class="appendix-letter">A</div>
+                        <div class="appendix-content">
+                            <h4>Detailed Initiative Catalog</h4>
+                            <p>Full 33 initiatives with specifications for PMO and execution teams</p>
+                        </div>
+                    </div>
+
+                    <div class="appendix-card clickable-item" data-detail="appendix-b">
+                        <div class="appendix-letter">B</div>
+                        <div class="appendix-content">
+                            <h4>Technical Architecture</h4>
+                            <p>Current state, target state, and integration architecture diagrams</p>
+                        </div>
+                    </div>
+
+                    <div class="appendix-card clickable-item" data-detail="appendix-c">
+                        <div class="appendix-letter">C</div>
+                        <div class="appendix-content">
+                            <h4>Subsidiary Strategies</h4>
+                            <p>Strategies for all 7 subsidiaries including Bloom, Petromal, FoodQuest</p>
+                        </div>
+                    </div>
+
+                    <div class="appendix-card clickable-item" data-detail="appendix-d">
+                        <div class="appendix-letter">D</div>
+                        <div class="appendix-content">
+                            <h4>Risk Register</h4>
+                            <p>60 identified issues with impact scores and mitigation plans</p>
+                        </div>
+                    </div>
+
+                    <div class="appendix-card clickable-item" data-detail="appendix-e">
+                        <div class="appendix-letter">E</div>
+                        <div class="appendix-content">
+                            <h4>Budget Details</h4>
+                            <p>Line-item breakdowns by year with vendor quotes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Recommended Approach -->
+        <section class="slide" data-slide="18">
+            <div class="slide-content">
+                <div class="section-tag">Supporting Documents</div>
+                <h2 class="slide-title">Recommended Approach</h2>
+
+                <div class="approach-container">
+                    <h3>Create 3 Documents</h3>
+
+                    <div class="document-cards">
+                        <div class="doc-card">
+                            <div class="doc-number">1</div>
+                            <div class="doc-content">
+                                <h4>Executive Strategy Brief</h4>
+                                <span class="doc-pages">10-12 pages</span>
+                                <p>For CEO/Board - High-level strategy overview</p>
+                            </div>
+                        </div>
+
+                        <div class="doc-card">
+                            <div class="doc-number">2</div>
+                            <div class="doc-content">
+                                <h4>IT Strategy Detailed Plan</h4>
+                                <span class="doc-pages">40-50 pages</span>
+                                <p>For Steering Committee - Technical details, full specs, detailed budgets</p>
+                            </div>
+                        </div>
+
+                        <div class="doc-card">
+                            <div class="doc-number">3</div>
+                            <div class="doc-content">
+                                <h4>Execution Playbooks</h4>
+                                <span class="doc-pages">Multiple docs</span>
+                                <p>For IT team - Step-by-step guides per workstream</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="additional-items">
+                        <h4>Plus:</h4>
+                        <div class="additional-grid">
+                            <div class="additional-item">
+                                <span class="additional-icon">📄</span>
+                                <span>Monthly 1-Pagers for CEO</span>
+                            </div>
+                            <div class="additional-item">
+                                <span class="additional-icon">📊</span>
+                                <span>Quarterly 3-5 Slide Decks for Board</span>
+                            </div>
+                            <div class="additional-item">
+                                <span class="additional-icon">📈</span>
+                                <span>Living Dashboard for Real-time Tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="end-slide-cta">
+                    <p>Thank you for your attention</p>
+                    <span class="cta-subtitle">Questions & Discussion</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Subsidiary Strategies -->
+        <section class="slide" data-slide="19">
+            <div class="slide-content">
+                <div class="section-tag">Supporting Documents</div>
+                <h2 class="slide-title">Subsidiary Strategies</h2>
+                <p class="slide-subtitle">Deloitte-Identified Priority Initiatives by Entity</p>
+
+                <div class="subsidiary-grid">
+                    <!-- Emirates Food Industries -->
+                    <div class="subsidiary-card clickable-item" data-detail="sub-efi">
+                        <div class="subsidiary-header">
+                            <h4>Emirates Food Industries (EFI)</h4>
+                            <span class="initiative-count">6 Initiatives</span>
+                        </div>
+                        <ul class="subsidiary-initiatives">
+                            <li><span class="init-code">P2</span> Data Governance & Data Management</li>
+                            <li><span class="init-code">IT</span> IT Maturity Assessment</li>
+                            <li><span class="init-code">AI</span> AI Strategy & Coordination</li>
+                            <li><span class="init-code">AI</span> AI Governance Framework</li>
+                            <li><span class="init-code">T10</span> GRC Application System</li>
+                            <li><span class="init-code">Sec</span> Continuous Cybersecurity Monitoring</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloom Education -->
+                    <div class="subsidiary-card clickable-item" data-detail="sub-bloom">
+                        <div class="subsidiary-header">
+                            <h4>Bloom Education</h4>
+                            <span class="initiative-count">6 Initiatives</span>
+                        </div>
+                        <ul class="subsidiary-initiatives">
+                            <li><span class="init-code">H1</span> People Plan & Security Lead Hire</li>
+                            <li><span class="init-code">P1</span> Cyber & IT Governance Framework</li>
+                            <li><span class="init-code">Sec</span> Information Security Policy House</li>
+                            <li><span class="init-code">P2</span> Data Classification & Labelling</li>
+                            <li><span class="init-code">Infra</span> Infrastructure Redundancy & DR</li>
+                            <li><span class="init-code">T12</span> SOC/NOC Implementation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Entrust Capital -->
+                    <div class="subsidiary-card clickable-item" data-detail="sub-entrust">
+                        <div class="subsidiary-header">
+                            <h4>Entrust Capital</h4>
+                            <span class="initiative-count">3 Initiatives</span>
+                        </div>
+                        <ul class="subsidiary-initiatives">
+                            <li><span class="init-code">AI</span> AI Strategy & Coordination</li>
+                            <li><span class="init-code">AI</span> AI Governance Framework</li>
+                            <li><span class="init-code">AI</span> AI-Driven Market Analysis</li>
+                        </ul>
+                    </div>
+
+                    <!-- Exeed Industries -->
+                    <div class="subsidiary-card clickable-item" data-detail="sub-exeed">
+                        <div class="subsidiary-header">
+                            <h4>Exeed Industries</h4>
+                            <span class="initiative-count">5 Initiatives</span>
+                        </div>
+                        <ul class="subsidiary-initiatives">
+                            <li><span class="init-code">IT</span> Digital Maturity & Automation Assessment</li>
+                            <li><span class="init-code">AI</span> AI Strategy & Coordination</li>
+                            <li><span class="init-code">AI</span> AI Governance Framework</li>
+                            <li><span class="init-code">Data</span> Data Lakes/Warehouses Implementation</li>
+                            <li><span class="init-code">OT</span> OT Lifecycle Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- FoodQuest -->
+                    <div class="subsidiary-card clickable-item" data-detail="sub-foodquest">
+                        <div class="subsidiary-header">
+                            <h4>FoodQuest</h4>
+                            <span class="initiative-count">6 Initiatives</span>
+                        </div>
+                        <ul class="subsidiary-initiatives">
+                            <li><span class="init-code">H1</span> ERP Application Support Engineer</li>
+                            <li><span class="init-code">P1</span> Cyber & IT Governance Framework</li>
+                            <li><span class="init-code">Auto</span> Order Automation System</li>
+                            <li><span class="init-code">AI</span> Video Surveillance Analytics</li>
+                            <li><span class="init-code">Data</span> Data Lakes/Warehouses</li>
+                            <li><span class="init-code">T10</span> GRC Application System</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsidiary-note">
+                    <span class="note-icon">ℹ️</span>
+                    <span>Click any subsidiary card for detailed initiative descriptions, timelines, and dependencies</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Initiative Codes Legend -->
+        <section class="slide" data-slide="20">
+            <div class="slide-content">
+                <div class="section-tag">Supporting Documents</div>
+                <h2 class="slide-title">Initiative Codes Legend</h2>
+                <p class="slide-subtitle">Deloitte Strategic Initiative Classification System</p>
+
+                <div class="legend-grid">
+                    <!-- People/Hiring Column -->
+                    <div class="legend-category">
+                        <div class="legend-category-header hiring">
+                            <span class="legend-icon">👥</span>
+                            <h4>H = Hiring & People</h4>
+                            <span class="legend-count">4 Initiatives</span>
+                        </div>
+                        <table class="legend-table">
+                            <tr><td class="code-cell">H1</td><td>Cyber & IT Team Hirings</td></tr>
+                            <tr><td class="code-cell">H2</td><td>Team Skilling & Reskilling</td></tr>
+                            <tr><td class="code-cell">H3</td><td>In-house Security Team Enablement</td></tr>
+                            <tr><td class="code-cell">H4</td><td>IT Performance Assessment & KPIs</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- Process Column -->
+                    <div class="legend-category">
+                        <div class="legend-category-header process">
+                            <span class="legend-icon">⚙️</span>
+                            <h4>P = Process</h4>
+                            <span class="legend-count">6 Initiatives</span>
+                        </div>
+                        <table class="legend-table">
+                            <tr><td class="code-cell">P1</td><td>Cyber & IT Governance Framework</td></tr>
+                            <tr><td class="code-cell">P2</td><td>Data Governance & Data Management</td></tr>
+                            <tr><td class="code-cell">P3</td><td>IT & Security Architecture Definition</td></tr>
+                            <tr><td class="code-cell">P4</td><td>Physical Security</td></tr>
+                            <tr><td class="code-cell">P5</td><td>Process & Workflow Optimization</td></tr>
+                            <tr><td class="code-cell">P6</td><td>SharePoint Legacy Data Cleansing</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- Technology Column -->
+                    <div class="legend-category technology-full">
+                        <div class="legend-category-header technology">
+                            <span class="legend-icon">💻</span>
+                            <h4>T = Technology</h4>
+                            <span class="legend-count">15 Initiatives</span>
+                        </div>
+                        <div class="legend-table-grid">
+                            <table class="legend-table">
+                                <tr><td class="code-cell">T1</td><td>Document Management System</td></tr>
+                                <tr><td class="code-cell">T2</td><td>HR Application System (HRMS)</td></tr>
+                                <tr><td class="code-cell">T3</td><td>Ticketing System Rollout</td></tr>
+                                <tr><td class="code-cell">T4</td><td>Inventory/Asset Management</td></tr>
+                                <tr><td class="code-cell">T5</td><td>L&D Platform</td></tr>
+                                <tr><td class="code-cell">T6</td><td>IAM Solution (Identity & Access)</td></tr>
+                                <tr><td class="code-cell">T7</td><td>Finance Analytics/EPM</td></tr>
+                                <tr><td class="code-cell">T8</td><td>Audit Platform/Automation</td></tr>
+                            </table>
+                            <table class="legend-table">
+                                <tr><td class="code-cell">T9</td><td>IT Knowledge Management</td></tr>
+                                <tr><td class="code-cell">T10</td><td>IT Compliance Automation (GRC)</td></tr>
+                                <tr><td class="code-cell">T11</td><td>Network Performance Monitoring</td></tr>
+                                <tr><td class="code-cell">T12</td><td>Integrated SOC and NOC</td></tr>
+                                <tr><td class="code-cell">T13</td><td>Network Segmentation</td></tr>
+                                <tr><td class="code-cell">T14</td><td>Full/Hybrid Cloud</td></tr>
+                                <tr><td class="code-cell">T15</td><td>ERP Strategy Implementation</td></tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ERP Column -->
+                    <div class="legend-category">
+                        <div class="legend-category-header erp">
+                            <span class="legend-icon">🏢</span>
+                            <h4>E = ERP Solutions</h4>
+                            <span class="legend-count">4 Modules</span>
+                        </div>
+                        <table class="legend-table">
+                            <tr><td class="code-cell">E</td><td>Oracle EPM (Finance Analytics)</td></tr>
+                            <tr><td class="code-cell">E</td><td>S/4 HANA (Core ERP)</td></tr>
+                            <tr><td class="code-cell">E</td><td>Treasury Management (KYRIBA)</td></tr>
+                            <tr><td class="code-cell">E</td><td>Procurement (SAP Ariba)</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="legend-footer">
+                    <p><strong>Source:</strong> Deloitte Digital Transformation Strategy v3.1 - Section 3.3 Strategic Initiatives Mapping</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Side Detail Panel -->
+    <aside class="side-detail-panel" id="sideDetailPanel">
+        <div class="side-panel-resize" id="sidePanelResize"></div>
+        <div class="side-panel-header">
+            <span class="side-panel-title" id="sidePanelTitle">Details</span>
+            <button class="side-panel-close" id="sidePanelClose">&times;</button>
+        </div>
+        <div class="side-panel-content" id="sidePanelContent"></div>
+    </aside>
+
+    <!-- Keyboard hints -->
+    <div class="keyboard-hints" id="keyboardHints">
+        <span><kbd>←</kbd> <kbd>→</kbd> Navigate</span>
+        <span><kbd>B</kbd> Toggle Menu</span>
+        <span><kbd>F</kbd> Fullscreen</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
