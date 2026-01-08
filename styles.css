@@ -1206,25 +1206,208 @@ body.panel-resizing * {
 .swot-card.opportunities li::before { background: var(--accent); }
 .swot-card.threats li::before { background: var(--warning); }
 
-/* ===== Vision Container ===== */
-.vision-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.vision-quote { max-width: 700px; margin-bottom: 1.5rem; }
-.quote-mark { font-size: 3rem; font-family: Georgia, serif; line-height: 0; color: var(--accent); opacity: 0.5; margin-bottom: -0.5rem; }
-.vision-quote p { font-size: 1.125rem; font-weight: 400; line-height: 1.5; color: var(--gray-600); font-style: italic; }
-.vision-pillars-preview { display: flex; gap: 1.5rem; }
-.pillar-preview { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-.pillar-icon { width: 48px; height: 48px; border-radius: 12px; }
-.pillar-icon.governance { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-.pillar-icon.digital { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
-.pillar-icon.security { background: linear-gradient(135deg, #ef4444, #b91c1c); }
-.pillar-icon.data { background: linear-gradient(135deg, #10b981, #047857); }
-.pillar-icon.automation { background: linear-gradient(135deg, #f59e0b, #d97706); }
-.pillar-preview span { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); }
-
-/* Mission Quote */
-.mission-quote { max-width: 700px; margin-bottom: 1.5rem; padding: 1rem; background: var(--gray-50); border-radius: 8px; border-left: 3px solid var(--accent); }
-.mission-label { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-.mission-quote p { font-size: 0.9375rem; line-height: 1.5; color: var(--gray-600); margin: 0; }
+/* ===== Vision Slide - Dramatic Styling ===== */
+.vision-slide {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+.vision-slide .section-tag {
+    background: rgba(139, 92, 246, 0.2) !important;
+    color: #a78bfa !important;
+    border-left-color: #8b5cf6 !important;
+}
+.vision-bg-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.vision-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+.vision-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+.vision-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px);
+    text-align: center;
+}
+.vision-hero {
+    margin-bottom: 2rem;
+}
+.vision-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.2));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+.vision-badge .badge-icon {
+    color: #a78bfa;
+    font-size: 0.75rem;
+}
+.vision-badge span {
+    color: #c4b5fd;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.vision-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+.vision-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    border-radius: 2px;
+    margin: 1rem auto 0;
+}
+.vision-statement-container {
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+.vision-statement {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.quote-icon-left, .quote-icon-right {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: #8b5cf6;
+    opacity: 0.3;
+    position: absolute;
+}
+.quote-icon-left { top: 0.5rem; left: 1rem; }
+.quote-icon-right { bottom: -1rem; right: 1rem; }
+.vision-text {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #e2e8f0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+.vision-text .highlight {
+    color: #a78bfa;
+    font-weight: 600;
+}
+.mission-statement {
+    max-width: 650px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+}
+.mission-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+.mission-icon {
+    color: #10b981;
+    font-size: 1rem;
+}
+.mission-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #10b981;
+}
+.mission-statement p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0;
+}
+.vision-pillars-bar {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pillar-chip {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+}
+.pillar-chip.governance {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border-color: rgba(99, 102, 241, 0.3);
+}
+.pillar-chip.innovation {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border-color: rgba(139, 92, 246, 0.3);
+}
+.pillar-chip.security {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+.pillar-chip.data {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+.pillar-chip.automation {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.3);
+}
 
 /* Hire Type Badge */
 .hire-type { font-size: 0.5625rem; color: var(--gray-500); background: var(--gray-100); padding: 0.125rem 0.375rem; border-radius: 3px; margin-top: 0.25rem; display: inline-block; }
