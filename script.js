@@ -3430,28 +3430,34 @@ class SidePanelHandler {
                 </div>
                 <div class="gantt-milestone"><strong>Milestone:</strong> Treasury/Procurement Go-Live Q4 2028 | Deloitte Priority: P0</div>`
             },
-            // ===== Slide 18: Appendices =====
+            // ===== Slide 21: Appendices =====
             'appendix-a': {
-                title: 'Appendix A: Detailed Initiative Catalog',
+                title: 'Appendix A: Initiative Catalog & KPIs',
                 content: `<div class="detail-reference">
                     <span class="ref-badge">Deloitte Deliverable</span>
                     <span class="ref-category">PMO Reference</span>
                 </div>
-                <p><strong>Purpose:</strong> Comprehensive catalog of all 33 transformation initiatives with detailed specifications for execution teams.</p>
-                <p><strong>Contents:</strong></p>
-                <p>• Initiative ID and name</p>
-                <p>• Business case and objectives</p>
-                <p>• Scope and deliverables</p>
-                <p>• Resource requirements</p>
-                <p>• Timeline and milestones</p>
-                <p>• Budget estimates</p>
-                <p>• Dependencies and risks</p>
-                <p>• Success criteria and KPIs</p>
-                <p><strong>Audience:</strong></p>
-                <p>• PMO and Project Managers</p>
-                <p>• IT Execution Teams</p>
-                <p>• Vendor Partners</p>
-                <p><strong>Update Frequency:</strong> Monthly review, quarterly refresh</p>`
+                <p><strong>33 Initiatives by Category:</strong></p>
+                <div class="detail-metrics" style="margin: 8px 0;">
+                    <span class="metric">H: 4 People</span>
+                    <span class="metric">P: 3 Process</span>
+                    <span class="metric">T: 15 Technology</span>
+                    <span class="metric">E: 11 ERP</span>
+                </div>
+                <p><strong>Priority Distribution:</strong></p>
+                <p>• MUST DO (Year 1): 12 initiatives</p>
+                <p>• SHOULD DO (Year 2): 13 initiatives</p>
+                <p>• NICE TO HAVE (Year 3): 8 initiatives</p>
+                <p><strong>Key Initiative KPIs:</strong></p>
+                <p>• <strong>H1 Hiring:</strong> 11 roles filled by Q3 2027</p>
+                <p>• <strong>T6 IAM:</strong> 100% user coverage, SSO enabled</p>
+                <p>• <strong>T12 SOC:</strong> 24/7 monitoring, &lt;15min response</p>
+                <p>• <strong>T15 ERP:</strong> S/4 HANA Go-Live Q3 2028</p>
+                <p>• <strong>P1 Governance:</strong> Monthly steering committee</p>
+                <p><strong>Program Success Metrics:</strong></p>
+                <p>• 90% on-time initiative delivery</p>
+                <p>• &lt;10% budget variance per initiative</p>
+                <p>• 100% critical dependencies tracked</p>`
             },
             'appendix-b': {
                 title: 'Appendix B: Technical Architecture',
@@ -3459,24 +3465,23 @@ class SidePanelHandler {
                     <span class="ref-badge">Deloitte Deliverable</span>
                     <span class="ref-category">Technical Reference</span>
                 </div>
-                <p><strong>Purpose:</strong> Document current and target state architecture to guide technology decisions and integration efforts.</p>
-                <p><strong>Contents:</strong></p>
-                <p>• Current State Architecture Diagrams</p>
-                <p>  - Infrastructure topology</p>
-                <p>  - Application landscape</p>
-                <p>  - Data flows and integrations</p>
-                <p>• Target State Architecture</p>
-                <p>  - S/4 HANA ecosystem</p>
-                <p>  - Cloud architecture</p>
-                <p>  - Security architecture</p>
-                <p>• Integration Architecture</p>
-                <p>  - API strategy</p>
-                <p>  - Middleware requirements</p>
-                <p>  - Data integration patterns</p>
-                <p><strong>Audience:</strong></p>
-                <p>• Enterprise Architect</p>
-                <p>• IT Technical Teams</p>
-                <p>• Implementation Vendors</p>`
+                <p><strong>Current State Metrics:</strong></p>
+                <p>• 28 vendors across 4 entities</p>
+                <p>• 80+ users supported</p>
+                <p>• Legacy ERP: Oracle EBS (aging)</p>
+                <p>• No centralized IAM or SSO</p>
+                <p>• Manual security monitoring</p>
+                <p><strong>Target State KPIs (2028):</strong></p>
+                <p>• <strong>Cloud:</strong> 70% workloads migrated</p>
+                <p>• <strong>ERP:</strong> Single S/4 HANA instance</p>
+                <p>• <strong>Security:</strong> Zero Trust architecture</p>
+                <p>• <strong>Integration:</strong> API-first, &lt;50 point-to-point</p>
+                <p>• <strong>Availability:</strong> 99.9% for critical systems</p>
+                <p><strong>Architecture Milestones:</strong></p>
+                <p>• Q4 2026: IAM & SSO deployed</p>
+                <p>• Q2 2027: SOC/NOC 24/7 operational</p>
+                <p>• Q4 2027: Cloud migration started</p>
+                <p>• Q3 2028: S/4 HANA Go-Live</p>`
             },
             'appendix-c': {
                 title: 'Appendix C: Risk Register',
@@ -3484,8 +3489,7 @@ class SidePanelHandler {
                     <span class="ref-badge">Deloitte Assessment</span>
                     <span class="ref-category">Governance Tool</span>
                 </div>
-                <p><strong>Purpose:</strong> Comprehensive risk tracking with impact scores and mitigation strategies.</p>
-                <p><strong>Risk Summary (60 Issues Identified):</strong></p>
+                <p><strong>60 Risks Identified:</strong></p>
                 <div class="detail-metrics" style="margin: 8px 0;">
                     <span class="metric critical">Critical (P0): 13</span>
                     <span class="metric high">High (P1): 16</span>
@@ -3494,19 +3498,17 @@ class SidePanelHandler {
                     <span class="metric medium">Medium (P2): 22</span>
                     <span class="metric">Low (P3): 9</span>
                 </div>
-                <p><strong>Categories:</strong></p>
-                <p>• People: 10 issues</p>
-                <p>• Process: 9 issues</p>
-                <p>• Technology: 20 issues</p>
-                <p>• ERP Systems: 15 issues</p>
-                <p>• Data & AI: 6 issues</p>
-                <p><strong>Risk Tracking:</strong></p>
-                <p>• Impact score (1-10)</p>
-                <p>• Effort score (1-10)</p>
-                <p>• Priority classification</p>
-                <p>• Mitigation plans</p>
-                <p>• Target resolution dates</p>
-                <p><strong>Review Frequency:</strong> Bi-weekly at Steering Committee</p>`
+                <p><strong>Top 5 Critical Risks:</strong></p>
+                <p>• No Cybersecurity Lead (Impact: 10)</p>
+                <p>• Missing IT Governance (Impact: 9.5)</p>
+                <p>• Single Points of Failure (Impact: 9)</p>
+                <p>• No Disaster Recovery (Impact: 9)</p>
+                <p>• Aging ERP System (Impact: 8.5)</p>
+                <p><strong>Risk KPIs:</strong></p>
+                <p>• Critical risks mitigated: 0/13 → 13/13 by Q4 2027</p>
+                <p>• Risk review frequency: Bi-weekly</p>
+                <p>• Average time to mitigation: &lt;90 days</p>
+                <p>• Risk escalation rate: &lt;10%</p>`
             },
             'appendix-d': {
                 title: 'Appendix D: Budget Details',
@@ -3514,28 +3516,26 @@ class SidePanelHandler {
                     <span class="ref-badge">Financial Planning</span>
                     <span class="ref-category">Confidential</span>
                 </div>
-                <p><strong>Purpose:</strong> Detailed financial breakdown for IT transformation investment.</p>
-                <p><strong>Budget Structure:</strong></p>
-                <p>• <strong>Year 1 (2026):</strong> Foundation & Critical Fixes</p>
-                <p>  - Hiring (leadership roles)</p>
-                <p>  - Security tools deployment</p>
-                <p>  - Oracle EPM implementation</p>
-                <p>  - Governance establishment</p>
-                <p>• <strong>Year 2 (2027):</strong> Core Transformation</p>
-                <p>  - S/4 HANA implementation</p>
-                <p>  - HRMS deployment</p>
-                <p>  - SOC/NOC setup</p>
-                <p>  - Network modernization</p>
-                <p>• <strong>Year 3 (2028):</strong> Optimization</p>
-                <p>  - Treasury/Procurement</p>
-                <p>  - Cloud migration</p>
-                <p>  - AI scaling</p>
-                <p><strong>Contents:</strong></p>
-                <p>• Line-item breakdowns</p>
-                <p>• Vendor quotes (where available)</p>
-                <p>• CapEx vs OpEx allocation</p>
-                <p>• Contingency reserves</p>
-                <p><strong>Audience:</strong> CFO, CEO, Board (restricted)</p>`
+                <p><strong>3-Year Investment Summary:</strong></p>
+                <div class="detail-metrics" style="margin: 8px 0;">
+                    <span class="metric">Year 1: Foundation</span>
+                    <span class="metric">Year 2: Transform</span>
+                    <span class="metric">Year 3: Optimize</span>
+                </div>
+                <p><strong>Budget by Category:</strong></p>
+                <p>• <strong>People (H):</strong> ~25% - Hiring 11 roles</p>
+                <p>• <strong>Technology (T):</strong> ~45% - Infrastructure & Security</p>
+                <p>• <strong>ERP (E):</strong> ~25% - S/4 HANA & modules</p>
+                <p>• <strong>Process (P):</strong> ~5% - Governance setup</p>
+                <p><strong>Financial KPIs:</strong></p>
+                <p>• Budget variance target: &lt;10%</p>
+                <p>• CapEx/OpEx ratio: 60/40</p>
+                <p>• Contingency reserve: 15%</p>
+                <p>• ROI timeline: 3-5 years</p>
+                <p><strong>Cost Avoidance Targets:</strong></p>
+                <p>• Security incidents: -80% by Year 3</p>
+                <p>• Manual processes: -60% with automation</p>
+                <p>• Vendor consolidation: 28 → 15 vendors</p>`
             }
         };
         this.init();
