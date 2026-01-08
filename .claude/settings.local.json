@@ -4,7 +4,11 @@
       "WebFetch(domain:nh.ae)",
       "WebFetch(domain:www.nh.ae)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }
