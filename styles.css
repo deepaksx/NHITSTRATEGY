@@ -298,7 +298,8 @@ body.sidebar-collapsed .keyboard-hints { left: 50px; }
     max-width: 1000px;
     width: 100%;
     max-height: calc(100vh - 100px);
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: visible;
     animation: fadeInUp 0.5s ease forwards;
     display: flex;
     flex-direction: column;
@@ -2133,6 +2134,7 @@ body.panel-resizing * {
 /* ===== Gantt Chart Styles ===== */
 .gantt-container {
     margin-top: 0.5rem;
+    overflow: visible;
 }
 
 .gantt-header {
@@ -2187,6 +2189,7 @@ body.panel-resizing * {
     gap: 2px;
     margin-bottom: 0.375rem;
     align-items: center;
+    overflow: visible;
 }
 
 .gantt-section-header {
@@ -2220,12 +2223,11 @@ body.panel-resizing * {
 .gantt-bar-cell {
     height: 18px;
     position: relative;
+    overflow: visible;
 }
 
 .gantt-bar {
-    position: absolute;
-    height: 14px;
-    top: 2px;
+    height: 18px;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -2235,6 +2237,21 @@ body.panel-resizing * {
     color: var(--white);
     text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
+
+/* Grid-based bar positioning */
+.gantt-row .gantt-bar {
+    grid-row: 1;
+}
+.gantt-row .gantt-bar.q1-1 { grid-column: 2 / span 1; }
+.gantt-row .gantt-bar.q1-2 { grid-column: 2 / span 2; }
+.gantt-row .gantt-bar.q1-3 { grid-column: 2 / span 3; }
+.gantt-row .gantt-bar.q1-4 { grid-column: 2 / span 4; }
+.gantt-row .gantt-bar.q2-1 { grid-column: 3 / span 1; }
+.gantt-row .gantt-bar.q2-2 { grid-column: 3 / span 2; }
+.gantt-row .gantt-bar.q2-3 { grid-column: 3 / span 3; }
+.gantt-row .gantt-bar.q3-1 { grid-column: 4 / span 1; }
+.gantt-row .gantt-bar.q3-2 { grid-column: 4 / span 2; }
+.gantt-row .gantt-bar.q4-1 { grid-column: 5 / span 1; }
 
 .gantt-bar.hiring {
     background: linear-gradient(90deg, #3b82f6, #60a5fa);
