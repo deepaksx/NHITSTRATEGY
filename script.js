@@ -3672,9 +3672,10 @@ class SidePanelHandler {
         const temp = document.createElement('div');
         temp.innerHTML = html;
 
-        // Check if content has a Gantt chart - if so, return as-is
+        // Check if content has special elements - if so, return as-is
         const ganttChart = temp.querySelector('.gantt-container');
-        if (ganttChart) {
+        const initiativeDetails = temp.querySelector('.initiative-detail');
+        if (ganttChart || initiativeDetails) {
             return html;
         }
 
