@@ -1208,14 +1208,8 @@ body.panel-resizing * {
 
 /* ===== Vision Slide - Dramatic Styling ===== */
 .vision-slide {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
     position: relative;
     overflow: hidden;
-}
-.vision-slide .section-tag {
-    background: rgba(139, 92, 246, 0.2) !important;
-    color: #a78bfa !important;
-    border-left-color: #8b5cf6 !important;
 }
 .vision-bg-effects {
     position: absolute;
@@ -1231,14 +1225,14 @@ body.panel-resizing * {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
     animation: pulse-glow 4s ease-in-out infinite;
 }
 @keyframes pulse-glow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
 }
 .vision-grid {
     position: absolute;
@@ -1247,9 +1241,9 @@ body.panel-resizing * {
     right: 0;
     bottom: 0;
     background-image:
-        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 .vision-content {
     position: relative;
@@ -1268,18 +1262,18 @@ body.panel-resizing * {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(99, 102, 241, 0.2));
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
     border: 1px solid rgba(139, 92, 246, 0.3);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     margin-bottom: 1rem;
 }
 .vision-badge .badge-icon {
-    color: #a78bfa;
+    color: #8b5cf6;
     font-size: 0.75rem;
 }
 .vision-badge span {
-    color: #c4b5fd;
+    color: #7c3aed;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -1288,7 +1282,7 @@ body.panel-resizing * {
 .vision-title {
     font-size: 3rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #a78bfa 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #6d28d9 50%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1308,39 +1302,40 @@ body.panel-resizing * {
 }
 .vision-statement {
     position: relative;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 2px solid rgba(139, 92, 246, 0.2);
     border-radius: 16px;
     padding: 2.5rem 3rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.15);
 }
 .quote-icon-left, .quote-icon-right {
     font-family: Georgia, serif;
-    font-size: 4rem;
+    font-size: 5rem;
     line-height: 1;
     color: #8b5cf6;
-    opacity: 0.3;
+    opacity: 0.2;
     position: absolute;
 }
-.quote-icon-left { top: 0.5rem; left: 1rem; }
-.quote-icon-right { bottom: -1rem; right: 1rem; }
+.quote-icon-left { top: 0.25rem; left: 1rem; }
+.quote-icon-right { bottom: -1.5rem; right: 1rem; }
 .vision-text {
     font-size: 1.375rem;
     font-weight: 400;
     line-height: 1.7;
-    color: #e2e8f0;
+    color: #334155;
     margin: 0;
     position: relative;
     z-index: 1;
 }
 .vision-text .highlight {
-    color: #a78bfa;
+    color: #7c3aed;
     font-weight: 600;
 }
 .mission-statement {
     max-width: 650px;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(100, 116, 139, 0.2);
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-left: 4px solid #10b981;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
     margin-bottom: 2rem;
@@ -1360,12 +1355,12 @@ body.panel-resizing * {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #10b981;
+    color: #059669;
 }
 .mission-statement p {
     font-size: 0.9375rem;
     line-height: 1.6;
-    color: #94a3b8;
+    color: #475569;
     margin: 0;
 }
 .vision-pillars-bar {
@@ -1384,28 +1379,28 @@ body.panel-resizing * {
     border: 1px solid;
 }
 .pillar-chip.governance {
-    background: rgba(99, 102, 241, 0.15);
-    color: #818cf8;
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
     border-color: rgba(99, 102, 241, 0.3);
 }
 .pillar-chip.innovation {
-    background: rgba(139, 92, 246, 0.15);
-    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
     border-color: rgba(139, 92, 246, 0.3);
 }
 .pillar-chip.security {
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
     border-color: rgba(239, 68, 68, 0.3);
 }
 .pillar-chip.data {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
     border-color: rgba(16, 185, 129, 0.3);
 }
 .pillar-chip.automation {
-    background: rgba(245, 158, 11, 0.15);
-    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
     border-color: rgba(245, 158, 11, 0.3);
 }
 
