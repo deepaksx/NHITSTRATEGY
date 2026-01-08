@@ -3479,29 +3479,7 @@ class SidePanelHandler {
                 <p>• Implementation Vendors</p>`
             },
             'appendix-c': {
-                title: 'Appendix C: Subsidiary Strategies',
-                content: `<ul class="detail-bullets">
-                    <li>Tailored IT strategies for each subsidiary addressing unique requirements and priorities</li>
-                    <li><strong>Subsidiaries Covered:</strong></li>
-                    <li>Emirates International Investment Company (EIIC) - Investment portfolio & financial systems</li>
-                    <li>Bloom Holding - Real estate, education, hospitality systems</li>
-                    <li>Emirates Food Industries (EFI) - Manufacturing & supply chain (Hayatna, National Feed)</li>
-                    <li>Exeed Industries - Industrial operations & project management</li>
-                    <li>FoodQuest - Food & Beverage POS, inventory, franchise management</li>
-                    <li>Petromal - Oil & Gas operations, field services</li>
-                    <li>Rise - Trading, distribution, healthcare systems</li>
-                    <li><strong>Contents per Subsidiary:</strong></li>
-                    <li>Current IT landscape assessment</li>
-                    <li>Subsidiary-specific challenges</li>
-                    <li>Alignment with Group IT strategy</li>
-                    <li>Priority initiatives & rollout timeline</li>
-                </ul>
-                <div class="detail-reference">
-                    <span class="ref-badge">Deloitte Deliverable</span>
-                </div>`
-            },
-            'appendix-d': {
-                title: 'Appendix D: Risk Register',
+                title: 'Appendix C: Risk Register',
                 content: `<div class="detail-reference">
                     <span class="ref-badge">Deloitte Assessment</span>
                     <span class="ref-category">Governance Tool</span>
@@ -3530,8 +3508,8 @@ class SidePanelHandler {
                 <p>• Target resolution dates</p>
                 <p><strong>Review Frequency:</strong> Bi-weekly at Steering Committee</p>`
             },
-            'appendix-e': {
-                title: 'Appendix E: Budget Details',
+            'appendix-d': {
+                title: 'Appendix D: Budget Details',
                 content: `<div class="detail-reference">
                     <span class="ref-badge">Financial Planning</span>
                     <span class="ref-category">Confidential</span>
