@@ -3430,7 +3430,7 @@ class SidePanelHandler {
                 </div>
                 <div class="gantt-milestone"><strong>Milestone:</strong> Treasury/Procurement Go-Live Q4 2028 | Deloitte Priority: P0</div>`
             },
-            // ===== Slide 21: Appendices =====
+            // ===== Slide 20: Appendices =====
             'appendix-a': {
                 title: 'Appendix A: Initiative Catalog',
                 content: `<div class="section-header">H = Hiring & People (4 Initiatives)</div>
