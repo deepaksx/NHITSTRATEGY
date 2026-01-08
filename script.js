@@ -1754,216 +1754,27 @@ class SidePanelHandler {
             },
             // ===== Slide 12: Year 1 Initiatives =====
             'y1-overview': {
-                title: 'Year 1 (2026) - Complete Timeline',
-                content: `<div class="gantt-container quarterly">
-                    <div class="gantt-header">
-                        <span class="gantt-header-label">Initiative</span>
-                        <span class="gantt-quarter">Q1</span>
-                        <span class="gantt-quarter">Q2</span>
-                        <span class="gantt-quarter">Q3</span>
-                        <span class="gantt-quarter">Q4</span>
-                    </div>
-                    <div class="gantt-year-labels">
-                        <span class="gantt-year-spacer"></span>
-                        <span class="gantt-year" style="grid-column: span 4;">2026</span>
-                    </div>
-                    <div class="gantt-section-header">PEOPLE & HIRING (H1-H4)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: Cyber Lead Hire</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-2">Recruit</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: Data/AI Lead Hire</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-2">Recruit</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: Business Analyst</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-1">Hire</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: PMO Lead</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-1">Hire</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: Cloud Engineer</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-1">Hire</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H2: Team Skilling</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar training span-4">Continuous Training</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H4: Performance KPIs</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">PROCESS (P1-P6)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P1: Governance Framework</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-1">Design</div></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P1: Steering Committee</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-1">Form</div></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-2">Operate</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P2: Data Governance</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Framework</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P3: IT/Security Architecture</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Define</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P5: Process Optimization</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-3">Optimize</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">P6: SharePoint Cleansing</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Clean</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">TECHNOLOGY (T1-T15)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T1: Document Mgmt System</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T3: Ticketing Rollout</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Rollout</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T4: Asset Management</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T5: L&D Platform</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-1">Deploy</div></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T6: IAM Solution</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar critical span-3">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T7: Oracle EPM</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar deployment span-2">Complete</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-2">Stabilize</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T8: Audit Platform</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-3">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T9: Knowledge Mgmt</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-1">Deploy</div></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T11: Network Monitoring</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T12: SOC/NOC Setup</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar critical span-2">Build</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T13: Network Segmentation</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar critical span-2">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">ERP STRATEGY (E)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: ERP Planning</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Plan</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: ERP Vendor Selection</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">RFP/Select</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-legend">
-                        <div class="gantt-legend-item"><span class="gantt-legend-color hiring"></span>Hiring</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color training"></span>Training</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color planning"></span>Planning</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color implementation"></span>Build</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color critical"></span>Security</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color deployment"></span>Go-Live</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color ongoing"></span>Operations</div>
-                    </div>
+                title: 'Year 1 (2026) - Overview',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Foundation Year</span>
+                    <span class="ref-category">MUST DO</span>
                 </div>
-                <div class="gantt-milestone"><strong>Year 1 Goal:</strong> Leadership hired, PMO operational, governance established, EPM live, security foundation built, core technology deployed</div>`
+                <p><strong>Year 1 Goal:</strong> Leadership hired, PMO operational, governance established, EPM live, security foundation built, core technology deployed.</p>
+                <p><strong>Key Focus Areas:</strong></p>
+                <ul class="detail-bullets">
+                    <li><strong>People & Hiring (H1-H4)</strong> - Hire Cyber Lead, Data/AI Lead, BA, PMO Lead, Cloud Engineer</li>
+                    <li><strong>Process (P1-P6)</strong> - Governance framework, Steering Committee, Data governance, IT architecture</li>
+                    <li><strong>Technology (T1-T13)</strong> - DMS, Ticketing, Asset Mgmt, IAM, Oracle EPM, SOC/NOC setup</li>
+                    <li><strong>ERP Strategy</strong> - Planning and vendor selection</li>
+                </ul>
+                <p><strong>Critical Milestones:</strong></p>
+                <ul class="detail-bullets">
+                    <li>Q1-Q2: Hire Cybersecurity Lead & Data/AI Lead</li>
+                    <li>Q2: Governance framework design complete</li>
+                    <li>Q3-Q4: BA & PMO hired, SOC/NOC setup begins</li>
+                    <li>Q4: Oracle EPM rollout complete</li>
+                </ul>
+                <p><em>See "Year 1 - Program" slide for detailed quarterly timeline.</em></p>`
             },
             'y1-hire-leads': {
                 title: 'Hire Critical Leadership',
@@ -2102,163 +1913,29 @@ class SidePanelHandler {
                 <p>• 100% endpoint coverage by Q4 2026</p>
                 <p>• 24/7 monitoring capability established</p>`
             },
-            // ===== Slide 13: Year 2 Initiatives =====
+            // ===== Slide 14: Year 2 Initiatives =====
             'y2-overview': {
-                title: 'Year 2 (2027) - Complete Timeline',
-                content: `<div class="gantt-container quarterly">
-                    <div class="gantt-header">
-                        <span class="gantt-header-label">Initiative</span>
-                        <span class="gantt-quarter">Q1</span>
-                        <span class="gantt-quarter">Q2</span>
-                        <span class="gantt-quarter">Q3</span>
-                        <span class="gantt-quarter">Q4</span>
-                    </div>
-                    <div class="gantt-year-labels">
-                        <span class="gantt-year-spacer"></span>
-                        <span class="gantt-year" style="grid-column: span 4;">2027</span>
-                    </div>
-                    <div class="gantt-section-header">PEOPLE & HIRING (H1-H4)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: Cyber Engineer</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: GRC Specialist</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: IDAM Specialist</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H2: Team Skilling</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar training span-4">Continuous Training</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H3: In-house Security</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">ERP & APPLICATIONS (T2, T10, T15, E)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T15: ERP Core Build</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-3">Build</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T15: ERP Data Migration</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar deployment span-2">Migrate</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T2: HRMS Config</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Configure</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T2: HRMS Go-Live</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar deployment span-2">Go-Live</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: Treasury Mgmt</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: Procurement (Ariba)</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-3">Implement</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T10: GRC Platform</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">TECHNOLOGY & INFRASTRUCTURE (T12, T14)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T12: SOC/NOC Ops</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">24/7 Operations</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T14: Cloud Strategy</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Plan</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T14: Cloud Migration</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Migrate</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">NAC Implementation</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar critical span-2">Deploy</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">DATA & AI</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">AI: GRC Analytics</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ai span-2">Build</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">AI: Audit Analytics</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ai span-2">Build</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-legend">
-                        <div class="gantt-legend-item"><span class="gantt-legend-color hiring"></span>Hiring</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color training"></span>Training</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color planning"></span>Planning</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color implementation"></span>Build</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color critical"></span>Security</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color deployment"></span>Go-Live</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color ongoing"></span>Operations</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color ai"></span>AI/Analytics</div>
-                    </div>
+                title: 'Year 2 (2027) - Overview',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Growth Year</span>
+                    <span class="ref-category">SHOULD DO</span>
                 </div>
-                <div class="gantt-milestone"><strong>Year 2 Goal:</strong> ERP core build complete, HRMS live, Treasury & Procurement deployed, cloud migration started, AI analytics operational</div>`
+                <p><strong>Year 2 Goal:</strong> ERP core build complete, HRMS live, Treasury & Procurement deployed, cloud migration started, AI analytics operational.</p>
+                <p><strong>Key Focus Areas:</strong></p>
+                <ul class="detail-bullets">
+                    <li><strong>People (H1-H3)</strong> - Cyber Engineer, GRC Specialist, IDAM Specialist operational</li>
+                    <li><strong>ERP & Apps (T2, T10, T15, E)</strong> - ERP core build, HRMS go-live, Treasury, Procurement, GRC</li>
+                    <li><strong>Technology (T12, T14)</strong> - SOC/NOC 24/7 operations, Cloud migration start</li>
+                    <li><strong>Data & AI</strong> - GRC Analytics, Audit Analytics</li>
+                </ul>
+                <p><strong>Critical Milestones:</strong></p>
+                <ul class="detail-bullets">
+                    <li>Q1-Q3: ERP Core Build & Data Migration</li>
+                    <li>Q1-Q3: HRMS Configuration & Go-Live</li>
+                    <li>Q2-Q4: SAP Ariba Procurement Implementation</li>
+                    <li>Q3-Q4: Cloud migration begins, AI analytics deployment</li>
+                </ul>
+                <p><em>See "Year 2 - Program" slide for detailed quarterly timeline.</em></p>`
             },
             'y2-erp': {
                 title: 'Core ERP Modernization',
@@ -2372,156 +2049,23 @@ class SidePanelHandler {
                 <p>• Zero Trust architecture implemented</p>
                 <p>• Full network visibility achieved</p>`
             },
-            // ===== Slide 14: Year 3 Initiatives =====
+            // ===== Slide 16: Year 3 Initiatives =====
             'y3-overview': {
-                title: 'Year 3 (2028) - Complete Timeline',
-                content: `<div class="gantt-container quarterly">
-                    <div class="gantt-header">
-                        <span class="gantt-header-label">Initiative</span>
-                        <span class="gantt-quarter">Q1</span>
-                        <span class="gantt-quarter">Q2</span>
-                        <span class="gantt-quarter">Q3</span>
-                        <span class="gantt-quarter">Q4</span>
-                    </div>
-                    <div class="gantt-year-labels">
-                        <span class="gantt-year-spacer"></span>
-                        <span class="gantt-year" style="grid-column: span 4;">2028</span>
-                    </div>
-                    <div class="gantt-section-header">PEOPLE & OPERATIONS</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H1: App Developer</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar hiring span-1">Hire</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">H2: Team Skilling</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar training span-4">Continuous Training</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">Full IT Team Ops</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">16 FTE Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">ERP & APPLICATIONS (T2, T15, E)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T15: ERP UAT</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Test</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T15: ERP Go-Live</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar deployment span-2">Go-Live</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: Entity Integration</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-1">Integrate</div></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: Treasury Go-Live</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar deployment span-2">Go-Live</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">E: Procurement Ops</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T10: GRC Operations</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">Operational</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">TECHNOLOGY & INFRASTRUCTURE (T12, T14)</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T14: Cloud Complete</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar implementation span-2">Complete</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-2">Cloud-First Ops</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">T12: SOC/NOC Mature</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-4">24/7 Mature Operations</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">ISO 27001 Cert</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar critical span-2">Certification</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-section-header">AUTOMATION & AI</div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">Hyper Automation</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ai span-4">End-to-End Automation</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">RPA Deployment</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ai span-3">Deploy & Scale</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">AI Use Case Scale</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ai span-2">Pilot</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-2">Scale Enterprise</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">AI Governance</span>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-2">Controls</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar ongoing span-2">Guardrails</div></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-task">Emerging Tech</span>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"><div class="gantt-bar planning span-3">Evaluate & Adopt</div></div>
-                        <div class="gantt-bar-cell"></div>
-                        <div class="gantt-bar-cell"></div>
-                    </div>
-                    <div class="gantt-legend">
-                        <div class="gantt-legend-item"><span class="gantt-legend-color hiring"></span>Hiring</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color training"></span>Training</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color planning"></span>Planning</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color implementation"></span>Build</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color critical"></span>Security</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color deployment"></span>Go-Live</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color ongoing"></span>Operations</div>
-                        <div class="gantt-legend-item"><span class="gantt-legend-color ai"></span>AI/Automation</div>
-                    </div>
+                title: 'Year 3 (2028) - Overview',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Optimization Year</span>
+                    <span class="ref-category">NICE TO HAVE</span>
                 </div>
-                <div class="gantt-milestone"><strong>Year 3 Goal:</strong> ERP & Treasury live, cloud-first achieved, ISO 27001 certified, AI/RPA scaled enterprise-wide, full 16 FTE team operational</div>`
+                <p><strong>Year 3 Goal:</strong> ERP & Treasury live, cloud-first achieved, ISO 27001 certified, AI/RPA scaled enterprise-wide, full 16 FTE team operational.</p>
+                <p><strong>Key Focus Areas:</strong></p>
+                <ul class="detail-bullets">
+                    <li><strong>People:</strong> App Developer hire, continuous team skilling, full 16 FTE operational</li>
+                    <li><strong>ERP & Applications:</strong> S/4 HANA UAT and Go-Live, Treasury Go-Live, Procurement operations</li>
+                    <li><strong>Infrastructure:</strong> Cloud migration complete, 24/7 SOC/NOC mature operations</li>
+                    <li><strong>Security:</strong> ISO 27001 certification achieved</li>
+                    <li><strong>Automation:</strong> Hyper-automation, RPA deployment, AI use cases scaled enterprise-wide</li>
+                </ul>
+                <p><em>See "Year 3 - Program" slide for detailed quarterly timeline.</em></p>`
             },
             'y3-treasury': {
                 title: 'Treasury & Procurement',
