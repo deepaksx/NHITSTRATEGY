@@ -539,29 +539,39 @@ body.panel-resizing * {
 }
 
 /* Initiative detail cards for subsidiary strategies */
-.initiative-detail {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
+.side-panel-content .initiative-detail {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 0.75rem;
     margin-bottom: 0.75rem;
+    border-left: 3px solid #3b82f6;
 }
-.initiative-detail p {
+.side-panel-content .initiative-detail p {
     margin-bottom: 0.25rem !important;
     font-size: 0.75rem !important;
     line-height: 1.5 !important;
+    color: #475569 !important;
 }
-.initiative-detail p:first-child {
+.side-panel-content .initiative-detail p:first-child {
     margin-bottom: 0.5rem !important;
     font-size: 0.8125rem !important;
-    color: var(--gray-800);
+    color: #1e293b !important;
+    font-weight: 600 !important;
 }
-.initiative-detail p:last-child {
+.side-panel-content .initiative-detail p:last-child {
     margin-bottom: 0 !important;
 }
-.initiative-detail em {
-    color: var(--accent);
+.side-panel-content .initiative-detail em {
+    color: #1e40af;
     font-style: normal;
+    font-weight: 600;
+}
+.side-panel-content h4 {
+    color: #3b82f6 !important;
+    font-size: 0.875rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.75rem !important;
     font-weight: 600;
 }
 
