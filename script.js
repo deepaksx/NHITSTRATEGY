@@ -2167,28 +2167,28 @@ class SidePanelHandler {
                     <p><strong>1. Data Governance & Data Management</strong></p>
                     <p>• <em>Challenge:</em> No unified data standards, manual analysis required</p>
                     <p>• <em>Solution:</em> Implement comprehensive data governance framework</p>
-                    <p>• <em>Timeline:</em> Q2-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q4 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>2. IT Maturity Assessment</strong></p>
                     <p>• <em>Challenge:</em> Lack of clear maturity level direction</p>
                     <p>• <em>Solution:</em> Assess IT landscape using international maturity models</p>
-                    <p>• <em>Timeline:</em> Q1-Q2 2025</p>
+                    <p>• <em>Timeline:</em> Q1-Q2 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>3. AI Strategy & Coordination</strong></p>
                     <p>• <em>Challenge:</em> Desire to implement AI (ChatGPT) without formal strategy</p>
                     <p>• <em>Solution:</em> Develop unified AI strategy with use case prioritization</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>4. AI Governance</strong></p>
                     <p>• <em>Challenge:</em> No formal AI governance framework</p>
                     <p>• <em>Solution:</em> Establish AI governance policies and standards</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                     <p>• <em>Dependencies:</em> AI Strategy completion</p>
                 </div>
 
@@ -2196,14 +2196,14 @@ class SidePanelHandler {
                     <p><strong>5. GRC Application System</strong></p>
                     <p>• <em>Challenge:</em> Manual compliance and data tasks</p>
                     <p>• <em>Solution:</em> Implement GRC platform with automated data integration</p>
-                    <p>• <em>Timeline:</em> Q4 2025-Q2 2026</p>
+                    <p>• <em>Timeline:</em> Q4 2026-Q2 2027</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>6. Continuous Cybersecurity Monitoring</strong></p>
                     <p>• <em>Challenge:</em> No periodic security assessments</p>
                     <p>• <em>Solution:</em> Implement monthly VA, quarterly VAPT, annual risk assessments</p>
-                    <p>• <em>Timeline:</em> Q2 2025 onwards (continuous)</p>
+                    <p>• <em>Timeline:</em> Q2 2026 onwards (continuous)</p>
                 </div>`
             },
             'sub-bloom': {
@@ -2220,42 +2220,42 @@ class SidePanelHandler {
                     <p><strong>1. People Plan Development</strong></p>
                     <p>• <em>Challenge:</em> Unclear roles and responsibilities, need for cybersecurity expert</p>
                     <p>• <em>Solution:</em> Define governance structure and hire dedicated security lead</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>2. Cyber & IT Governance Framework</strong></p>
                     <p>• <em>Challenge:</em> Siloed systems, fragmented data, no formal governance</p>
                     <p>• <em>Solution:</em> Develop comprehensive governance framework</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>3. Information Security Policy House</strong></p>
                     <p>• <em>Challenge:</em> No formalized security policies aligned with ISO 27001</p>
                     <p>• <em>Solution:</em> Develop and implement security policies and procedures</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>4. Data Classification and Labelling</strong></p>
                     <p>• <em>Challenge:</em> No data classification currently in place</p>
                     <p>• <em>Solution:</em> Implement comprehensive data classification framework</p>
-                    <p>• <em>Timeline:</em> Q4 2025-Q1 2026</p>
+                    <p>• <em>Timeline:</em> Q4 2026-Q1 2027</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>5. Infrastructure Redundancy and Continuity</strong></p>
                     <p>• <em>Challenge:</em> Single point of failure in internet connectivity, no DR</p>
                     <p>• <em>Solution:</em> Deploy redundancy (MPLS/internet lines) and DR with Moro Hub</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>6. SOC/NOC Implementation</strong></p>
                     <p>• <em>Challenge:</em> Need for network monitoring capabilities</p>
                     <p>• <em>Solution:</em> Implement SOC/NOC services with Moro cloud consolidation</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                 </div>`
             },
             'sub-entrust': {
@@ -2272,21 +2272,21 @@ class SidePanelHandler {
                     <p><strong>1. AI Strategy & Coordination</strong></p>
                     <p>• <em>Challenge:</em> Lack of unified AI strategy</p>
                     <p>• <em>Solution:</em> Develop AI strategy aligned with business objectives</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>2. AI Governance</strong></p>
                     <p>• <em>Challenge:</em> No formal AI governance for ChatGPT implementation</p>
                     <p>• <em>Solution:</em> Establish AI governance framework</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>3. AI-Driven Market Analysis</strong></p>
                     <p>• <em>Challenge:</em> Need for AI capabilities for market insights</p>
                     <p>• <em>Solution:</em> Implement AI-powered market analysis tools</p>
-                    <p>• <em>Timeline:</em> Q4 2025-Q2 2026</p>
+                    <p>• <em>Timeline:</em> Q4 2026-Q2 2027</p>
                     <p>• <em>Dependencies:</em> AI Strategy and Governance completion</p>
                 </div>
 
@@ -2311,35 +2311,35 @@ class SidePanelHandler {
                     <p><strong>1. Digital Maturity and Automation</strong></p>
                     <p>• <em>Challenge:</em> No framework to assess IT/security/automation maturity</p>
                     <p>• <em>Solution:</em> Define digital maturity framework and roadmap</p>
-                    <p>• <em>Timeline:</em> Q1-Q2 2025</p>
+                    <p>• <em>Timeline:</em> Q1-Q2 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>2. AI Strategy & Coordination</strong></p>
                     <p>• <em>Challenge:</em> Lack of AI strategy to support business objectives</p>
                     <p>• <em>Solution:</em> Develop comprehensive AI strategy</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>3. AI Governance</strong></p>
                     <p>• <em>Challenge:</em> No AI governance for desired ChatGPT implementation</p>
                     <p>• <em>Solution:</em> Establish AI governance policies</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>4. Implementation of Data Lakes/Warehouses</strong></p>
                     <p>• <em>Challenge:</em> Need for data-driven decision making</p>
                     <p>• <em>Solution:</em> Implement data lake/warehouse infrastructure</p>
-                    <p>• <em>Timeline:</em> Q3 2025-Q2 2026</p>
+                    <p>• <em>Timeline:</em> Q3 2026-Q2 2027</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>5. OT Lifecycle Management</strong></p>
                     <p>• <em>Challenge:</em> No formal OT system lifecycle management</p>
                     <p>• <em>Solution:</em> Define comprehensive OT lifecycle (projects, assets, assessments, vendors, risks)</p>
-                    <p>• <em>Timeline:</em> Q2-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q4 2026</p>
                 </div>
 
                 <p style="margin-top: 1rem;"><strong>Note:</strong> OT (Operational Technology) management is critical for industrial operations and requires specialized security considerations separate from IT systems.</p>`
@@ -2358,29 +2358,29 @@ class SidePanelHandler {
                     <p><strong>1. ERP Application Support Engineer</strong></p>
                     <p>• <em>Challenge:</em> Single point of failure for ERP support</p>
                     <p>• <em>Solution:</em> Build redundant support team, implement knowledge management</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
-                    <p>• <em>Note:</em> Oracle ERP (NetSuite) implementation expected Q2 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
+                    <p>• <em>Note:</em> Oracle ERP (NetSuite) implementation expected Q2 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>2. Cyber & IT Governance Framework</strong></p>
                     <p>• <em>Challenge:</em> Siloed systems, manual processes, risk of human error</p>
                     <p>• <em>Solution:</em> Develop comprehensive governance framework</p>
-                    <p>• <em>Timeline:</em> Q2-Q3 2025</p>
+                    <p>• <em>Timeline:</em> Q2-Q3 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>3. Order Automation</strong></p>
                     <p>• <em>Challenge:</em> Manual order management processes</p>
                     <p>• <em>Solution:</em> Implement automated order management system integrated with POS</p>
-                    <p>• <em>Timeline:</em> Q3-Q4 2025</p>
+                    <p>• <em>Timeline:</em> Q3-Q4 2026</p>
                 </div>
 
                 <div class="initiative-detail">
                     <p><strong>4. Video Surveillance Analytics</strong></p>
                     <p>• <em>Challenge:</em> Need for customer behavior insights</p>
                     <p>• <em>Solution:</em> Deploy video analytics for conversion ratio analysis</p>
-                    <p>• <em>Timeline:</em> Q4 2025-Q1 2026</p>
+                    <p>• <em>Timeline:</em> Q4 2026-Q1 2027</p>
                 </div>
 
                 <div class="initiative-detail">
@@ -2407,17 +2407,17 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High</span>
-                    <span class="metric">Timeline: Q2 2025 - Q3 2026</span>
+                    <span class="metric">Timeline: Q2 2026 - Q3 2027</span>
                 </div>
                 <p><strong>Objective:</strong> Add specialized resources to enhance department capabilities and eliminate single points of failure.</p>
                 <p><strong>Current Gap:</strong> Critical functions (Business Analysis, PMO, Cybersecurity) missing or inadequately defined. Multiple roles handled by same individuals.</p>
                 <h4 style="color: var(--accent-light); margin-top: 0.75rem;">Hiring Roadmap:</h4>
                 <table style="width: 100%; font-size: 0.625rem; margin-top: 0.5rem;">
                     <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;"><strong>Role</strong></td><td><strong>Timeline</strong></td><td><strong>Type</strong></td></tr>
-                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Cybersecurity Lead</td><td>Q2 2025</td><td>FTE In-House</td></tr>
-                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Data & AI Lead</td><td>Q2 2025</td><td>FTE In-House</td></tr>
-                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Business Analyst</td><td>Q3 2025</td><td>On-Demand → FTE</td></tr>
-                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">PMO Lead</td><td>Q3 2025</td><td>On-Demand</td></tr>
+                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Cybersecurity Lead</td><td>Q2 2026</td><td>FTE In-House</td></tr>
+                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Data & AI Lead</td><td>Q2 2026</td><td>FTE In-House</td></tr>
+                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Business Analyst</td><td>Q3 2026</td><td>On-Demand → FTE</td></tr>
+                    <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">PMO Lead</td><td>Q3 2026</td><td>On-Demand</td></tr>
                     <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Cloud Engineer</td><td>Q2 2026</td><td>On-Demand</td></tr>
                     <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">Network/Security Architect</td><td>Q3 2026</td><td>On-Demand</td></tr>
                     <tr style="border-bottom: 1px solid var(--gray-700);"><td style="padding: 0.25rem;">GRC Specialist</td><td>Q3 2026</td><td>On-Demand</td></tr>
@@ -2435,7 +2435,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High</span>
-                    <span class="metric">Timeline: Q1 2025 onwards (Continuous)</span>
+                    <span class="metric">Timeline: Q1 2026 onwards (Continuous)</span>
                 </div>
                 <p><strong>Objective:</strong> Close skills gaps through training and certification programs.</p>
                 <p><strong>Current Gap:</strong> No budget for training, certifications, or skill development. No structured career development or certification path.</p>
@@ -2458,12 +2458,12 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium-High</span>
-                    <span class="metric">Timeline: Q2-Q3 2025</span>
+                    <span class="metric">Timeline: Q2-Q3 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Build internal security capabilities to reduce vendor dependency.</p>
                 <p><strong>Current Gap:</strong> Strong dependency on third-party vendors for cybersecurity functions. No dedicated security team.</p>
                 <p><strong>Solution:</strong></p>
-                <p>• Hire Cybersecurity Lead (Q2 2025)</p>
+                <p>• Hire Cybersecurity Lead (Q2 2026)</p>
                 <p>• Hire Cybersecurity Engineer (Q3 2026)</p>
                 <p>• Transfer knowledge from vendors to internal team</p>
                 <p>• Establish security operations procedures</p>
@@ -2479,7 +2479,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q3 2025</span>
+                    <span class="metric">Timeline: Q3 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Implement KPI framework and performance management for IT team.</p>
                 <p><strong>Current Gap:</strong> No KPIs or performance tracking mechanism. No structured methodology to assess skill gaps.</p>
@@ -2507,7 +2507,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High (P0)</span>
-                    <span class="metric">Timeline: Q1-Q2 2025 (In Progress)</span>
+                    <span class="metric">Timeline: Q1-Q2 2026 (In Progress)</span>
                 </div>
                 <p><strong>Objective:</strong> Establish formal governance aligned with ISO 27001/38000 standards.</p>
                 <p><strong>Current Gap:</strong> No documented IT and security governance framework. Absence of formal cybersecurity governance. Policies developed but inconsistently applied.</p>
@@ -2533,7 +2533,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High</span>
-                    <span class="metric">Timeline: Q2-Q4 2025</span>
+                    <span class="metric">Timeline: Q2-Q4 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Implement data quality, security, and lifecycle management framework.</p>
                 <p><strong>Current Gap:</strong> Data Governance maturity at "Initial" level. No unified data standards. Data inconsistency and lack of readily available information.</p>
@@ -2555,7 +2555,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium-High</span>
-                    <span class="metric">Timeline: Q2-Q3 2025</span>
+                    <span class="metric">Timeline: Q2-Q3 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Create reference architecture for IT, security, network, and applications.</p>
                 <p><strong>Current Gap:</strong> Enterprise Architecture maturity at "Initial" level. No standardized approach to system design.</p>
@@ -2577,7 +2577,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q3 2025</span>
+                    <span class="metric">Timeline: Q3 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Implement access controls, visitor management, and surveillance for IT assets.</p>
                 <p><strong>Current Gap:</strong> Physical Security maturity at "Managed" level but needs enhancement for ISO 27001 compliance.</p>
@@ -2598,7 +2598,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q3 2025 - Q2 2026</span>
+                    <span class="metric">Timeline: Q3 2026 - Q2 2027</span>
                 </div>
                 <p><strong>Objective:</strong> Streamline and automate manual processes across IT operations.</p>
                 <p><strong>Current Gap:</strong> Optimized Workflows maturity at "Initial" level. Limited automation leads to time-consuming manual processes.</p>
@@ -2619,7 +2619,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Low-Medium</span>
-                    <span class="metric">Timeline: Q4 2025</span>
+                    <span class="metric">Timeline: Q4 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Archive or delete outdated SharePoint data to improve data quality and reduce costs.</p>
                 <p><strong>Current Gap:</strong> Accumulated legacy data in SharePoint causing storage bloat and data quality issues.</p>
@@ -2686,7 +2686,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q2 2025</span>
+                    <span class="metric">Timeline: Q2 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Roll out IT ticketing system (ServiceDesk Plus) to all employees across the organization.</p>
                 <p><strong>Current Gap:</strong> IT Service Management at "Managed" level but not fully deployed to all users.</p>
@@ -2708,7 +2708,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q3 2025</span>
+                    <span class="metric">Timeline: Q3 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Implement comprehensive IT asset lifecycle management system.</p>
                 <p><strong>Current Gap:</strong> Asset Management at "Managed" level but lacks full lifecycle visibility and automation.</p>
@@ -2730,7 +2730,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q4 2025</span>
+                    <span class="metric">Timeline: Q4 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Deploy Learning Management System (LMS) for structured training and skill development.</p>
                 <p><strong>Current Gap:</strong> Formalized IT Training "Doesn't exist". No budget for training or certifications.</p>
@@ -2774,7 +2774,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High (P0)</span>
-                    <span class="metric">Timeline: Q1-Q4 2025 (In Progress)</span>
+                    <span class="metric">Timeline: Q1-Q4 2026 (In Progress)</span>
                 </div>
                 <p><strong>Objective:</strong> Implement Oracle EPM for enterprise performance management and financial analytics.</p>
                 <p><strong>Current Gap:</strong> Business Intelligence at "Initial" level. No tools for planning, forecasting, budgeting. Slow close processes.</p>
@@ -2783,7 +2783,7 @@ class SidePanelHandler {
                 <p>• Real-time financial reporting</p>
                 <p>• Standardized budgeting with audit trails</p>
                 <p>• Advanced forecasting with predictive analytics</p>
-                <p>• Tax module (Q3-Q4 2025)</p>
+                <p>• Tax module (Q3-Q4 2026)</p>
                 <p>• Consolidation and close management</p>
                 <p><strong>Investment:</strong> Covered under EPM implementation budget</p>
                 <p><strong>Impact:</strong> Real-time financial reporting, faster close, better forecasting</p>`
@@ -2818,7 +2818,7 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric">Priority: Medium</span>
-                    <span class="metric">Timeline: Q4 2025</span>
+                    <span class="metric">Timeline: Q4 2026</span>
                 </div>
                 <p><strong>Objective:</strong> Implement knowledge base platform for IT documentation and self-service.</p>
                 <p><strong>Current Gap:</strong> Knowledge Management "Doesn't exist". Critical knowledge in individuals' heads.</p>
@@ -2953,12 +2953,12 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High (P0)</span>
-                    <span class="metric">Timeline: 2025-2027 (Phased)</span>
+                    <span class="metric">Timeline: 2026-2028 (Phased)</span>
                 </div>
                 <p><strong>Objective:</strong> Modernize enterprise resource planning systems for integrated business processes.</p>
                 <p><strong>Current Gap:</strong> ERP Core at maturity level 2. Heavy reliance on manual processes. Poor master data management.</p>
                 <p><strong>Implementation Phases:</strong></p>
-                <p>• <strong>Phase 1 (2025):</strong> Oracle EPM - Financial planning & analytics</p>
+                <p>• <strong>Phase 1 (2026):</strong> Oracle EPM - Financial planning & analytics</p>
                 <p>• <strong>Phase 2 (2026):</strong> ERP Core Upgrade (S/4 HANA)</p>
                 <p>• <strong>Phase 3 (2026-27):</strong> HRMS Implementation</p>
                 <p>• <strong>Phase 4 (2027):</strong> Treasury & Procurement</p>
@@ -2975,11 +2975,11 @@ class SidePanelHandler {
                 </div>
                 <div class="detail-metrics">
                     <span class="metric critical">Priority: High</span>
-                    <span class="metric">Timeline: 2025-2027</span>
+                    <span class="metric">Timeline: 2026-2028</span>
                 </div>
                 <p><strong>Objective:</strong> Comprehensive ERP modernization across finance, HR, treasury, and procurement.</p>
                 <h4 style="color: var(--accent-light); margin-top: 0.75rem;">ERP Modules:</h4>
-                <p><strong>1. Oracle EPM</strong> (Q1-Q4 2025)</p>
+                <p><strong>1. Oracle EPM</strong> (Q1-Q4 2026)</p>
                 <p>• Financial planning, budgeting, forecasting</p>
                 <p>• Real-time reporting and consolidation</p>
                 <p><strong>2. S/4 HANA Core ERP</strong> (Q1-Q3 2026)</p>
