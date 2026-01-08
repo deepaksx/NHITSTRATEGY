@@ -1103,6 +1103,9 @@ body.panel-resizing * {
 /* Hire Type Badge */
 .hire-type { font-size: 0.5625rem; color: var(--gray-500); background: var(--gray-100); padding: 0.125rem 0.375rem; border-radius: 3px; margin-top: 0.25rem; display: inline-block; }
 
+/* Deloitte Note */
+.deloitte-note { font-size: 0.625rem; font-weight: 400; color: var(--accent); font-style: italic; }
+
 /* ===== Pillars Grid ===== */
 .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; width: 100%; }
 .pillar-card { background: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-200); box-shadow: var(--shadow-sm); }
