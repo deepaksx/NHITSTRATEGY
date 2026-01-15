@@ -5214,10 +5214,12 @@ class SidePanelHandler {
 
     bindEvents() {
         // Click on clickable items
+        console.log('SidePanelHandler: Binding events to', this.clickableItems.length, 'clickable items');
         this.clickableItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const detailId = item.dataset.detail;
+                console.log('SidePanelHandler: Clicked item with detail:', detailId);
                 this.toggleDetail(detailId, item);
             });
         });

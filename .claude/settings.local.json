@@ -13,7 +13,9 @@
       "Bash(pip install:*)",
       "Bash(powershell -Command \"\\(Get-Content index.html\\) -replace ''<span class=\"\"tab-count\"\">.*?</span>'', '''' | Set-Content index.html\")",
       "Bash(curl:*)",
-      "WebFetch(domain:deepaksx.github.io)"
+      "WebFetch(domain:deepaksx.github.io)",
+      "Bash(node -c:*)",
+      "Bash(node:*)"
     ]
   }
 }
