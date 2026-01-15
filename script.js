@@ -5214,12 +5214,10 @@ class SidePanelHandler {
 
     bindEvents() {
         // Click on clickable items
-        console.log('SidePanelHandler: Binding events to', this.clickableItems.length, 'clickable items');
         this.clickableItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const detailId = item.dataset.detail;
-                console.log('SidePanelHandler: Clicked item with detail:', detailId);
                 this.toggleDetail(detailId, item);
             });
         });
@@ -5407,17 +5405,6 @@ class SidePanelHandler {
 
 // ===== Initialize Everything =====
 document.addEventListener('DOMContentLoaded', () => {
-    // DEBUG: Global click handler to see what's being clicked
-    document.addEventListener('click', (e) => {
-        const target = e.target;
-        const parent = target.parentElement;
-        const grandparent = parent ? parent.parentElement : null;
-        console.log('Global click on:', target.tagName, 'class:', target.className);
-        console.log('  Parent:', parent?.tagName, 'class:', parent?.className);
-        console.log('  Grandparent:', grandparent?.tagName, 'class:', grandparent?.className);
-        console.log('  Closest .clickable-item:', target.closest('.clickable-item'));
-    }, true);  // Use capture phase
-
     // Initialize preloader
     new Preloader();
 

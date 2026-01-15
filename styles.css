@@ -262,6 +262,7 @@ body {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
     transform: translateX(40px);
     padding: 70px 2rem 1.5rem;
@@ -270,7 +271,7 @@ body {
     justify-content: flex-start;
     padding-left: 3rem;
 }
-.slide.active { opacity: 1; visibility: visible; transform: translateX(0); }
+.slide.active { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(0); }
 .slide.prev { transform: translateX(-40px); }
 .slide.next-incoming { transform: translateX(40px); }
 
