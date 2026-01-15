@@ -1030,6 +1030,252 @@ class SidePanelHandler {
                     <span class="ref-badge">Financial Excellence</span>
                 </div>`
             },
+            // ===== Slide 9: Future Target Team - New Hires Justification =====
+            // Year 1 New Hires
+            'new-security-lead-y1': {
+                title: 'Security Lead (Year 1)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>No dedicated cybersecurity leadership exists today</li>
+                    <li>Security operations are entirely outsourced with no internal ownership</li>
+                    <li>Critical exposure to cyber threats and compliance risks</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Build and lead the cybersecurity function</li>
+                    <li>Establish security governance and policies</li>
+                    <li>Drive ISO 27001 certification</li>
+                    <li>Implement SIEM and 24/7 monitoring capabilities</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Reduce cyber risk exposure</li>
+                    <li>Ensure regulatory compliance</li>
+                    <li>Protect company reputation and assets</li>
+                    <li><strong>Timing:</strong> Q2 2026</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Deloitte Issue #1, #26, #27</span>
+                </div>`
+            },
+            'new-data-ai-lead-y1': {
+                title: 'Data & AI Lead (Year 1)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>No formal AI strategy or governance exists</li>
+                    <li>Data remains siloed across multiple systems</li>
+                    <li>No centralized data platform (data lake/warehouse)</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Develop and execute AI/ML strategy</li>
+                    <li>Establish data governance framework</li>
+                    <li>Build enterprise data platform</li>
+                    <li>Enable data-driven decision making</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Unlock value from organizational data</li>
+                    <li>Enable predictive analytics</li>
+                    <li>Support digital transformation initiatives</li>
+                    <li><strong>Timing:</strong> Q2 2026</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Deloitte Issue #55, #56, #57</span>
+                </div>`
+            },
+            'new-pmo-lead-y1': {
+                title: 'PMO Lead (Year 1)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>No Project Management Office exists</li>
+                    <li>Projects managed ad-hoc without standards</li>
+                    <li>Projects consistently delivered late and over budget</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Establish PMO function and governance</li>
+                    <li>Define project management standards</li>
+                    <li>Manage project portfolio and prioritization</li>
+                    <li>Track and report on transformation progress</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Improved project success rates</li>
+                    <li>Better resource allocation</li>
+                    <li>Visibility into transformation progress</li>
+                    <li><strong>Timing:</strong> Q3 2026</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Deloitte Issue #1, #11, #16, #17</span>
+                </div>`
+            },
+            // Year 2 New Hires
+            'new-security-engineer-y2': {
+                title: 'Security Engineer (Year 2)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Security Lead needs dedicated technical support</li>
+                    <li>Growing infrastructure requires hands-on security operations</li>
+                    <li>24/7 monitoring capability requires additional staff</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Implement and manage security tools (SIEM, EDR, IAM)</li>
+                    <li>Conduct vulnerability assessments</li>
+                    <li>Monitor and respond to security incidents</li>
+                    <li>Support ISO 27001 compliance activities</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Enhanced threat detection capabilities</li>
+                    <li>Faster incident response times</li>
+                    <li>Reduced dependency on external vendors</li>
+                    <li><strong>Timing:</strong> Q1 2027</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-data-analyst-y2': {
+                title: 'Data/AI Analyst (Year 2)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Data platform implementation requires dedicated resources</li>
+                    <li>Growing analytics demand across business units</li>
+                    <li>AI initiatives need specialized technical support</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Develop dashboards and reports</li>
+                    <li>Build and maintain data pipelines</li>
+                    <li>Support AI/ML model development</li>
+                    <li>Ensure data quality and governance</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Faster analytics delivery to business</li>
+                    <li>Improved data quality and accessibility</li>
+                    <li>Enable self-service analytics</li>
+                    <li><strong>Timing:</strong> Q1 2027</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-pmo-coordinator-y2': {
+                title: 'PMO Coordinator (Year 2)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Transformation projects increasing in volume and complexity</li>
+                    <li>PMO Lead needs administrative and coordination support</li>
+                    <li>More subsidiaries being onboarded to PMO standards</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Project scheduling and resource coordination</li>
+                    <li>Status reporting and documentation</li>
+                    <li>Meeting facilitation and follow-up</li>
+                    <li>PMO process administration</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>PMO Lead freed for strategic work</li>
+                    <li>Better project tracking and visibility</li>
+                    <li>Improved stakeholder communication</li>
+                    <li><strong>Timing:</strong> Q2 2027</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-it-ops-y2': {
+                title: 'IT Operations Staff (Year 2)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Growing infrastructure from cloud adoption and new systems</li>
+                    <li>Increased support demand from transformation projects</li>
+                    <li>Need to reduce single points of failure in operations</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Infrastructure monitoring and maintenance</li>
+                    <li>User support and helpdesk services</li>
+                    <li>System administration and updates</li>
+                    <li>Backup and disaster recovery operations</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Improved system uptime and reliability</li>
+                    <li>Faster incident resolution times</li>
+                    <li>Better coverage for operational support</li>
+                    <li><strong>Timing:</strong> Q2 2027</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            // Year 3 New Hires
+            'new-security-engineer-y3': {
+                title: 'Second Security Engineer (Year 3)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Full 24/7 SOC coverage requires additional staff</li>
+                    <li>Expanded infrastructure and cloud adoption</li>
+                    <li>Advanced security capabilities require specialization</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Cloud security and DevSecOps</li>
+                    <li>Advanced threat hunting and analysis</li>
+                    <li>Security automation and orchestration</li>
+                    <li>Security architecture reviews</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>True 24/7 security coverage</li>
+                    <li>Specialized cloud security expertise</li>
+                    <li>Proactive threat prevention</li>
+                    <li><strong>Timing:</strong> Q1 2028</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-data-analyst-y3': {
+                title: 'Second Data/AI Analyst (Year 3)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Maturing data platform requires more capacity</li>
+                    <li>AI adoption expanding across business units</li>
+                    <li>Advanced analytics demand increasing</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Advanced analytics and ML model development</li>
+                    <li>Data product ownership</li>
+                    <li>Business intelligence optimization</li>
+                    <li>AI solution implementation</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Scaled analytics capabilities</li>
+                    <li>More AI use cases deployed</li>
+                    <li>Faster time-to-insight</li>
+                    <li><strong>Timing:</strong> Q1 2028</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-pmo-coordinator-y3': {
+                title: 'Second PMO Coordinator (Year 3)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Full transformation portfolio requires dedicated support</li>
+                    <li>All subsidiaries under PMO governance</li>
+                    <li>Continuous improvement initiatives need coordination</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Portfolio analytics and reporting</li>
+                    <li>Process improvement facilitation</li>
+                    <li>Training and onboarding support</li>
+                    <li>Cross-subsidiary coordination</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Enterprise-wide project visibility</li>
+                    <li>Mature PMO operations</li>
+                    <li>Sustainable governance model</li>
+                    <li><strong>Timing:</strong> Q2 2028</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
+            'new-architecture-y3': {
+                title: 'Architecture Team (Year 3)',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Why This Role is Critical:</strong></li>
+                    <li>Complex technology landscape requires architectural oversight</li>
+                    <li>ERP modernization needs solution architecture</li>
+                    <li>Cloud and integration patterns require standards</li>
+                    <li><strong>Key Responsibilities:</strong></li>
+                    <li>Enterprise Architecture governance</li>
+                    <li>Technology standards and roadmaps</li>
+                    <li>Solution design for major initiatives</li>
+                    <li>Integration architecture patterns</li>
+                    <li><strong>Business Impact:</strong></li>
+                    <li>Coherent technology landscape</li>
+                    <li>Reduced technical debt</li>
+                    <li>Better technology investment decisions</li>
+                    <li><strong>Timing:</strong> Q1 2028</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Team Scaling Plan</span>
+                </div>`
+            },
             // ===== Slide 11: Hiring Roadmap =====
             'hire-pmo': {
                 title: 'PMO Lead - Timeline',
@@ -5192,6 +5438,17 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             const detailKey = btn.getAttribute('data-detail');
+            if (detailKey && sidePanel) {
+                sidePanel.showDetail(detailKey);
+            }
+        });
+    });
+
+    // Handle clickable NEW badges in org chart
+    document.querySelectorAll('.clickable-badge').forEach(badge => {
+        badge.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const detailKey = badge.getAttribute('data-detail');
             if (detailKey && sidePanel) {
                 sidePanel.showDetail(detailKey);
             }

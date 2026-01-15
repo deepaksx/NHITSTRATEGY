@@ -1997,6 +1997,23 @@ body.panel-resizing * {
     text-transform: uppercase;
 }
 
+/* Clickable NEW badges */
+.org-badge.clickable-badge {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.org-badge.clickable-badge:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background: var(--primary);
+}
+
+.org-badge.clickable-badge:active {
+    transform: scale(1.05);
+}
+
 .org-level {
     display: flex;
     flex-wrap: wrap;
