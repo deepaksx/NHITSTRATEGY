@@ -5407,6 +5407,11 @@ class SidePanelHandler {
 
 // ===== Initialize Everything =====
 document.addEventListener('DOMContentLoaded', () => {
+    // DEBUG: Global click handler to see what's being clicked
+    document.addEventListener('click', (e) => {
+        console.log('Global click on:', e.target.tagName, e.target.className, 'closest clickable:', e.target.closest('.clickable-item'));
+    }, true);  // Use capture phase
+
     // Initialize preloader
     new Preloader();
 
