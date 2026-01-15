@@ -5213,14 +5213,15 @@ class SidePanelHandler {
     }
 
     bindEvents() {
-        // Click on clickable items
-        this.clickableItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+        // Click on clickable items - use event delegation for reliability
+        document.addEventListener('click', (e) => {
+            const clickableItem = e.target.closest('.clickable-item');
+            console.log('Document click, target:', e.target.tagName, 'clickableItem:', clickableItem?.dataset?.detail);
+            if (clickableItem && clickableItem.dataset.detail) {
                 e.stopPropagation();
-                const detailId = item.dataset.detail;
-                console.log('Click detected on:', detailId, 'activeItem:', this.activeItem);
-                this.toggleDetail(detailId, item);
-            });
+                const detailId = clickableItem.dataset.detail;
+                this.toggleDetail(detailId, clickableItem);
+            }
         });
 
         // Close button
