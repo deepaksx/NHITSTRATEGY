@@ -1278,29 +1278,35 @@ class SidePanelHandler {
             },
             // EFI IT Partnership
             'efi-collaboration': {
-                title: 'EFI IT Partnership Model',
+                title: 'EFI IT Partnership - Strategic Value',
                 content: `<ul class="detail-bullets">
-                    <li><strong>Strategic Approach:</strong></li>
-                    <li>EFI (Emirates Food Industries) has a mature, capable IT team</li>
-                    <li>NH IT team will work as ONE unified team with EFI IT</li>
-                    <li>EFI IT experts serve as mentors for operational activities</li>
-                    <li><strong>Collaboration Model:</strong></li>
-                    <li>NH IT staff report to EFI IT experts for day-to-day operations</li>
-                    <li>EFI provides guidance, best practices, and knowledge transfer</li>
-                    <li>Joint problem-solving and incident response</li>
-                    <li>Shared tools, processes, and documentation</li>
-                    <li><strong>Key Benefits:</strong></li>
-                    <li>Accelerated capability building through mentorship</li>
-                    <li>Leverage EFI's proven operational expertise</li>
-                    <li>Faster time-to-competency for NH IT team</li>
-                    <li>Consistent IT practices across subsidiaries</li>
-                    <li>Reduced learning curve and operational risks</li>
-                    <li><strong>Note:</strong></li>
-                    <li>This partnership is IN ADDITION to the new hires shown</li>
-                    <li>EFI mentorship enhances effectiveness of the entire team</li>
+                    <li><strong>💡 The Opportunity:</strong></li>
+                    <li>EFI has a proven, mature IT team with years of operational excellence</li>
+                    <li>This expertise is an EXISTING GROUP ASSET - ready to leverage NOW</li>
+                    <li>Why build from scratch when we can accelerate with internal expertise?</li>
+                    <li><strong>🎯 Strategic Value Proposition:</strong></li>
+                    <li><span style="color: #16a34a; font-weight: 600;">Cost Avoidance:</span> Reduce external consulting dependency by 40-60%</li>
+                    <li><span style="color: #16a34a; font-weight: 600;">Speed to Value:</span> 6-12 months faster capability building vs. standalone approach</li>
+                    <li><span style="color: #16a34a; font-weight: 600;">Risk Reduction:</span> Proven practices reduce operational failures and incidents</li>
+                    <li><span style="color: #16a34a; font-weight: 600;">Knowledge Retention:</span> Expertise stays within the Group, not with vendors</li>
+                    <li><strong>🤝 How It Works:</strong></li>
+                    <li>NH IT team reports to EFI IT experts for operational activities</li>
+                    <li>EFI mentors guide day-to-day decisions and problem-solving</li>
+                    <li>Shared tools, processes, and documentation across teams</li>
+                    <li>Joint incident response and continuous improvement</li>
+                    <li><strong>📈 Expected Outcomes:</strong></li>
+                    <li>NH IT achieves operational maturity in Year 1 (vs. Year 2-3 alone)</li>
+                    <li>Consistent IT service quality across NH and EFI</li>
+                    <li>Stronger Group-wide IT capability and resilience</li>
+                    <li>Foundation for future shared services model</li>
+                    <li><strong>⚡ Why Now:</strong></li>
+                    <li>New hires need guidance - EFI mentorship ensures success</li>
+                    <li>Transformation initiatives require experienced oversight</li>
+                    <li>This is IN ADDITION to planned hires - maximizes their effectiveness</li>
                 </ul>
                 <div class="detail-reference">
-                    <span class="ref-badge">Operational Excellence Strategy</span>
+                    <span class="ref-badge">Strategic Initiative</span>
+                    <span class="ref-badge" style="background: #16a34a;">Executive Priority</span>
                 </div>`
             },
             // ===== Slide 11: Hiring Roadmap =====
