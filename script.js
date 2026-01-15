@@ -5409,7 +5409,13 @@ class SidePanelHandler {
 document.addEventListener('DOMContentLoaded', () => {
     // DEBUG: Global click handler to see what's being clicked
     document.addEventListener('click', (e) => {
-        console.log('Global click on:', e.target.tagName, e.target.className, 'closest clickable:', e.target.closest('.clickable-item'));
+        const target = e.target;
+        const parent = target.parentElement;
+        const grandparent = parent ? parent.parentElement : null;
+        console.log('Global click on:', target.tagName, 'class:', target.className);
+        console.log('  Parent:', parent?.tagName, 'class:', parent?.className);
+        console.log('  Grandparent:', grandparent?.tagName, 'class:', grandparent?.className);
+        console.log('  Closest .clickable-item:', target.closest('.clickable-item'));
     }, true);  // Use capture phase
 
     // Initialize preloader
