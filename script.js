@@ -5218,6 +5218,7 @@ class SidePanelHandler {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const detailId = item.dataset.detail;
+                console.log('Click detected on:', detailId, 'activeItem:', this.activeItem);
                 this.toggleDetail(detailId, item);
             });
         });
