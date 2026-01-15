@@ -5216,7 +5216,10 @@ class SidePanelHandler {
         // Click on clickable items - use event delegation for reliability
         document.addEventListener('click', (e) => {
             const clickableItem = e.target.closest('.clickable-item');
-            console.log('Document click, target:', e.target.tagName, 'clickableItem:', clickableItem?.dataset?.detail);
+            const parent = e.target.parentElement;
+            console.log('Click target:', e.target.tagName, e.target.className);
+            console.log('Parent:', parent?.tagName, parent?.className);
+            console.log('Closest .clickable-item:', clickableItem, 'detail:', clickableItem?.dataset?.detail);
             if (clickableItem && clickableItem.dataset.detail) {
                 e.stopPropagation();
                 const detailId = clickableItem.dataset.detail;
