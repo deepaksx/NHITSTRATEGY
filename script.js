@@ -1276,6 +1276,33 @@ class SidePanelHandler {
                     <span class="ref-badge">Team Scaling Plan</span>
                 </div>`
             },
+            // EFI IT Partnership
+            'efi-collaboration': {
+                title: 'EFI IT Partnership Model',
+                content: `<ul class="detail-bullets">
+                    <li><strong>Strategic Approach:</strong></li>
+                    <li>EFI (Emirates Food Industries) has a mature, capable IT team</li>
+                    <li>NH IT team will work as ONE unified team with EFI IT</li>
+                    <li>EFI IT experts serve as mentors for operational activities</li>
+                    <li><strong>Collaboration Model:</strong></li>
+                    <li>NH IT staff report to EFI IT experts for day-to-day operations</li>
+                    <li>EFI provides guidance, best practices, and knowledge transfer</li>
+                    <li>Joint problem-solving and incident response</li>
+                    <li>Shared tools, processes, and documentation</li>
+                    <li><strong>Key Benefits:</strong></li>
+                    <li>Accelerated capability building through mentorship</li>
+                    <li>Leverage EFI's proven operational expertise</li>
+                    <li>Faster time-to-competency for NH IT team</li>
+                    <li>Consistent IT practices across subsidiaries</li>
+                    <li>Reduced learning curve and operational risks</li>
+                    <li><strong>Note:</strong></li>
+                    <li>This partnership is IN ADDITION to the new hires shown</li>
+                    <li>EFI mentorship enhances effectiveness of the entire team</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Operational Excellence Strategy</span>
+                </div>`
+            },
             // ===== Slide 11: Hiring Roadmap =====
             'hire-pmo': {
                 title: 'PMO Lead - Timeline',
