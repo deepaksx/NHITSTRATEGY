@@ -173,6 +173,9 @@ class PresentationController {
             window.sidePanel.closePanel();
         }
 
+        // Reset accordion states when navigating to any slide
+        this.resetAccordionStates(slideNum);
+
         this.isAnimating = true;
         const direction = slideNum > this.currentSlide ? 'next' : 'prev';
 
@@ -205,6 +208,46 @@ class PresentationController {
             currentSlideEl.classList.remove('prev', 'next-incoming');
             this.isAnimating = false;
         }, 500);
+    }
+
+    resetAccordionStates(slideNum) {
+        // Get the target slide element
+        const targetSlide = this.slides[slideNum - 1];
+        if (!targetSlide) return;
+
+        // Find all accordions in the target slide
+        const accordions = targetSlide.querySelectorAll('.h-accordion');
+        accordions.forEach(accordion => {
+            const items = accordion.querySelectorAll('.h-accordion-item');
+            items.forEach((item, index) => {
+                // Reset to first item active
+                if (index === 0) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        });
+
+        // Also reset any tab states in the slide
+        const tabContents = targetSlide.querySelectorAll('.slide-tab-content');
+        const tabButtons = targetSlide.querySelectorAll('.slide-tab');
+        if (tabContents.length > 0) {
+            tabContents.forEach((content, index) => {
+                if (index === 0) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+            tabButtons.forEach((btn, index) => {
+                if (index === 0) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
     }
 
     updateUI() {
@@ -2086,6 +2129,87 @@ class SidePanelHandler {
                 <p>• Zero Trust architecture implemented</p>
                 <p>• Full network visibility achieved</p>`
             },
+            'y2-people': {
+                title: 'Year 2 - People & Operations',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Team Building</span>
+                    <span class="ref-category">Year 2 Priority</span>
+                </div>
+                <p><strong>Focus:</strong> Expand technical capabilities with specialist hires and establish fully operational security team.</p>
+                <p><strong>Key Hires (H1):</strong></p>
+                <ul class="detail-bullets">
+                    <li><strong>Cyber Engineer:</strong> Hands-on security implementation and monitoring</li>
+                    <li><strong>GRC Specialist:</strong> Governance, risk, and compliance management</li>
+                    <li><strong>IDAM Specialist:</strong> Identity and access management operations</li>
+                </ul>
+                <p><strong>Team Development (H2):</strong></p>
+                <ul class="detail-bullets">
+                    <li>Continuous skilling and certifications program</li>
+                    <li>Cross-training across security domains</li>
+                    <li>Vendor certification tracks (Microsoft, Cisco, etc.)</li>
+                </ul>
+                <p><strong>Security Team (H3):</strong></p>
+                <ul class="detail-bullets">
+                    <li>In-house security team fully operational</li>
+                    <li>24/7 monitoring capability established</li>
+                    <li>Incident response procedures in place</li>
+                </ul>`
+            },
+            'y2-data-ai': {
+                title: 'Year 2 - Data & AI Initiatives',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Analytics & Intelligence</span>
+                    <span class="ref-category">Year 2 Priority</span>
+                </div>
+                <p><strong>Focus:</strong> Deploy analytics capabilities for governance, risk, and internal audit functions.</p>
+                <p><strong>GRC Analytics & BI:</strong></p>
+                <ul class="detail-bullets">
+                    <li>Risk dashboards and reporting</li>
+                    <li>Compliance monitoring analytics</li>
+                    <li>Control effectiveness metrics</li>
+                    <li>Real-time risk indicators</li>
+                </ul>
+                <p><strong>Internal Audit Analytics:</strong></p>
+                <ul class="detail-bullets">
+                    <li>Automated audit sampling</li>
+                    <li>Continuous monitoring dashboards</li>
+                    <li>Exception detection and alerting</li>
+                    <li>Audit trail analysis</li>
+                </ul>
+                <p><strong>Expected Outcomes:</strong></p>
+                <ul class="detail-bullets">
+                    <li>Data-driven decision making</li>
+                    <li>Proactive risk identification</li>
+                    <li>Reduced manual audit effort</li>
+                </ul>`
+            },
+            'y3-people': {
+                title: 'Year 3 - People & Operations',
+                content: `<div class="detail-reference">
+                    <span class="ref-badge">Team Optimization</span>
+                    <span class="ref-category">Year 3 Priority</span>
+                </div>
+                <p><strong>Focus:</strong> Complete team buildout and achieve full operational maturity.</p>
+                <p><strong>App Developer (H1):</strong></p>
+                <ul class="detail-bullets">
+                    <li>On-demand hiring based on project needs</li>
+                    <li>Custom application development capability</li>
+                    <li>Integration and automation development</li>
+                </ul>
+                <p><strong>Team Development (H2):</strong></p>
+                <ul class="detail-bullets">
+                    <li>Advanced certifications program</li>
+                    <li>Leadership development tracks</li>
+                    <li>Specialized skill enhancement</li>
+                </ul>
+                <p><strong>Full IT Team (16 FTE):</strong></p>
+                <ul class="detail-bullets">
+                    <li>Complete organizational structure</li>
+                    <li>All roles filled and operational</li>
+                    <li>Mature processes and procedures</li>
+                    <li>Knowledge management established</li>
+                </ul>`
+            },
             // ===== Slide 16: Year 3 Initiatives =====
             'y3-overview': {
                 title: 'Year 3 (2028) - Overview',
@@ -3467,174 +3591,89 @@ class SidePanelHandler {
                 </div>
                 <div class="gantt-milestone"><strong>Milestone:</strong> Treasury/Procurement Go-Live Q4 2028 | Deloitte Priority: P0</div>`
             },
-            // ===== Slide 20: Appendices =====
-            'appendix-a': {
-                title: 'Appendix A: Full Initiative Catalog (33 Initiatives)',
-                content: `<div class="section-header">H = Hiring & People (4 Initiatives)</div>
+            // ===== Risk Mitigation Slide Details =====
+            'risk-critical': {
+                title: 'P0 Critical Risks - Y1 Mitigation Plan',
+                content: `<div class="section-header">Y1 Target: 8 of 13 Critical Risks Mitigated</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
-                    <tr><td class="code-col">H1</td><td>Cyber & IT Team Hirings</td><td>11 roles: Cyber Lead, Data Lead, PMO Lead, IT Auditor, Solutions Architects (2), DevOps (2), Security Engineers (2), Support</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td class="code-col">H2</td><td>Team Skilling & Reskilling</td><td>Certifications: CISSP, CISM, Azure, AWS, SAP. Training budget per FTE.</td><td class="priority-col"><span class="priority-y1">Y1-3</span></td></tr>
-                    <tr><td class="code-col">H3</td><td>In-house Security Team</td><td>Build internal SOC capability, reduce dependency on MSSPs</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">H4</td><td>IT Performance & KPIs</td><td>Define SLAs, OKRs, performance metrics for IT team</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><th>Risk</th><th>Mitigation Action</th><th>Timeline</th><th>Y1</th></tr>
+                    <tr><td>No Cybersecurity Leadership</td><td>Hire Cyber Lead (H1)</td><td>Q2'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>Missing IT Governance</td><td>Deploy ITIL/COBIT Framework (P1)</td><td>Q1'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>Single Points of Failure</td><td>Cross-training + backup staff (H1)</td><td>Q2'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No IAM/SSO Solution</td><td>Deploy Okta/Azure AD + MFA (T6)</td><td>Q4'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>Flat Network Architecture</td><td>VLAN segmentation + NAC (T13)</td><td>Q4'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No Data Classification</td><td>Data governance policy (P2)</td><td>Q2'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No Security Architecture</td><td>Zero Trust roadmap (P3)</td><td>Q1'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>Knowledge Loss Risk</td><td>KM System + runbooks (T9)</td><td>Q3'26</td><td class="impact-col">✓</td></tr>
                 </table>
 
-                <div class="section-header">P = Process & Governance (6 Initiatives)</div>
+                <div class="section-header">Remaining 5 Risks (Y2-Y3)</div>
                 <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
-                    <tr><td class="code-col">P1</td><td>Cyber & IT Governance</td><td>IT Steering Committee, RACI, ITIL/COBIT frameworks, decision rights</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P2</td><td>Data Governance</td><td>Data classification, ownership, retention, privacy (PDPL compliance)</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P3</td><td>Security Architecture</td><td>Enterprise security architecture, Zero Trust roadmap, reference designs</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P4</td><td>Physical Security</td><td>DC access controls, CCTV, biometrics, visitor management</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">P5</td><td>Process Optimization</td><td>IT workflows automation, service catalog, change management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">P6</td><td>SharePoint Cleansing</td><td>Legacy data cleanup, migration to modern DMS, archival policies</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
+                    <tr><th>Risk</th><th>Mitigation Action</th><th>Timeline</th></tr>
+                    <tr><td>No Disaster Recovery Plan</td><td>DR site + replication (T16)</td><td>Q4'27</td></tr>
+                    <tr><td>Aging ERP (Oracle EBS)</td><td>S/4 HANA migration (E2)</td><td>Q3'28</td></tr>
+                    <tr><td>No Security Monitoring</td><td>24/7 SOC operations (T12)</td><td>Q2'27</td></tr>
+                    <tr><td>No SIEM/Log Management</td><td>SIEM deploy with SOC (T12)</td><td>Q1'27</td></tr>
+                    <tr><td>No BCP Testing</td><td>Annual DR drills</td><td>Q4'27</td></tr>
                 </table>
 
-                <div class="section-header">T = Technology (19 Initiatives)</div>
-                <table class="panel-table">
-                    <tr><th>Code</th><th>Initiative</th><th>Description</th><th>Year</th></tr>
-                    <tr><td class="code-col">T1</td><td>Document Management</td><td>Enterprise DMS with versioning, workflow, e-signatures</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T2</td><td>HRMS System</td><td>Core HR, payroll, time & attendance, employee self-service</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">T3</td><td>Ticketing System</td><td>ITSM platform: incidents, requests, problems, changes</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T4</td><td>Asset Management</td><td>IT asset lifecycle, inventory, software licensing, CMDB</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T5</td><td>L&D Platform</td><td>Learning management system, skills tracking, certifications</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T6</td><td>IAM Solution</td><td>SSO, MFA, PAM, lifecycle management, access reviews</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T7</td><td>Finance Analytics/EPM</td><td>Oracle EPM for budgeting, forecasting, consolidation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T8</td><td>Audit Platform</td><td>Internal audit automation, risk assessment, compliance tracking</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T9</td><td>Knowledge Management</td><td>IT wiki, runbooks, documentation repository, search</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T10</td><td>GRC Platform</td><td>IT compliance automation, policy management, audit trails</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td class="code-col">T11</td><td>Network Monitoring</td><td>NPM tools, traffic analysis, bandwidth management</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T12</td><td>SOC/NOC Integration</td><td>24/7 security operations, SIEM, incident response</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td class="code-col">T13</td><td>Network Segmentation</td><td>VLANs, microsegmentation, NAC, firewall zones</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T14</td><td>Cloud Migration</td><td>Hybrid cloud strategy, Azure/AWS, lift-and-shift, modernization</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td class="code-col">T15</td><td>ERP Strategy</td><td>S/4 HANA implementation planning and execution</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td class="code-col">T16</td><td>Backup & DR</td><td>Backup modernization, DR site, RTO/RPO targets</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td></tr>
-                    <tr><td class="code-col">T17</td><td>Endpoint Security</td><td>EDR/XDR, device management, encryption, DLP</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T18</td><td>Email Security</td><td>Advanced threat protection, anti-phishing, DMARC</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">T19</td><td>Vulnerability Mgmt</td><td>Scanning, patching, remediation tracking, reporting</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                </table>
-
-                <div class="section-header">E = ERP & Enterprise Apps (4 Modules)</div>
-                <table class="panel-table">
-                    <tr><th>Code</th><th>Module</th><th>Description</th><th>Year</th></tr>
-                    <tr><td class="code-col">E1</td><td>Oracle EPM</td><td>Finance analytics, planning, budgeting, consolidation</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td class="code-col">E2</td><td>SAP S/4 HANA</td><td>Core ERP: Finance, HR, Supply Chain, single instance</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td></tr>
-                    <tr><td class="code-col">E3</td><td>KYRIBA Treasury</td><td>Cash management, bank connectivity, forecasting</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td class="code-col">E4</td><td>SAP Ariba</td><td>Procurement, supplier management, contract lifecycle</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                </table>
+                <div class="section-header">Y1 Mitigation Approach</div>
+                <ul class="detail-bullets">
+                    <li><strong>Q1'26:</strong> Governance framework, Security architecture definition</li>
+                    <li><strong>Q2'26:</strong> Cyber Lead hired, Data classification policy, Cross-training begins</li>
+                    <li><strong>Q3'26:</strong> Knowledge management system deployed</li>
+                    <li><strong>Q4'26:</strong> IAM/SSO live, Network segmentation complete</li>
+                </ul>
 
                 <div class="detail-reference">
-                    <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">33 Initiatives | Full Catalog | 3-Year Roadmap</span>
+                    <span class="ref-badge">Y1 Progress</span>
+                    <span class="ref-category">8/13 (62%) Critical Risks Mitigated</span>
                 </div>`
             },
-            'appendix-b': {
-                title: 'Appendix B: Technical Architecture (Full Detail)',
-                content: `<div class="section-header">Current State Assessment (All Domains)</div>
+            'risk-high': {
+                title: 'P1 High Risks - Y1 Mitigation Plan',
+                content: `<div class="section-header">Y1 Target: 6 of 16 High Risks Mitigated</div>
                 <table class="panel-table">
-                    <tr><th>Domain</th><th>Current State</th><th>Issues</th><th>Gap</th></tr>
-                    <tr><td>ERP</td><td>Oracle EBS R12</td><td>End-of-life, no support, performance issues</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Identity (IAM)</td><td>Manual AD only</td><td>No SSO, no MFA, manual provisioning</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Security Ops</td><td>No SOC/NOC</td><td>Manual monitoring, reactive only</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Cloud</td><td>0% cloud</td><td>100% on-premise, no cloud strategy</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>Network</td><td>Flat network</td><td>No segmentation, no NAC, no ZTNA</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>DR/BCP</td><td>No DR site</td><td>No tested plan, no replication</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Backup</td><td>Basic backup</td><td>No offsite, untested restores</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>Endpoint</td><td>Basic AV only</td><td>No EDR/XDR, no DLP, unencrypted</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>Email</td><td>O365 basic</td><td>No ATP, no anti-phishing, no DMARC</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
-                    <tr><td>SIEM</td><td>None</td><td>No log aggregation, no correlation</td><td class="priority-col"><span class="risk-critical">Critical</span></td></tr>
-                    <tr><td>Vendors</td><td>28 vendors</td><td>Fragmented, no consolidation strategy</td><td class="priority-col"><span class="risk-high">High</span></td></tr>
+                    <tr><th>Risk</th><th>Mitigation Action</th><th>Timeline</th><th>Y1</th></tr>
+                    <tr><td>No Endpoint Protection</td><td>Deploy Microsoft Defender XDR (T17)</td><td>Q2'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No Email Security</td><td>M365 ATP + DMARC/DKIM (T18)</td><td>Q2'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No MFA Enforcement</td><td>MFA rollout with IAM (T6)</td><td>Q4'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No Change Management</td><td>ITIL CAB process (P1)</td><td>Q1'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No PAM Solution</td><td>CyberArk PAM with IAM (T6)</td><td>Q4'26</td><td class="impact-col">✓</td></tr>
+                    <tr><td>No Security Awareness</td><td>KnowBe4 training program (H2)</td><td>Q3'26</td><td class="impact-col">✓</td></tr>
                 </table>
 
-                <div class="section-header">Target State Architecture (2028)</div>
+                <div class="section-header">Remaining 10 Risks (Y2-Y3)</div>
                 <table class="panel-table">
-                    <tr><th>Domain</th><th>Target Solution</th><th>Target KPI</th></tr>
-                    <tr><td>ERP</td><td>SAP S/4 HANA (Single Instance)</td><td>100% modules live by Q3'28</td></tr>
-                    <tr><td>Identity</td><td>Azure AD + Okta SSO + MFA + PAM</td><td>100% users, 100% apps covered</td></tr>
-                    <tr><td>Security Ops</td><td>24/7 SOC + NOC (Hybrid model)</td><td>&lt;15 min MTTR, &lt;5 min detection</td></tr>
-                    <tr><td>Cloud</td><td>Hybrid Cloud (Azure primary)</td><td>70% workloads migrated</td></tr>
-                    <tr><td>Network</td><td>Segmented + NAC + ZTNA</td><td>Zero Trust architecture</td></tr>
-                    <tr><td>DR/BCP</td><td>Active-Passive DR site</td><td>RTO: 4 hours, RPO: 1 hour</td></tr>
-                    <tr><td>Backup</td><td>3-2-1 strategy, immutable backups</td><td>Daily backups, monthly tests</td></tr>
-                    <tr><td>Endpoint</td><td>Microsoft Defender XDR + Intune</td><td>100% managed, 100% encrypted</td></tr>
-                    <tr><td>Email</td><td>M365 ATP + DMARC/DKIM/SPF</td><td>99.9% spam blocked</td></tr>
-                    <tr><td>SIEM</td><td>Microsoft Sentinel or Splunk</td><td>All logs ingested, 90-day retention</td></tr>
-                    <tr><td>Vendors</td><td>Consolidated vendor portfolio</td><td>28 → 15 vendors (-46%)</td></tr>
-                    <tr><td>Availability</td><td>N+1 redundancy for critical</td><td>99.9% uptime SLA</td></tr>
+                    <tr><th>Risk</th><th>Mitigation Action</th><th>Timeline</th></tr>
+                    <tr><td>Vendor Sprawl (28)</td><td>Consolidate to 15 vendors</td><td>Y2-Y3</td></tr>
+                    <tr><td>Unpatched Systems</td><td>Vuln mgmt program (T19)</td><td>Q1'27</td></tr>
+                    <tr><td>Manual IT Processes</td><td>Workflow automation (P5)</td><td>Q2'27</td></tr>
+                    <tr><td>No IT Asset Inventory</td><td>CMDB implementation (T4)</td><td>Q1'27</td></tr>
+                    <tr><td>No Incident Response</td><td>IR with SOC (T12)</td><td>Q2'27</td></tr>
+                    <tr><td>Outdated Backup</td><td>3-2-1 backup strategy (T16)</td><td>Q3'27</td></tr>
+                    <tr><td>Shadow IT Risk</td><td>Discovery tools (T4)</td><td>Q1'27</td></tr>
+                    <tr><td>Compliance Gaps</td><td>GRC platform (T10)</td><td>Q2'27</td></tr>
+                    <tr><td>No Penetration Testing</td><td>Annual pentests</td><td>Q4'27</td></tr>
+                    <tr><td>Third-Party Risk</td><td>Vendor assessments</td><td>Q2'27</td></tr>
                 </table>
 
-                <div class="section-header">Architecture Milestones Timeline</div>
-                <table class="panel-table">
-                    <tr><th>Quarter</th><th>Milestone</th><th>Deliverables</th><th>Year</th></tr>
-                    <tr><td>Q1 2026</td><td>Architecture Definition</td><td>EA docs, security architecture, standards</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q2 2026</td><td>Governance Framework</td><td>ITIL processes, RACI, service catalog</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q3 2026</td><td>IAM Phase 1</td><td>SSO for top 10 apps, MFA rollout</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q4 2026</td><td>Network Segmentation</td><td>VLANs, firewall rules, NAC pilot</td><td class="priority-col"><span class="priority-y1">Y1</span></td></tr>
-                    <tr><td>Q1 2027</td><td>SOC Foundation</td><td>SIEM deployed, use cases, playbooks</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q2 2027</td><td>SOC 24/7 Operations</td><td>Full SOC/NOC coverage, incident response</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q3 2027</td><td>Cloud Migration Start</td><td>Pilot workloads, Azure landing zone</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q4 2027</td><td>DR Site Operational</td><td>Active-passive, tested failover</td><td class="priority-col"><span class="priority-y2">Y2</span></td></tr>
-                    <tr><td>Q1 2028</td><td>S/4 HANA Build</td><td>Development, configuration, testing</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td>Q3 2028</td><td>S/4 HANA Go-Live</td><td>Production cutover, hypercare</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                    <tr><td>Q4 2028</td><td>Full Cloud Migration</td><td>70% workloads in cloud</td><td class="priority-col"><span class="priority-y3">Y3</span></td></tr>
-                </table>
+                <div class="section-header">Y1 Mitigation Approach</div>
+                <ul class="detail-bullets">
+                    <li><strong>Q1'26:</strong> Change management process established</li>
+                    <li><strong>Q2'26:</strong> Endpoint & Email security deployed</li>
+                    <li><strong>Q3'26:</strong> Security awareness training launched</li>
+                    <li><strong>Q4'26:</strong> MFA + PAM live with IAM rollout</li>
+                </ul>
 
                 <div class="detail-reference">
-                    <span class="ref-badge">Deloitte Deliverable</span>
-                    <span class="ref-category">Enterprise Architecture | Full Technical Roadmap</span>
+                    <span class="ref-badge">Y1 Progress</span>
+                    <span class="ref-category">6/16 (38%) High Risks Mitigated</span>
                 </div>`
             },
-            'appendix-c': {
-                title: 'Appendix C: Full Risk Register (60 Risks)',
-                content: `<div class="section-header">Risk Summary by Priority</div>
-                <table class="panel-table">
-                    <tr><th>Priority</th><th>Count</th><th>Impact Range</th><th>Action Required</th></tr>
-                    <tr><td><span class="risk-critical">P0 Critical</span></td><td class="impact-col">13</td><td>8.0 - 10.0</td><td>Immediate action required</td></tr>
-                    <tr><td><span class="risk-high">P1 High</span></td><td class="impact-col">16</td><td>6.0 - 7.9</td><td>Year 1 priority</td></tr>
-                    <tr><td><span class="priority-y2">P2 Medium</span></td><td class="impact-col">22</td><td>4.0 - 5.9</td><td>Year 2 addressed</td></tr>
-                    <tr><td><span class="priority-y3">P3 Low</span></td><td class="impact-col">9</td><td>1.0 - 3.9</td><td>Monitored</td></tr>
-                </table>
-
-                <div class="section-header">P0 Critical Risks (13)</div>
-                <table class="panel-table">
-                    <tr><th>#</th><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
-                    <tr><td>1</td><td>No Cybersecurity Leadership</td><td class="impact-col">10.0</td><td>H1: Hire Cyber Lead Q2'26</td></tr>
-                    <tr><td>2</td><td>Missing IT Governance</td><td class="impact-col">9.5</td><td>P1: Framework Q1'26</td></tr>
-                    <tr><td>3</td><td>Single Points of Failure</td><td class="impact-col">9.0</td><td>H1: Cross-training, backups</td></tr>
-                    <tr><td>4</td><td>No Disaster Recovery Plan</td><td class="impact-col">9.0</td><td>T16: DR site by Q4'27</td></tr>
-                    <tr><td>5</td><td>Aging ERP (Oracle EBS)</td><td class="impact-col">8.5</td><td>E2: S/4 HANA migration</td></tr>
-                    <tr><td>6</td><td>No IAM/SSO Solution</td><td class="impact-col">8.5</td><td>T6: IAM deploy Q4'26</td></tr>
-                    <tr><td>7</td><td>No Security Monitoring</td><td class="impact-col">8.0</td><td>T12: SOC by Q2'27</td></tr>
-                    <tr><td>8</td><td>Flat Network Architecture</td><td class="impact-col">8.0</td><td>T13: Segmentation Q4'26</td></tr>
-                    <tr><td>9</td><td>No SIEM/Log Management</td><td class="impact-col">8.0</td><td>T12: SIEM with SOC</td></tr>
-                    <tr><td>10</td><td>No Data Classification</td><td class="impact-col">7.5</td><td>P2: Policy Q2'26</td></tr>
-                    <tr><td>11</td><td>No Security Architecture</td><td class="impact-col">7.0</td><td>P3: Define Q1'26</td></tr>
-                    <tr><td>12</td><td>Knowledge Loss Risk</td><td class="impact-col">7.0</td><td>T9: KM System</td></tr>
-                    <tr><td>13</td><td>No BCP Testing</td><td class="impact-col">6.5</td><td>Annual DR drills</td></tr>
-                </table>
-
-                <div class="section-header">P1 High Risks (16)</div>
-                <table class="panel-table">
-                    <tr><th>#</th><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
-                    <tr><td>14</td><td>Vendor Sprawl (28 vendors)</td><td class="impact-col">7.0</td><td>Consolidate to 15</td></tr>
-                    <tr><td>15</td><td>No Endpoint Protection (EDR)</td><td class="impact-col">6.5</td><td>T17: Deploy XDR</td></tr>
-                    <tr><td>16</td><td>Unpatched Systems</td><td class="impact-col">6.5</td><td>T19: Vuln mgmt program</td></tr>
-                    <tr><td>17</td><td>No Email Security (ATP)</td><td class="impact-col">6.5</td><td>T18: M365 ATP</td></tr>
-                    <tr><td>18</td><td>No MFA Enforcement</td><td class="impact-col">6.5</td><td>T6: MFA with IAM</td></tr>
-                    <tr><td>19</td><td>Manual IT Processes</td><td class="impact-col">6.0</td><td>P5: Workflow automation</td></tr>
-                    <tr><td>20</td><td>No IT Asset Inventory</td><td class="impact-col">6.0</td><td>T4: CMDB implementation</td></tr>
-                    <tr><td>21</td><td>No Change Management</td><td class="impact-col">6.0</td><td>P1: ITIL CAB process</td></tr>
-                    <tr><td>22</td><td>No Incident Response Plan</td><td class="impact-col">6.0</td><td>T12: IR with SOC</td></tr>
-                    <tr><td>23</td><td>Outdated Backup Strategy</td><td class="impact-col">6.0</td><td>T16: 3-2-1 backup</td></tr>
-                    <tr><td>24</td><td>No PAM Solution</td><td class="impact-col">6.0</td><td>T6: PAM with IAM</td></tr>
-                    <tr><td>25</td><td>Shadow IT Risk</td><td class="impact-col">6.0</td><td>T4: Discovery tools</td></tr>
-                    <tr><td>26</td><td>No Security Awareness</td><td class="impact-col">5.5</td><td>H2: Training program</td></tr>
-                    <tr><td>27</td><td>Compliance Gaps (NCA)</td><td class="impact-col">5.5</td><td>T10: GRC platform</td></tr>
-                    <tr><td>28</td><td>No Penetration Testing</td><td class="impact-col">5.5</td><td>Annual pentests</td></tr>
-                    <tr><td>29</td><td>Third-Party Risk</td><td class="impact-col">5.5</td><td>Vendor assessments</td></tr>
-                </table>
-
-                <div class="section-header">P2 Medium Risks (22)</div>
+            'risk-medium': {
+                title: 'P2 Medium Risks (22)',
+                content: `<div class="section-header">Year 2 Addressed</div>
                 <table class="panel-table">
                     <tr><th>Risk Category</th><th>Count</th><th>Examples</th></tr>
                     <tr><td>Process Gaps</td><td class="impact-col">8</td><td>No SLAs, No service catalog, No RACI</td></tr>
@@ -3642,99 +3681,1267 @@ class SidePanelHandler {
                     <tr><td>Documentation</td><td class="impact-col">4</td><td>No runbooks, No architecture docs</td></tr>
                     <tr><td>Skills Gaps</td><td class="impact-col">4</td><td>Cloud skills, Security certs, SAP expertise</td></tr>
                 </table>
-
-                <div class="section-header">P3 Low Risks (9)</div>
+                <div class="section-header">Mitigation Approach</div>
+                <ul class="detail-bullets">
+                    <li>Address as part of Y2 transformation initiatives</li>
+                    <li>Include in governance framework rollout</li>
+                    <li>Training and certification programs</li>
+                    <li>Process documentation during system implementations</li>
+                </ul>
+                <div class="detail-reference">
+                    <span class="ref-badge">Timeline</span>
+                    <span class="ref-category">Bulk addressed during Y2 transformation</span>
+                </div>`
+            },
+            'risk-low': {
+                title: 'P3 Low Risks (9)',
+                content: `<div class="section-header">Monitored</div>
                 <table class="panel-table">
                     <tr><th>Risk Category</th><th>Count</th><th>Examples</th></tr>
                     <tr><td>Nice-to-Have Features</td><td class="impact-col">5</td><td>Advanced analytics, AI/ML, Automation</td></tr>
                     <tr><td>Future Planning</td><td class="impact-col">4</td><td>Capacity planning, Tech refresh cycles</td></tr>
                 </table>
-
-                <div class="section-header">Risk Management KPIs</div>
-                <table class="panel-table">
-                    <tr><th>KPI</th><th>Current</th><th>Y1 Target</th><th>Y3 Target</th></tr>
-                    <tr><td>Critical risks mitigated</td><td class="impact-col">0/13</td><td>8/13</td><td>13/13</td></tr>
-                    <tr><td>High risks mitigated</td><td class="impact-col">0/16</td><td>6/16</td><td>16/16</td></tr>
-                    <tr><td>Risk review frequency</td><td class="impact-col">Ad-hoc</td><td>Bi-weekly</td><td>Weekly</td></tr>
-                    <tr><td>Avg mitigation time</td><td class="impact-col">N/A</td><td>&lt;120 days</td><td>&lt;60 days</td></tr>
-                    <tr><td>Controls effectiveness</td><td class="impact-col">40%</td><td>70%</td><td>95%</td></tr>
-                    <tr><td>Risk escalation rate</td><td class="impact-col">N/A</td><td>&lt;15%</td><td>&lt;5%</td></tr>
-                </table>
-
+                <div class="section-header">Management Approach</div>
+                <ul class="detail-bullets">
+                    <li>Quarterly review and reassessment</li>
+                    <li>Address opportunistically during related projects</li>
+                    <li>Monitor for escalation triggers</li>
+                    <li>Include in Y3 optimization phase if resources permit</li>
+                </ul>
                 <div class="detail-reference">
-                    <span class="ref-badge">Deloitte Assessment</span>
-                    <span class="ref-category">60 Risks | Full Register | Bi-weekly Review</span>
+                    <span class="ref-badge">Status</span>
+                    <span class="ref-category">Monitored | Quarterly Review</span>
                 </div>`
             },
-            'appendix-d': {
-                title: 'Appendix D: Full Budget Details',
-                content: `<div class="section-header">Investment Summary by Category</div>
+
+            // ===== RISE Technology Hub Slide Details =====
+            'rise-model': {
+                title: 'RISE Cost-Plus Model',
+                content: `<div class="initiative-detail">
+                <div class="section-header">The Deal</div>
+                <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+                    <p style="font-size: 1.2rem; margin: 0;"><strong>Entity pays = Vendor Cost + X% Margin</strong></p>
+                </div>
+
+                <div class="section-header">Example Transaction</div>
                 <table class="panel-table">
-                    <tr><th>Category</th><th>Code</th><th>Allocation</th><th>Key Items</th></tr>
-                    <tr><td>Hiring & People</td><td class="code-col">H</td><td>~25%</td><td>11 FTE: Cyber Lead, Data Lead, PMO, Architects, Engineers</td></tr>
-                    <tr><td>Process & Governance</td><td class="code-col">P</td><td>~5%</td><td>Governance framework, Policies, Training, Consulting</td></tr>
-                    <tr><td>Technology</td><td class="code-col">T</td><td>~45%</td><td>IAM, SOC/NOC, Cloud, Network, Security tools</td></tr>
-                    <tr><td>ERP & Enterprise</td><td class="code-col">E</td><td>~25%</td><td>S/4 HANA, EPM, Treasury, Procurement</td></tr>
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Dell charges RISE</td><td>100,000</td></tr>
+                    <tr><td>RISE margin (5%)</td><td>5,000</td></tr>
+                    <tr><td><strong>Entity pays</strong></td><td><strong>105,000</strong></td></tr>
                 </table>
 
-                <div class="section-header">3-Year Investment Phasing</div>
+                <div class="section-header">Full Transparency</div>
+                <ul class="detail-bullets">
+                    <li><strong>Entity sees:</strong> Vendor's original quote</li>
+                    <li><strong>Entity sees:</strong> Vendor's invoice to RISE</li>
+                    <li><strong>Entity sees:</strong> The X% margin calculation</li>
+                    <li><strong>No hidden fees</strong> - everything is visible</li>
+                </ul>
+
+                <div class="section-header">Why This Model Works</div>
                 <table class="panel-table">
-                    <tr><th>Year</th><th>Phase</th><th>% of Total</th><th>Focus Areas</th></tr>
-                    <tr><td class="priority-col"><span class="priority-y1">Y1 (2026)</span></td><td>Foundation</td><td>~35%</td><td>Hiring, Governance, IAM, Security basics, Quick wins</td></tr>
-                    <tr><td class="priority-col"><span class="priority-y2">Y2 (2027)</span></td><td>Transform</td><td>~40%</td><td>ERP build, Cloud migration, SOC 24/7, Major systems</td></tr>
-                    <tr><td class="priority-col"><span class="priority-y3">Y3 (2028)</span></td><td>Optimize</td><td>~25%</td><td>ERP go-live, Automation, AI, Optimization</td></tr>
+                    <tr><th>Problem Now</th><th>RISE Solution</th></tr>
+                    <tr><td>Each entity negotiates alone</td><td>Combined buying power</td></tr>
+                    <tr><td>Weak pricing</td><td>Better vendor deals</td></tr>
+                    <tr><td>No tech expertise</td><td>Expert validation</td></tr>
+                    <tr><td>Manual overhead</td><td>Centralized efficiency</td></tr>
                 </table>
 
-                <div class="section-header">Hiring Budget (H) - 11 Roles</div>
+                <p style="margin-top: 1rem;"><strong>Net Cost:</strong> X% margin is offset by better pricing + reduced overhead across entities</p>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">RISE Framework v2.0</span>
+                    <span class="ref-category">Simple Cost-Plus Model</span>
+                </div>
+                </div>`
+            },
+
+            'rise-process': {
+                title: 'How RISE Works - 4 Simple Steps',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Simple 4-Step Process</div>
                 <table class="panel-table">
-                    <tr><th>Role</th><th>Count</th><th>Year</th><th>Type</th></tr>
-                    <tr><td>Cybersecurity Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
-                    <tr><td>Data & Analytics Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
-                    <tr><td>PMO Lead</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
-                    <tr><td>IT Auditor</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
-                    <tr><td>Solutions Architects</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>FTE</td></tr>
-                    <tr><td>DevOps Engineers</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y2">Y2</span></td><td>FTE</td></tr>
-                    <tr><td>Security Engineers</td><td class="impact-col">2</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>FTE</td></tr>
-                    <tr><td>IT Support Specialist</td><td class="impact-col">1</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>FTE</td></tr>
+                    <tr><th>Step</th><th>Action</th><th>Example</th></tr>
+                    <tr><td><strong>1</strong></td><td>Entity needs technology</td><td>Email RISE request</td></tr>
+                    <tr><td><strong>2</strong></td><td>RISE gets vendor quotes</td><td>Shows entity (e.g., Dell AED 50K)</td></tr>
+                    <tr><td><strong>3</strong></td><td>Entity approves</td><td>Issues PO to RISE (AED 52,500 with 5%)</td></tr>
+                    <tr><td><strong>4</strong></td><td>RISE orders & delivers</td><td>Entity pays RISE</td></tr>
                 </table>
 
-                <div class="section-header">Technology Budget (T) - Major Items</div>
-                <table class="panel-table">
-                    <tr><th>Initiative</th><th>Type</th><th>Year</th><th>Notes</th></tr>
-                    <tr><td>IAM/SSO Platform</td><td>License + Impl</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Okta or Azure AD P2</td></tr>
-                    <tr><td>SOC/NOC Setup</td><td>MSSP + Tools</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>Hybrid model, SIEM</td></tr>
-                    <tr><td>Cloud Migration</td><td>Azure/AWS</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td><td>70% workloads target</td></tr>
-                    <tr><td>Network Security</td><td>Hardware + SW</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Firewalls, NAC, Segmentation</td></tr>
-                    <tr><td>Endpoint Security</td><td>License</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Microsoft Defender XDR</td></tr>
-                    <tr><td>Backup & DR</td><td>Infrastructure</td><td class="priority-col"><span class="priority-y1">Y1-2</span></td><td>DR site, replication</td></tr>
-                    <tr><td>ITSM Platform</td><td>SaaS</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>ServiceNow or similar</td></tr>
-                </table>
+                <div class="section-header">First Month Setup</div>
+                <ul class="detail-bullets">
+                    <li>Each entity lists technology needs (servers, laptops, software, etc.)</li>
+                    <li>RISE confirms "we can handle this" or "we can't"</li>
+                    <li><strong>Approved items</strong> = RISE-exclusive channel</li>
+                    <li><strong>Declined items</strong> = Entity buys independently</li>
+                </ul>
 
-                <div class="section-header">ERP Budget (E) - Enterprise Apps</div>
+                <div class="section-header">Implementation Timeline</div>
                 <table class="panel-table">
-                    <tr><th>Module</th><th>Vendor</th><th>Year</th><th>Scope</th></tr>
-                    <tr><td>Finance Analytics</td><td>Oracle EPM</td><td class="priority-col"><span class="priority-y1">Y1</span></td><td>Budgeting, forecasting, consolidation</td></tr>
-                    <tr><td>Core ERP</td><td>SAP S/4 HANA</td><td class="priority-col"><span class="priority-y2">Y2-3</span></td><td>Finance, HR, Supply Chain, single instance</td></tr>
-                    <tr><td>Treasury</td><td>KYRIBA</td><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Cash management, bank connectivity</td></tr>
-                    <tr><td>Procurement</td><td>SAP Ariba</td><td class="priority-col"><span class="priority-y3">Y3</span></td><td>Supplier mgmt, contracts, sourcing</td></tr>
-                </table>
-
-                <div class="section-header">Financial Controls & KPIs</div>
-                <table class="panel-table">
-                    <tr><th>KPI</th><th>Target</th><th>Measurement</th><th>Benefit</th></tr>
-                    <tr><td>Budget Variance</td><td>&lt;10%</td><td>Monthly tracking</td><td>Cost control</td></tr>
-                    <tr><td>CapEx/OpEx Ratio</td><td>60/40</td><td>Quarterly review</td><td>Cash flow balance</td></tr>
-                    <tr><td>Contingency Reserve</td><td>15%</td><td>Held in reserve</td><td>Risk buffer</td></tr>
-                    <tr><td>ROI Timeline</td><td>3-5 years</td><td>Business case tracking</td><td>Value realization</td></tr>
-                    <tr><td>Vendor Consolidation</td><td>28→15</td><td>Annual review</td><td>~15% cost reduction</td></tr>
-                    <tr><td>Automation Savings</td><td>60%</td><td>Process metrics</td><td>FTE efficiency</td></tr>
-                    <tr><td>Security Incidents</td><td>-80%</td><td>Incident tracking</td><td>Risk cost avoidance</td></tr>
-                    <tr><td>System Availability</td><td>99.9%</td><td>Uptime monitoring</td><td>Productivity gains</td></tr>
+                    <tr><th>Phase</th><th>Activities</th></tr>
+                    <tr><td><strong>Month 1</strong></td><td>Sign agreement, set margin %, entities submit lists</td></tr>
+                    <tr><td><strong>Months 2-4</strong></td><td>Pilot with 1-2 entities</td></tr>
+                    <tr><td><strong>Month 5+</strong></td><td>Full rollout to all entities</td></tr>
                 </table>
 
                 <div class="detail-reference">
-                    <span class="ref-badge">Financial Planning</span>
-                    <span class="ref-category">Confidential | Full 3-Year Investment Plan</span>
+                    <span class="ref-badge">RISE Framework v2.0</span>
+                    <span class="ref-category">How It Works</span>
+                </div>
+                </div>`
+            },
+
+            'rise-rules': {
+                title: 'RISE Operating Rules',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Entities CANNOT (for RISE-approved items)</div>
+                <ul class="detail-bullets" style="color: #dc3545;">
+                    <li>❌ Contact vendors directly</li>
+                    <li>❌ Get their own quotes</li>
+                    <li>❌ Issue POs to vendors</li>
+                </ul>
+
+                <div class="section-header">Entities CAN</div>
+                <ul class="detail-bullets" style="color: #28a745;">
+                    <li>✅ Buy what RISE declined to handle</li>
+                    <li>✅ Add new categories (1-month notice to RISE)</li>
+                    <li>✅ Bypass RISE if SLA fails (with NH IT approval)</li>
+                </ul>
+
+                <div class="section-header">Violation Consequences</div>
+                <table class="panel-table">
+                    <tr><th>Occurrence</th><th>Action</th></tr>
+                    <tr><td>1st violation</td><td>Warning</td></tr>
+                    <tr><td>2nd violation</td><td>CIO meeting</td></tr>
+                    <tr><td>3rd violation</td><td>Removed from framework</td></tr>
+                </table>
+
+                <div class="section-header">Key Protections</div>
+                <ul class="detail-bullets">
+                    <li>Entities retain escalation rights to NH IT if unsatisfied</li>
+                    <li>Critical/urgent requests can bypass RISE with NH IT approval</li>
+                    <li>Entity representatives participate in quarterly reviews</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">RISE Framework v2.0</span>
+                    <span class="ref-category">The Rules</span>
+                </div>
+                </div>`
+            },
+
+            'rise-sla': {
+                title: 'RISE Service Level Agreements',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Response Times</div>
+                <table class="panel-table">
+                    <tr><th>Type</th><th>Response</th><th>Example</th></tr>
+                    <tr><td><strong>Critical</strong></td><td>2 hours</td><td>Server down</td></tr>
+                    <tr><td><strong>Urgent</strong></td><td>4 hours</td><td>Security issue</td></tr>
+                    <tr><td><strong>Normal</strong></td><td>8 hours</td><td>Need laptops</td></tr>
+                </table>
+
+                <div class="section-header">Monthly Targets</div>
+                <table class="panel-table">
+                    <tr><th>Metric</th><th>Target</th></tr>
+                    <tr><td>SLA Compliance</td><td>≥95%</td></tr>
+                    <tr><td>Quote Accuracy</td><td>≥98%</td></tr>
+                    <tr><td>Entity Satisfaction</td><td>≥4.0/5.0</td></tr>
+                </table>
+
+                <div class="section-header">If RISE Fails</div>
+                <table class="panel-table">
+                    <tr><th>Situation</th><th>Consequence</th></tr>
+                    <tr><td>Month 1 below 90%</td><td>Warning</td></tr>
+                    <tr><td>Month 2 below 90%</td><td>Review</td></tr>
+                    <tr><td>Month 3 below 90%</td><td><strong>Automatic Termination</strong></td></tr>
+                </table>
+
+                <div class="section-header">Overcharging Found?</div>
+                <ul class="detail-bullets">
+                    <li><strong>Refund within 7 days</strong> - no exceptions</li>
+                    <li><strong>3+ errors</strong> = Full framework review</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">RISE Framework v2.0</span>
+                    <span class="ref-category">RISE Must Deliver</span>
+                </div>
+                </div>`
+            },
+
+            'rise-governance': {
+                title: 'RISE Governance & Exit Strategy',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Governance Structure</div>
+                <table class="panel-table">
+                    <tr><th>Cadence</th><th>Participants</th><th>Focus</th></tr>
+                    <tr><td><strong>Monthly</strong></td><td>NH IT + RISE</td><td>Performance review</td></tr>
+                    <tr><td><strong>Quarterly</strong></td><td>CIO, Entities, RISE, Finance</td><td>Steering committee</td></tr>
+                    <tr><td><strong>Annual</strong></td><td>All stakeholders</td><td>Contract renewal decision</td></tr>
+                </table>
+
+                <div class="section-header">NH Audit Rights</div>
+                <ul class="detail-bullets">
+                    <li><strong>Random checks:</strong> 10 transactions/month</li>
+                    <li><strong>Full audit:</strong> Quarterly</li>
+                    <li><strong>Any transaction:</strong> Anytime, no notice required</li>
+                </ul>
+
+                <div class="section-header">NH Can Terminate For</div>
+                <ul class="detail-bullets">
+                    <li>Performance failure (3 months below 90%)</li>
+                    <li>Pricing fraud</li>
+                    <li>Entity dissatisfaction</li>
+                    <li>Strategic change (90-day notice)</li>
+                    <li><strong>Anytime for any reason</strong></li>
+                </ul>
+
+                <div class="section-header">Exit Protection (Zero Risk)</div>
+                <table class="panel-table">
+                    <tr><td>✅ Zero penalties</td><td>✅ Zero minimum commitment</td></tr>
+                    <tr><td>✅ All vendors transfer to NH</td><td>✅ RISE pays transition costs</td></tr>
+                </table>
+
+                <div class="section-header">90-Day Exit Timeline</div>
+                <ul class="detail-bullets">
+                    <li><strong>Days 1-30:</strong> Get vendor contacts</li>
+                    <li><strong>Days 30-60:</strong> Knowledge transfer</li>
+                    <li><strong>Days 60-90:</strong> Complete orders</li>
+                    <li><strong>Day 90:</strong> Done</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">RISE Framework v2.0</span>
+                    <span class="ref-category">Controls & Exit Strategy</span>
+                </div>
+                </div>`
+            },
+
+            // ===== 2026 Budget Slide Details =====
+            'budget-total': {
+                title: '2026 IT Budget Overview',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Total Investment: AED 10,164,932</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th><th>%</th></tr>
+                    <tr><td>OPEX (Operating)</td><td class="impact-col">7,878,732</td><td>77%</td></tr>
+                    <tr><td>CAPEX (Capital)</td><td class="impact-col">2,286,200</td><td>23%</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>10,164,932</strong></td><td><strong>100%</strong></td></tr>
+                </table>
+
+                <div class="section-header">Budget Allocation by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th><th>%</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">5,271,079</td><td>52%</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">2,984,020</td><td>29%</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">1,298,382</td><td>13%</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">611,451</td><td>6%</td></tr>
+                </table>
+
+                <div class="section-header">Key Investments</div>
+                <ul class="detail-bullets">
+                    <li><strong>Oracle EPM:</strong> AED 1.32M - Finance analytics and reporting</li>
+                    <li><strong>PeopleStrong HRMS:</strong> AED 800K - HR modernization</li>
+                    <li><strong>Security Stack:</strong> AED 1.65M - SOC/NOC, CrowdStrike, CyberArk</li>
+                    <li><strong>Cloud & DR:</strong> AED 500K - Azure disaster recovery</li>
+                    <li><strong>AI Use Cases:</strong> AED 500K - Pilot implementations</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                </div>
+                </div>`
+            },
+
+            'budget-opex': {
+                title: 'OPEX Breakdown - AED 7.88M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Operating Expenses by Category</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th></tr>
+                    <tr><td>Software Licenses & Maintenance</td><td class="impact-col">1,820,000</td></tr>
+                    <tr><td>Security & Compliance</td><td class="impact-col">1,377,000</td></tr>
+                    <tr><td>Cloud & Hosting Services</td><td class="impact-col">741,732</td></tr>
+                    <tr><td>Network & Connectivity</td><td class="impact-col">507,500</td></tr>
+                    <tr><td>Hardware Maintenance</td><td class="impact-col">384,000</td></tr>
+                    <tr><td>Training & Development</td><td class="impact-col">150,000</td></tr>
+                    <tr><td>Other Services</td><td class="impact-col">2,898,500</td></tr>
+                </table>
+
+                <div class="section-header">Top OPEX Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>PeopleStrong HRMS:</strong> AED 800K</li>
+                    <li><strong>Oracle EPM Licenses:</strong> AED 570K</li>
+                    <li><strong>AI Use Cases Implementation:</strong> AED 500K</li>
+                    <li><strong>DELL Support Contract:</strong> AED 500K</li>
+                    <li><strong>Microsoft Enterprise Agreement:</strong> AED 400K</li>
+                    <li><strong>Oracle EPM Maintenance:</strong> AED 350K</li>
+                    <li><strong>Cyber Insurance:</strong> AED 345K</li>
+                    <li><strong>Security Application (DNS/NDR):</strong> AED 330K</li>
+                    <li><strong>Managed Security Service:</strong> AED 300K</li>
+                    <li><strong>Azure DR Infrastructure:</strong> AED 300K</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Operating Expenses</span>
+                </div>
+                </div>`
+            },
+
+            'budget-capex': {
+                title: 'CAPEX Breakdown - AED 2.29M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Capital Expenditure Items</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Datacenter Infra Refresh</td><td class="impact-col">800,000</td></tr>
+                    <tr><td>Backup & Storage Refresh</td><td class="impact-col">400,000</td></tr>
+                    <tr><td>EPM Tax Module (TRCS)</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>EPM Treasury Module</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>Desktops & Laptops Refresh</td><td class="impact-col">165,000</td></tr>
+                    <tr><td>New EPM Licenses</td><td class="impact-col">100,000</td></tr>
+                    <tr><td>MFPs & Photocopiers</td><td class="impact-col">100,000</td></tr>
+                    <tr><td>New Smartphones</td><td class="impact-col">78,000</td></tr>
+                    <tr><td>System Integration (Inteqnion-Wincos)</td><td class="impact-col">43,200</td></tr>
+                </table>
+
+                <div class="section-header">CAPEX Distribution by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">1,058,800</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">499,794</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">131,924</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">301,682</td></tr>
+                </table>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Capital Expenses</span>
+                </div>
+                </div>`
+            },
+
+            'budget-entities': {
+                title: 'Budget Distribution by Entity',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Entity Budget Allocation</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Employees</th><th>Budget (AED)</th><th>%</th></tr>
+                    <tr><td>National Holding (NH)</td><td>34</td><td class="impact-col">5,271,079</td><td>52%</td></tr>
+                    <tr><td>EIIC</td><td>28</td><td class="impact-col">2,984,020</td><td>29%</td></tr>
+                    <tr><td>Rise</td><td>16</td><td class="impact-col">1,298,382</td><td>13%</td></tr>
+                    <tr><td>Petromal</td><td>7</td><td class="impact-col">611,451</td><td>6%</td></tr>
+                    <tr><td><strong>Total</strong></td><td><strong>85</strong></td><td class="impact-col"><strong>10,164,932</strong></td><td><strong>100%</strong></td></tr>
+                </table>
+
+                <div class="section-header">Cost Sharing Model</div>
+                <ul class="detail-bullets">
+                    <li><strong>Headcount-based:</strong> Most shared services allocated by employee count</li>
+                    <li><strong>Direct costs:</strong> Entity-specific items charged directly</li>
+                    <li><strong>NH Higher Share:</strong> Includes group-level systems (KYC, ESG, Website)</li>
+                    <li><strong>Shared Infrastructure:</strong> Data center, network, security tools</li>
+                </ul>
+
+                <div class="section-header">Entity-Specific Costs</div>
+                <ul class="detail-bullets">
+                    <li><strong>NH Only:</strong> KYC Screening (200K), Website (35K), ESG Automation (200K)</li>
+                    <li><strong>NH + EIIC:</strong> Datacenter colocation, Video conferencing</li>
+                    <li><strong>All Entities:</strong> Microsoft licenses, Security stack, Cloud backup</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Entity Distribution</span>
+                </div>
+                </div>`
+            },
+
+            'budget-security': {
+                title: 'Security & Compliance - AED 1.65M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Security Investment Breakdown</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Cyber Insurance</td><td class="impact-col">345,000</td></tr>
+                    <tr><td>Security Application (DNS/NDR)</td><td class="impact-col">330,000</td></tr>
+                    <tr><td>Managed Security Service</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>Bluecoat, Symantec, DLP</td><td class="impact-col">180,000</td></tr>
+                    <tr><td>CrowdStrike Endpoint Detection</td><td class="impact-col">170,000</td></tr>
+                    <tr><td>Digital Risk Protection</td><td class="impact-col">150,000</td></tr>
+                    <tr><td>Data Classification Tool</td><td class="impact-col">100,000</td></tr>
+                    <tr><td>CyberArk PAM Solution</td><td class="impact-col">82,000</td></tr>
+                </table>
+
+                <div class="section-header">Additional Security Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>Email Security (Mimecast):</strong> AED 80K</li>
+                    <li><strong>FortiGate & FortiAuth:</strong> AED 65K</li>
+                    <li><strong>Security Devices Maintenance:</strong> AED 50K</li>
+                    <li><strong>KnowBe4 Security Training:</strong> AED 30K</li>
+                    <li><strong>ISO 27001 Certification:</strong> AED 30K</li>
+                    <li><strong>VAPT & Security Review:</strong> AED 20K</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Security & Compliance</span>
+                </div>
+                </div>`
+            },
+
+            'budget-cloud': {
+                title: 'Cloud & Infrastructure - AED 1.74M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Infrastructure Investment</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Datacenter Infra Refresh (CAPEX)</td><td class="impact-col">800,000</td></tr>
+                    <tr><td>DELL Support Contract</td><td class="impact-col">500,000</td></tr>
+                    <tr><td>Backup & Storage Refresh (CAPEX)</td><td class="impact-col">400,000</td></tr>
+                    <tr><td>Azure DR Infrastructure</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>Etisalat Data Center Connectivity</td><td class="impact-col">240,000</td></tr>
+                    <tr><td>Moro Data Center Hosting</td><td class="impact-col">201,732</td></tr>
+                </table>
+
+                <div class="section-header">Network & Connectivity</div>
+                <ul class="detail-bullets">
+                    <li><strong>Data Center Equipment Maintenance:</strong> AED 155K</li>
+                    <li><strong>Cisco ISE Renewal:</strong> AED 125K</li>
+                    <li><strong>Network Equipment (Cisco):</strong> AED 115K</li>
+                    <li><strong>WAN & Internet Service:</strong> AED 27.5K</li>
+                    <li><strong>Server Room Maintenance:</strong> AED 35K</li>
+                    <li><strong>Barracuda Load Balancer:</strong> AED 20K</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Cloud & Infrastructure</span>
+                </div>
+                </div>`
+            },
+
+            'budget-epm': {
+                title: 'Oracle EPM & Analytics - AED 1.32M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Oracle EPM Investment</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th><th>Type</th></tr>
+                    <tr><td>Oracle EPM Licenses</td><td class="impact-col">570,000</td><td>OPEX</td></tr>
+                    <tr><td>Oracle EPM Maintenance</td><td class="impact-col">350,000</td><td>OPEX</td></tr>
+                    <tr><td>EPM Tax Module (TRCS)</td><td class="impact-col">300,000</td><td>CAPEX</td></tr>
+                    <tr><td>New EPM Licenses</td><td class="impact-col">100,000</td><td>CAPEX</td></tr>
+                    <tr><td><strong>Total EPM</strong></td><td class="impact-col"><strong>1,320,000</strong></td><td></td></tr>
+                </table>
+
+                <div class="section-header">EPM Capabilities</div>
+                <ul class="detail-bullets">
+                    <li><strong>Financial Consolidation:</strong> Group-wide financial reporting</li>
+                    <li><strong>Planning & Budgeting:</strong> Unified budgeting process</li>
+                    <li><strong>Tax Reporting (TRCS):</strong> Corporate tax compliance</li>
+                    <li><strong>Analytics & Dashboards:</strong> Real-time financial insights</li>
+                </ul>
+
+                <div class="section-header">Timeline</div>
+                <ul class="detail-bullets">
+                    <li><strong>Q1-Q4 2026:</strong> Full EPM rollout across entities</li>
+                    <li><strong>Target:</strong> Replace manual Excel-based consolidation</li>
+                    <li><strong>Benefit:</strong> 80% reduction in reporting time</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Oracle EPM</span>
+                </div>
+                </div>`
+            },
+
+            'budget-software': {
+                title: 'Software Licenses - AED 1.82M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Major Software Investments</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>PeopleStrong HRMS</td><td class="impact-col">800,000</td></tr>
+                    <tr><td>Microsoft Enterprise Agreement</td><td class="impact-col">400,000</td></tr>
+                    <tr><td>Microsoft O365 & CSP</td><td class="impact-col">250,000</td></tr>
+                    <tr><td>SAP Annual Support</td><td class="impact-col">145,000</td></tr>
+                    <tr><td>Adobe Creative Cloud & Acrobat</td><td class="impact-col">63,500</td></tr>
+                    <tr><td>CERRA Award Management</td><td class="impact-col">50,000</td></tr>
+                    <tr><td>Code Two Email Signatures</td><td class="impact-col">50,000</td></tr>
+                    <tr><td>Freshservice Enterprise</td><td class="impact-col">40,000</td></tr>
+                </table>
+
+                <div class="section-header">Other Software</div>
+                <ul class="detail-bullets">
+                    <li><strong>Business Memo Automation:</strong> AED 25K</li>
+                    <li><strong>Renewal Certificates & Plugins:</strong> AED 25K</li>
+                    <li><strong>Macroview License:</strong> AED 22K</li>
+                    <li><strong>License Renewals (WinRAR, PDQ, etc.):</strong> AED 16K</li>
+                    <li><strong>Red Hat & Windows Server RDS:</strong> AED 15K</li>
+                    <li><strong>Domain Names Maintenance:</strong> AED 15K</li>
+                    <li><strong>SharePoint Support:</strong> AED 10K</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Software Licenses</span>
+                </div>
+                </div>`
+            },
+
+            'budget-hardware': {
+                title: 'Hardware Refresh - AED 1.49M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Hardware CAPEX Items</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Datacenter Infra Refresh</td><td class="impact-col">800,000</td></tr>
+                    <tr><td>Backup & Storage Refresh</td><td class="impact-col">400,000</td></tr>
+                    <tr><td>Desktops & Laptops</td><td class="impact-col">165,000</td></tr>
+                    <tr><td>MFPs & Photocopiers</td><td class="impact-col">100,000</td></tr>
+                    <tr><td>New Smartphones</td><td class="impact-col">78,000</td></tr>
+                    <tr><td><strong>Total Hardware CAPEX</strong></td><td class="impact-col"><strong>1,543,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">Hardware Maintenance (OPEX)</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Server Maintenance</td><td class="impact-col">17,000</td></tr>
+                    <tr><td>Desktop/Laptop Maintenance</td><td class="impact-col">17,000</td></tr>
+                    <tr><td>MFP/Copier Maintenance (MyQ)</td><td class="impact-col">15,000</td></tr>
+                    <tr><td>Video Conference Maintenance</td><td class="impact-col">10,000</td></tr>
+                </table>
+
+                <div class="section-header">Refresh by Entity</div>
+                <ul class="detail-bullets">
+                    <li><strong>NH:</strong> AED 75K laptops, AED 60K MFPs, AED 30K phones</li>
+                    <li><strong>EIIC:</strong> AED 7.5K laptops, AED 40K MFPs, AED 33K phones</li>
+                    <li><strong>Petromal:</strong> AED 22.5K laptops, AED 6K phones</li>
+                    <li><strong>Rise:</strong> AED 60K laptops, AED 9K phones</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Hardware Refresh</span>
+                </div>
+                </div>`
+            },
+
+            'budget-ai': {
+                title: 'AI & Automation - AED 600K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">AI Investment by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">-</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">-</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>600,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">Budget Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>AI Use Cases Implementation:</strong> AED 500K (shared NH + EIIC)</li>
+                    <li><strong>Data Classification Tool:</strong> AED 100K (shared)</li>
+                </ul>
+
+                <div class="section-header">Planned AI Use Cases</div>
+                <ul class="detail-bullets">
+                    <li><strong>Document Processing:</strong> Automated invoice & contract analysis</li>
+                    <li><strong>Financial Analytics:</strong> Predictive budgeting & forecasting</li>
+                    <li><strong>IT Operations:</strong> Intelligent ticketing & incident prediction</li>
+                    <li><strong>Security:</strong> Threat detection & anomaly analysis</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">AI & Automation</span>
+                </div>
+                </div>`
+            },
+
+            'budget-maintenance': {
+                title: 'Maintenance & Support - AED 576K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Maintenance by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">285,000</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">178,000</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">42,000</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">71,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>576,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">Maintenance Items</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Data Center Equipment Maintenance</td><td class="impact-col">155,000</td></tr>
+                    <tr><td>Server Maintenance</td><td class="impact-col">17,000</td></tr>
+                    <tr><td>Desktop/Laptop Maintenance</td><td class="impact-col">17,000</td></tr>
+                    <tr><td>Access Control Maintenance</td><td class="impact-col">17,000</td></tr>
+                    <tr><td>MFP/Copier Maintenance (MyQ)</td><td class="impact-col">15,000</td></tr>
+                    <tr><td>CCTV Maintenance</td><td class="impact-col">15,000</td></tr>
+                    <tr><td>Attendance System Maintenance</td><td class="impact-col">13,000</td></tr>
+                    <tr><td>Video Conference Maintenance</td><td class="impact-col">10,000</td></tr>
+                </table>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">Maintenance & Support</span>
+                </div>
+                </div>`
+            },
+
+            'budget-datacenter': {
+                title: 'Datacenter & Storage - AED 1.2M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">CAPEX by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">480,000</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">395,000</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">99,000</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">226,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>1,200,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">Investment Items</div>
+                <table class="panel-table">
+                    <tr><th>Item</th><th>Amount (AED)</th></tr>
+                    <tr><td>Datacenter Infrastructure Refresh</td><td class="impact-col">800,000</td></tr>
+                    <tr><td>Backup & Storage Refresh</td><td class="impact-col">400,000</td></tr>
+                </table>
+
+                <div class="section-header">Scope</div>
+                <ul class="detail-bullets">
+                    <li><strong>Server Hardware:</strong> Replace aging Dell/HP servers</li>
+                    <li><strong>Storage:</strong> NetApp/Dell EMC storage refresh</li>
+                    <li><strong>Backup:</strong> Commvault/Acronis infrastructure</li>
+                    <li><strong>Network:</strong> Core switches and connectivity</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">CAPEX - Datacenter</span>
+                </div>
+                </div>`
+            },
+
+            'budget-epm-capex': {
+                title: 'EPM Modules (Tax, Treasury) - AED 600K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">CAPEX by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">600,000</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">-</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">-</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">-</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>600,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">EPM Module Investments</div>
+                <table class="panel-table">
+                    <tr><th>Module</th><th>Amount (AED)</th></tr>
+                    <tr><td>EPM Tax Module (TRCS)</td><td class="impact-col">300,000</td></tr>
+                    <tr><td>EPM Treasury Module</td><td class="impact-col">300,000</td></tr>
+                </table>
+
+                <div class="section-header">Capabilities</div>
+                <ul class="detail-bullets">
+                    <li><strong>TRCS (Tax Reporting):</strong> Corporate tax compliance, UAE CT readiness</li>
+                    <li><strong>Treasury Module:</strong> Cash management, bank reconciliation</li>
+                    <li><strong>Integration:</strong> Links to core EPM for unified reporting</li>
+                </ul>
+
+                <div class="section-header">Timeline</div>
+                <ul class="detail-bullets">
+                    <li><strong>Q2-Q3 2026:</strong> Implementation and configuration</li>
+                    <li><strong>Q4 2026:</strong> Go-live and user training</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">CAPEX - EPM Modules</span>
+                </div>
+                </div>`
+            },
+
+            'budget-integration': {
+                title: 'System Integration - AED 44K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">CAPEX by Entity</div>
+                <table class="panel-table">
+                    <tr><th>Entity</th><th>Amount (AED)</th></tr>
+                    <tr><td>National Holding (NH)</td><td class="impact-col">14,000</td></tr>
+                    <tr><td>EIIC</td><td class="impact-col">24,000</td></tr>
+                    <tr><td>Petromal</td><td class="impact-col">4,000</td></tr>
+                    <tr><td>Rise</td><td class="impact-col">2,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>44,000</strong></td></tr>
+                </table>
+
+                <div class="section-header">Integration Project</div>
+                <ul class="detail-bullets">
+                    <li><strong>Project:</strong> Inteqnion - Wincos Integration</li>
+                    <li><strong>Purpose:</strong> Enable communication between CFM production systems</li>
+                    <li><strong>Scope:</strong> Data synchronization, workflow automation</li>
+                </ul>
+
+                <div class="section-header">Benefits</div>
+                <ul class="detail-bullets">
+                    <li>Eliminate manual data entry between systems</li>
+                    <li>Real-time production data visibility</li>
+                    <li>Improved reporting accuracy</li>
+                </ul>
+
+                <div class="detail-reference">
+                    <span class="ref-badge">PERN Budget 2026</span>
+                    <span class="ref-category">CAPEX - Integration</span>
+                </div>
+                </div>`
+            },
+
+            // ===== Entity Budget Summaries =====
+            'budget-entity-nh': {
+                title: 'National Holding (NH) - AED 4.89M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Budget Summary</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th></tr>
+                    <tr><td>OPEX</td><td class="impact-col">3,634,000</td></tr>
+                    <tr><td>CAPEX</td><td class="impact-col">1,259,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>4,893,000</strong></td></tr>
+                </table>
+                <div class="section-header">Top NH Investments</div>
+                <ul class="detail-bullets">
+                    <li><strong>Software & Licenses:</strong> AED 1,082K</li>
+                    <li><strong>Infrastructure & Cloud:</strong> AED 987K</li>
+                    <li><strong>EPM Tax & Treasury Modules:</strong> AED 600K</li>
+                    <li><strong>Security & Compliance:</strong> AED 612K</li>
+                    <li><strong>Datacenter Refresh:</strong> AED 480K</li>
+                </ul>
+                <div class="section-header">NH-Only Items</div>
+                <ul class="detail-bullets">
+                    <li>KYC Screening Tool (200K)</li>
+                    <li>Website Maintenance (35K)</li>
+                    <li>ESG Automation (200K)</li>
+                    <li>Moro Data Center Hosting (202K)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">52% of Total Budget</span></div>
+                </div>`
+            },
+            'budget-entity-eiic': {
+                title: 'EIIC - AED 3.10M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Budget Summary</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th></tr>
+                    <tr><td>OPEX</td><td class="impact-col">2,602,000</td></tr>
+                    <tr><td>CAPEX</td><td class="impact-col">500,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>3,102,000</strong></td></tr>
+                </table>
+                <div class="section-header">Top EIIC Investments</div>
+                <ul class="detail-bullets">
+                    <li><strong>Software & Licenses:</strong> AED 819K</li>
+                    <li><strong>Infrastructure & Cloud:</strong> AED 531K</li>
+                    <li><strong>Security & Compliance:</strong> AED 471K</li>
+                    <li><strong>Datacenter Refresh:</strong> AED 395K</li>
+                    <li><strong>Oracle EPM:</strong> AED 303K</li>
+                    <li><strong>AI & Automation:</strong> AED 300K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">29% of Total Budget</span></div>
+                </div>`
+            },
+            'budget-entity-petromal': {
+                title: 'Petromal - AED 646K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Budget Summary</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th></tr>
+                    <tr><td>OPEX</td><td class="impact-col">514,000</td></tr>
+                    <tr><td>CAPEX</td><td class="impact-col">132,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>646,000</strong></td></tr>
+                </table>
+                <div class="section-header">Top Petromal Investments</div>
+                <ul class="detail-bullets">
+                    <li><strong>Software & Licenses:</strong> AED 189K</li>
+                    <li><strong>Security & Compliance:</strong> AED 112K</li>
+                    <li><strong>Datacenter Refresh:</strong> AED 99K</li>
+                    <li><strong>Infrastructure & Cloud:</strong> AED 95K</li>
+                    <li><strong>Oracle EPM:</strong> AED 76K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">6% of Total Budget</span></div>
+                </div>`
+            },
+            'budget-entity-rise': {
+                title: 'Rise - AED 1.45M',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Budget Summary</div>
+                <table class="panel-table">
+                    <tr><th>Category</th><th>Amount (AED)</th></tr>
+                    <tr><td>OPEX</td><td class="impact-col">1,152,000</td></tr>
+                    <tr><td>CAPEX</td><td class="impact-col">297,000</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="impact-col"><strong>1,449,000</strong></td></tr>
+                </table>
+                <div class="section-header">Top Rise Investments</div>
+                <ul class="detail-bullets">
+                    <li><strong>Software & Licenses:</strong> AED 430K</li>
+                    <li><strong>Security & Compliance:</strong> AED 260K</li>
+                    <li><strong>Datacenter Refresh:</strong> AED 226K</li>
+                    <li><strong>Infrastructure & Cloud:</strong> AED 218K</li>
+                    <li><strong>Oracle EPM:</strong> AED 173K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">13% of Total Budget</span></div>
+                </div>`
+            },
+
+            // ===== Cell-specific details (entity + category) =====
+            'budget-software-nh': {
+                title: 'NH Software & Licenses - AED 1,082K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Software Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>PeopleStrong HRMS:</strong> AED 320K (40% share)</li>
+                    <li><strong>Microsoft Enterprise:</strong> AED 160K</li>
+                    <li><strong>Microsoft O365:</strong> AED 100K</li>
+                    <li><strong>SAP Support:</strong> AED 58K (40% share)</li>
+                    <li><strong>Adobe Licenses:</strong> AED 25K</li>
+                    <li><strong>Other software:</strong> Various shared licenses</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH - 40% headcount share</span></div>
+                </div>`
+            },
+            'budget-software-eiic': {
+                title: 'EIIC Software & Licenses - AED 819K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Software Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>PeopleStrong HRMS:</strong> AED 264K (33% share)</li>
+                    <li><strong>Microsoft Enterprise:</strong> AED 132K</li>
+                    <li><strong>Microsoft O365:</strong> AED 82K</li>
+                    <li><strong>SAP Support:</strong> AED 64K (44% share)</li>
+                    <li><strong>Adobe Licenses:</strong> AED 25K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC - 33% headcount share</span></div>
+                </div>`
+            },
+            'budget-software-petromal': {
+                title: 'Petromal Software & Licenses - AED 189K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Software Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>PeopleStrong HRMS:</strong> AED 66K (8% share)</li>
+                    <li><strong>Microsoft Enterprise:</strong> AED 33K</li>
+                    <li><strong>Microsoft O365:</strong> AED 21K</li>
+                    <li><strong>SAP Support:</strong> AED 23K (16% share)</li>
+                    <li><strong>Adobe Licenses:</strong> AED 3.5K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal - 8% headcount share</span></div>
+                </div>`
+            },
+            'budget-software-rise': {
+                title: 'Rise Software & Licenses - AED 430K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Software Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>PeopleStrong HRMS:</strong> AED 151K (19% share)</li>
+                    <li><strong>Microsoft Enterprise:</strong> AED 75K</li>
+                    <li><strong>Microsoft O365:</strong> AED 47K</li>
+                    <li><strong>Adobe Licenses:</strong> AED 10K</li>
+                    <li><strong>Other software:</strong> Various shared licenses</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise - 19% headcount share</span></div>
+                </div>`
+            },
+            'budget-security-nh': {
+                title: 'NH Security & Compliance - AED 612K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Security Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Cyber Insurance:</strong> AED 138K</li>
+                    <li><strong>Security Application (DNS/NDR):</strong> AED 165K</li>
+                    <li><strong>Managed Security Service:</strong> AED 120K</li>
+                    <li><strong>CrowdStrike:</strong> AED 68K</li>
+                    <li><strong>Other security tools:</strong> Shared allocation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH Security Budget</span></div>
+                </div>`
+            },
+            'budget-security-eiic': {
+                title: 'EIIC Security & Compliance - AED 471K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Security Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Security Application (DNS/NDR):</strong> AED 165K</li>
+                    <li><strong>Cyber Insurance:</strong> AED 114K</li>
+                    <li><strong>Managed Security Service:</strong> AED 99K</li>
+                    <li><strong>CrowdStrike:</strong> AED 56K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC Security Budget</span></div>
+                </div>`
+            },
+            'budget-security-petromal': {
+                title: 'Petromal Security & Compliance - AED 112K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Security Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Cyber Insurance:</strong> AED 28K</li>
+                    <li><strong>Managed Security Service:</strong> AED 25K</li>
+                    <li><strong>CrowdStrike:</strong> AED 14K</li>
+                    <li><strong>Other security:</strong> Shared allocation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal Security Budget</span></div>
+                </div>`
+            },
+            'budget-security-rise': {
+                title: 'Rise Security & Compliance - AED 260K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Security Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Cyber Insurance:</strong> AED 65K</li>
+                    <li><strong>Managed Security Service:</strong> AED 56K</li>
+                    <li><strong>CrowdStrike:</strong> AED 32K</li>
+                    <li><strong>Other security:</strong> Shared allocation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise Security Budget</span></div>
+                </div>`
+            },
+            'budget-cloud-nh': {
+                title: 'NH Infrastructure & Cloud - AED 987K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Infrastructure Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Azure DR Infrastructure:</strong> AED 300K</li>
+                    <li><strong>DELL Support Contract:</strong> AED 200K</li>
+                    <li><strong>Moro Data Center Hosting:</strong> AED 202K</li>
+                    <li><strong>Etisalat DC Connectivity:</strong> AED 120K</li>
+                    <li><strong>Data Center Maintenance:</strong> AED 62K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH Infrastructure Budget</span></div>
+                </div>`
+            },
+            'budget-cloud-eiic': {
+                title: 'EIIC Infrastructure & Cloud - AED 531K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Infrastructure Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>DELL Support Contract:</strong> AED 165K</li>
+                    <li><strong>Etisalat DC Connectivity:</strong> AED 120K</li>
+                    <li><strong>Data Center Maintenance:</strong> AED 51K</li>
+                    <li><strong>Cisco ISE Renewal:</strong> AED 41K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC Infrastructure Budget</span></div>
+                </div>`
+            },
+            'budget-cloud-petromal': {
+                title: 'Petromal Infrastructure & Cloud - AED 95K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Infrastructure Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>DELL Support Contract:</strong> AED 41K</li>
+                    <li><strong>Data Center Maintenance:</strong> AED 13K</li>
+                    <li><strong>Cisco ISE Renewal:</strong> AED 10K</li>
+                    <li><strong>Other infrastructure:</strong> Shared allocation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal Infrastructure Budget</span></div>
+                </div>`
+            },
+            'budget-cloud-rise': {
+                title: 'Rise Infrastructure & Cloud - AED 218K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Infrastructure Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>DELL Support Contract:</strong> AED 94K</li>
+                    <li><strong>Data Center Maintenance:</strong> AED 29K</li>
+                    <li><strong>Cisco ISE Renewal:</strong> AED 24K</li>
+                    <li><strong>Other infrastructure:</strong> Shared allocation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise Infrastructure Budget</span></div>
+                </div>`
+            },
+            'budget-epm-nh': {
+                title: 'NH Oracle EPM - AED 368K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH EPM OPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Oracle EPM Licenses:</strong> AED 228K (40% share)</li>
+                    <li><strong>Oracle EPM Maintenance:</strong> AED 140K (40% share)</li>
+                </ul>
+                <div class="section-header">Note</div>
+                <p>EPM CAPEX modules (Tax, Treasury) totaling AED 600K are separate and allocated 100% to NH.</p>
+                <div class="detail-reference"><span class="ref-badge">NH EPM Budget</span></div>
+                </div>`
+            },
+            'budget-epm-eiic': {
+                title: 'EIIC Oracle EPM - AED 303K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC EPM OPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Oracle EPM Licenses:</strong> AED 188K (33% share)</li>
+                    <li><strong>Oracle EPM Maintenance:</strong> AED 115K (33% share)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC EPM Budget</span></div>
+                </div>`
+            },
+            'budget-epm-petromal': {
+                title: 'Petromal Oracle EPM - AED 76K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal EPM OPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Oracle EPM Licenses:</strong> AED 47K (8% share)</li>
+                    <li><strong>Oracle EPM Maintenance:</strong> AED 29K (8% share)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal EPM Budget</span></div>
+                </div>`
+            },
+            'budget-epm-rise': {
+                title: 'Rise Oracle EPM - AED 173K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise EPM OPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Oracle EPM Licenses:</strong> AED 107K (19% share)</li>
+                    <li><strong>Oracle EPM Maintenance:</strong> AED 66K (19% share)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise EPM Budget</span></div>
+                </div>`
+            },
+            'budget-maintenance-nh': {
+                title: 'NH Maintenance & Support - AED 285K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Maintenance Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>Server Room Maintenance:</strong> AED 17.5K</li>
+                    <li><strong>Server Maintenance:</strong> AED 10K</li>
+                    <li><strong>Desktop/Laptop Maintenance:</strong> AED 10K</li>
+                    <li><strong>Access Control:</strong> AED 10K</li>
+                    <li><strong>MFP/Copier Maintenance:</strong> AED 10K</li>
+                    <li><strong>CCTV Maintenance:</strong> AED 8K</li>
+                    <li><strong>Video Conference:</strong> AED 6.7K</li>
+                    <li><strong>Attendance System:</strong> AED 6.5K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH Maintenance Budget</span></div>
+                </div>`
+            },
+            'budget-maintenance-eiic': {
+                title: 'EIIC Maintenance & Support - AED 178K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Maintenance Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>Server Room Maintenance:</strong> AED 17.5K</li>
+                    <li><strong>Server Maintenance:</strong> AED 5K</li>
+                    <li><strong>Desktop/Laptop Maintenance:</strong> AED 5K</li>
+                    <li><strong>Access Control:</strong> AED 5K</li>
+                    <li><strong>CCTV Maintenance:</strong> AED 4K</li>
+                    <li><strong>Video Conference:</strong> AED 3.3K</li>
+                    <li><strong>Attendance System:</strong> AED 6.5K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC Maintenance Budget</span></div>
+                </div>`
+            },
+            'budget-maintenance-petromal': {
+                title: 'Petromal Maintenance & Support - AED 42K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Maintenance Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>CCTV Maintenance:</strong> AED 3K</li>
+                    <li><strong>Server Maintenance:</strong> AED 1K</li>
+                    <li><strong>Desktop/Laptop Maintenance:</strong> AED 1K</li>
+                    <li><strong>Access Control:</strong> AED 1K</li>
+                    <li><strong>MFP/Copier Maintenance:</strong> AED 1K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal Maintenance Budget</span></div>
+                </div>`
+            },
+            'budget-maintenance-rise': {
+                title: 'Rise Maintenance & Support - AED 71K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Maintenance Items</div>
+                <ul class="detail-bullets">
+                    <li><strong>Server Maintenance:</strong> AED 1K</li>
+                    <li><strong>Desktop/Laptop Maintenance:</strong> AED 1K</li>
+                    <li><strong>Access Control:</strong> AED 1K</li>
+                    <li><strong>MFP/Copier Maintenance:</strong> AED 1K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise Maintenance Budget</span></div>
+                </div>`
+            },
+            'budget-ai-nh': {
+                title: 'NH AI & Automation - AED 300K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH AI Investment</div>
+                <ul class="detail-bullets">
+                    <li><strong>AI Use Cases Implementation:</strong> AED 250K (50% of 500K)</li>
+                    <li><strong>Data Classification Tool:</strong> AED 50K (50% of 100K)</li>
+                </ul>
+                <div class="section-header">Planned Use Cases</div>
+                <ul class="detail-bullets">
+                    <li>Document processing automation</li>
+                    <li>Financial analytics</li>
+                    <li>GRC analytics preparation</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH AI Budget</span></div>
+                </div>`
+            },
+            'budget-ai-eiic': {
+                title: 'EIIC AI & Automation - AED 300K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC AI Investment</div>
+                <ul class="detail-bullets">
+                    <li><strong>AI Use Cases Implementation:</strong> AED 250K (50% of 500K)</li>
+                    <li><strong>Data Classification Tool:</strong> AED 50K (50% of 100K)</li>
+                </ul>
+                <div class="section-header">Planned Use Cases</div>
+                <ul class="detail-bullets">
+                    <li>Document processing automation</li>
+                    <li>Financial analytics</li>
+                    <li>Operational efficiency improvements</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC AI Budget</span></div>
+                </div>`
+            },
+            'budget-datacenter-nh': {
+                title: 'NH Datacenter & Storage - AED 480K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH CAPEX Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Datacenter Infra Refresh:</strong> AED 320K (40% of 800K)</li>
+                    <li><strong>Backup & Storage Refresh:</strong> AED 160K (40% of 400K)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH Datacenter CAPEX</span></div>
+                </div>`
+            },
+            'budget-datacenter-eiic': {
+                title: 'EIIC Datacenter & Storage - AED 395K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC CAPEX Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Datacenter Infra Refresh:</strong> AED 264K (33% of 800K)</li>
+                    <li><strong>Backup & Storage Refresh:</strong> AED 132K (33% of 400K)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC Datacenter CAPEX</span></div>
+                </div>`
+            },
+            'budget-datacenter-petromal': {
+                title: 'Petromal Datacenter & Storage - AED 99K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal CAPEX Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Datacenter Infra Refresh:</strong> AED 66K (8% of 800K)</li>
+                    <li><strong>Backup & Storage Refresh:</strong> AED 33K (8% of 400K)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal Datacenter CAPEX</span></div>
+                </div>`
+            },
+            'budget-datacenter-rise': {
+                title: 'Rise Datacenter & Storage - AED 226K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise CAPEX Breakdown</div>
+                <ul class="detail-bullets">
+                    <li><strong>Datacenter Infra Refresh:</strong> AED 151K (19% of 800K)</li>
+                    <li><strong>Backup & Storage Refresh:</strong> AED 75K (19% of 400K)</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise Datacenter CAPEX</span></div>
+                </div>`
+            },
+            'budget-epm-capex-nh': {
+                title: 'NH EPM Modules - AED 600K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EPM CAPEX (NH Only)</div>
+                <ul class="detail-bullets">
+                    <li><strong>EPM Tax Module (TRCS):</strong> AED 300K</li>
+                    <li><strong>EPM Treasury Module:</strong> AED 300K</li>
+                </ul>
+                <div class="section-header">Capabilities</div>
+                <ul class="detail-bullets">
+                    <li><strong>TRCS:</strong> Corporate tax compliance, UAE CT readiness</li>
+                    <li><strong>Treasury:</strong> Cash management, bank reconciliation</li>
+                </ul>
+                <div class="section-header">Note</div>
+                <p>These modules are implemented at group level and allocated 100% to NH as they provide group-wide capabilities.</p>
+                <div class="detail-reference"><span class="ref-badge">NH EPM CAPEX</span></div>
+                </div>`
+            },
+            'budget-hardware-nh': {
+                title: 'NH Hardware Refresh - AED 165K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Hardware CAPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Desktops & Laptops:</strong> AED 75K</li>
+                    <li><strong>MFPs & Photocopiers:</strong> AED 60K</li>
+                    <li><strong>New Smartphones:</strong> AED 30K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">NH Hardware CAPEX</span></div>
+                </div>`
+            },
+            'budget-hardware-eiic': {
+                title: 'EIIC Hardware Refresh - AED 81K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Hardware CAPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>MFPs & Photocopiers:</strong> AED 40K</li>
+                    <li><strong>New Smartphones:</strong> AED 33K</li>
+                    <li><strong>Desktops & Laptops:</strong> AED 7.5K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">EIIC Hardware CAPEX</span></div>
+                </div>`
+            },
+            'budget-hardware-petromal': {
+                title: 'Petromal Hardware Refresh - AED 29K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Hardware CAPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Desktops & Laptops:</strong> AED 22.5K</li>
+                    <li><strong>New Smartphones:</strong> AED 6K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Petromal Hardware CAPEX</span></div>
+                </div>`
+            },
+            'budget-hardware-rise': {
+                title: 'Rise Hardware Refresh - AED 69K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Hardware CAPEX</div>
+                <ul class="detail-bullets">
+                    <li><strong>Desktops & Laptops:</strong> AED 60K</li>
+                    <li><strong>New Smartphones:</strong> AED 9K</li>
+                </ul>
+                <div class="detail-reference"><span class="ref-badge">Rise Hardware CAPEX</span></div>
+                </div>`
+            },
+            'budget-integration-nh': {
+                title: 'NH System Integration - AED 14K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">NH Integration CAPEX</div>
+                <p>Inteqnion - Wincos Integration project allocation (32% share)</p>
+                <div class="detail-reference"><span class="ref-badge">NH Integration CAPEX</span></div>
+                </div>`
+            },
+            'budget-integration-eiic': {
+                title: 'EIIC System Integration - AED 24K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">EIIC Integration CAPEX</div>
+                <p>Inteqnion - Wincos Integration project allocation (56% share - primary user)</p>
+                <div class="detail-reference"><span class="ref-badge">EIIC Integration CAPEX</span></div>
+                </div>`
+            },
+            'budget-integration-petromal': {
+                title: 'Petromal System Integration - AED 4K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Petromal Integration CAPEX</div>
+                <p>Inteqnion - Wincos Integration project allocation (8% share)</p>
+                <div class="detail-reference"><span class="ref-badge">Petromal Integration CAPEX</span></div>
+                </div>`
+            },
+            'budget-integration-rise': {
+                title: 'Rise System Integration - AED 2K',
+                content: `<div class="initiative-detail">
+                <div class="section-header">Rise Integration CAPEX</div>
+                <p>Inteqnion - Wincos Integration project allocation (4% share)</p>
+                <div class="detail-reference"><span class="ref-badge">Rise Integration CAPEX</span></div>
                 </div>`
             }
         };
@@ -3915,6 +5122,26 @@ class SidePanelHandler {
         return result;
     }
 
+    // Show detail panel without requiring element reference (for accordion, etc.)
+    showDetail(detailId) {
+        // Update panel content
+        const data = this.detailData[detailId];
+        if (data) {
+            this.titleEl.textContent = data.title;
+            this.contentEl.innerHTML = this.reorganizeContent(data.content);
+            this.panel.classList.add('visible');
+            this.activeItem = detailId;
+
+            // Shift slide content left
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.add('panel-open');
+            });
+            document.querySelectorAll('.slide-content').forEach(content => {
+                content.classList.add('panel-open');
+            });
+        }
+    }
+
     closePanel() {
         this.panel.classList.remove('visible');
         this.clickableItems.forEach(item => item.classList.remove('active'));
@@ -3944,6 +5171,56 @@ document.addEventListener('DOMContentLoaded', () => {
     new HashNavigation(presentation);
     new PrintMode();
     const sidePanel = new SidePanelHandler();
+
+    // Initialize horizontal accordion for Subsidiary Strategies
+    document.querySelectorAll('.h-accordion').forEach(accordion => {
+        const items = accordion.querySelectorAll('.h-accordion-item');
+        items.forEach(item => {
+            const tab = item.querySelector('.h-accordion-tab');
+            tab.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Remove active from all items
+                items.forEach(i => i.classList.remove('active'));
+                // Add active to clicked item
+                item.classList.add('active');
+            });
+        });
+    });
+
+    // Handle details buttons in accordions
+    document.querySelectorAll('.accordion-details-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const detailKey = btn.getAttribute('data-detail');
+            if (detailKey && sidePanel) {
+                sidePanel.showDetail(detailKey);
+            }
+        });
+    });
+
+    // Initialize slide tabs
+    document.querySelectorAll('.slide-tabs').forEach(tabContainer => {
+        const tabs = tabContainer.querySelectorAll('.slide-tab');
+        const slide = tabContainer.closest('.slide');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const targetId = tab.getAttribute('data-tab');
+
+                // Remove active from all tabs and contents in this slide
+                tabs.forEach(t => t.classList.remove('active'));
+                slide.querySelectorAll('.slide-tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked tab and target content
+                tab.classList.add('active');
+                const targetContent = slide.querySelector(`#${targetId}`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    });
 
     // Make all initiative codes clickable
     document.querySelectorAll('.init-code').forEach(codeEl => {

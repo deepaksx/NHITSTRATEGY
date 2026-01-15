@@ -1,0 +1,92 @@
+Cost Classification,Details, NH , EIIC , Petromal , Rise , Total Budget 26 , Actual , Nature , Business Term 
+,No of employees,34,28,7,16,85,,,
+,Sharing percentage,40%,33%,8%,19%,100,,,
+OPEX,"Annual Maintenance for Data Center Equipment, Backup System, Consumables, Dell EMC Ultrium 8 LTO Data Cartridge, Storage & Software","62,000","51,059","12,765","29,176","155,000",,BAU,Network Components
+OPEX,Service - Data Center Colocation Services (Data Center),,,,,,,BAU,Data Center- Internet & Colocation
+OPEX,Service - Etisalat Connections Data Center (Data Center) 15 MB DR Bandwidth,"120,000","120,000",,,"240,000",,BAU,Data Center- Internet & Colocation
+OPEX,WAN & Internet Service - Shared,"12,225","7,861","1,590","5,824","27,500",,BAU,Sites- Internet
+OPEX,SAP Annual Support License Contract,"58,000","63,800","23,200",,"145,000",,Production/ AMC's,Software License
+OPEX,People Strong,"320,000","263,529","65,882","150,588","800,000",,Production/ AMC's,Software License
+OPEX,Oracle EPM Licenses ,"228,000","187,765","46,941","107,294","570,000",,Production/ AMC's,Software License
+OPEX,Oracle EPM- Annual Maintenance Contract,"140,000","115,294","28,824","65,882","350,000",,Production/ AMC's,Software License
+OPEX,Cisco ISE Renewal,"50,000","41,176","10,294","23,529","125,000",,Production/ AMC's,Software License
+OPEX,"Annual Maintenance for IT Security, Compliance Products & Sites Network Equipment (Cisco Devices: Switches, Access Point, Wireless Controller,..)","65,000","30,000","10,000","10,000","115,000",,BAU,Network Components
+OPEX,"Annual Maintenance for IT Security, Compliance Products & Sites Network Equipment (Security Devices)","25,000","15,000","5,000","5,000","50,000",,BAU,Network Components
+OPEX,"Annual Maintenance for IT Security, Compliance Products & Sites Network Equipment (Riverbed- WAN Optimization)",,,,,,,BAU,Network Components
+OPEX,"Annual Maintenance for IT Security, Compliance Products & Sites Network Equipment (Bluecoat, Symantec Antivirus, DLP,...)","72,000","59,294","14,824","33,882","180,000",,BAU,Network Components
+OPEX,Maintenance Agreement for Servers,"10,000","5,000","1,000","1,000","17,000",,BAU,Network Components
+OPEX,"Maintenance Agreement for Desktops, Laptops, etc…","10,000","5,000","1,000","1,000","17,000",,Production/ AMC's,End User Assets
+OPEX,"Maintenance Agreement Managed Multifunction Copier Machines, MyQ","10,000","3,000","1,000","1,000","15,000",,Production/ AMC's,Printers
+OPEX,"Adobe Acrobat Pro & AI Assistant License Renewal, Adobe Creative Cloud","25,000","25,000","3,500","10,000","63,500",,Production/ AMC's,End User Assets
+OPEX,Consumables & End User Accessories,"40,000","32,941","8,235","18,824","100,000",,Production/ AMC's,End User Assets
+OPEX,"Licenses Maintenance Renewals (WinRAR, PDQ, AnyDesk, Visio, Projects, Microsoft Teams,…) WeTransfer","6,400","5,271","1,318","3,012","16,000",,Production/ AMC's,End User Assets
+OPEX,Access Control Annual Maintenance ,"10,000","5,000","1,000","1,000","17,000",,Production/ AMC's,Physical Security
+OPEX,CCTV Annual Maintenance ,"8,000","4,000","3,000",,"15,000",,Production/ AMC's,Physical Security
+OPEX,Attendance Annual Maintenance ,"6,500","6,500",,,"13,000",,Production/ AMC's,Business Applications
+OPEX,Video Conference Annual Maintenance ,"6,667","3,333",,,"10,000",,Production/ AMC's,Business Applications
+OPEX,Server Rooms Annual Maintenance ,"17,500","17,500",,,"35,000",,BAU,Network Components
+OPEX,Support & Software contract for DELL,"200,000","164,706","41,176","94,118","500,000",,Production/ AMC's,Business Applications
+OPEX,Radware WAF,"26,000","21,412","5,353","12,235","65,000",,Production/ AMC's,Business Applications
+OPEX,Renewal of the certificates & Plugins,"17,855","3,573","3,572",,"25,000",,Production/ AMC's,Business Applications
+OPEX,"Training of IT Resources, Press Book, Learning Hub Access & Subscription, Certified Information Security Manager,..","60,000","49,412","12,353","28,235","150,000",,Production/ AMC's,Business Applications
+OPEX,Digital Risk Protection & Social Media Monitoring,"60,000","49,412","12,353","28,235","150,000",,Production/ AMC's,Business Applications
+OPEX,"Website maintennace, Hosting Renewal (Kinsta) & Plugins (Gravity, WPML, Themeco, ..)","35,000",,,,"35,000",,Production/ AMC's,Business Applications
+OPEX,Freshservice Enterprise,"16,000","13,176","3,294","7,529","40,000",,Production/ AMC's,Business Applications
+OPEX,Domain Names maintenance,"8,000","4,000","1,500","1,500","15,000",,Production/ AMC's,Business Applications
+OPEX,Acronis Cloud Backup,800,659,165,376,"2,000",,Production/ AMC's,Business Applications
+OPEX,SharePoint Application Support,"4,000","3,294",824,"1,882","10,000",,Production/ AMC's,Business Applications
+OPEX,O365 Licenses & Microsoft CSP renewal 2025,"100,000","82,353","20,588","47,059","250,000",,Production/ AMC's,Business Applications
+OPEX,"Microsoft Enterprise Agreement, OLV Agreement Renewal","160,000","131,765","32,941","75,294","400,000",,Production/ AMC's,Business Applications
+OPEX,Cloud Service- Moro Data Center Hosting ,"201,732",,,,"201,732",,Production/ AMC's,Business Applications
+OPEX,"Email Security Mimecast , DMARC Analyzer & Managed Service ","32,000","26,353","6,588","15,059","80,000",,Production/ AMC's,Business Applications
+OPEX,"FortiGate, FortiAuthenticator-VM license upgrade, Forti EMS Licenses 50 User","35,000","20,000","5,000","5,000","65,000",,Production/ AMC's,Business Applications
+OPEX,QuestionPro survey & assessment software platform,,,,,,,Production/ AMC's,Business Applications
+OPEX,"KnowBe4 Security Awareness Training Solution, Phishing & Ransomware","12,000","9,882","2,471","5,647","30,000",,Production/ AMC's,Business Applications
+OPEX,"PAM Solution , CyberArk  ","32,800","27,012","6,753","15,435","82,000",,Production/ AMC's,Business Applications
+OPEX,Managed Security Service,"120,000","98,824","24,706","56,471","300,000",,Production/ AMC's,Business Applications
+OPEX,IT General Controls Review; and a Vulnerability Assessment & Penetration Test (VAPT); and Secure Configuration Review ,"8,000","6,588","1,647","3,765","20,000",,Production/ AMC's,Business Applications
+OPEX,Networking & Infrastructure Setup for Microsoft Azure as a Disaster Recovery Site,"300,000",,,,"300,000",,Production/ AMC's,Business Applications
+OPEX,Network Security & Privacy Liability (Cyber) Insurance,"138,000","113,647","28,412","64,941","345,000",,Production/ AMC's,Business Applications
+OPEX,ISO 27001:2022 & ISO 27701:2019,"12,000","9,882","2,471","5,647","30,000",,Production/ AMC's,Business Applications
+OPEX,Code Two Email Signatures 365,"20,000","16,471","4,118","9,412","50,000",,Production/ AMC's,Business Applications
+OPEX,Macroview License and Support,"8,800","7,247","1,812","4,141","22,000",,Production/ AMC's,Business Applications
+OPEX,Barracuda Load Balancer License and Support,"8,000","6,588","1,647","3,765","20,000",,Production/ AMC's,Business Applications
+OPEX,KYC Screening Tool for NH Compliance,"200,000",,,,"200,000",,Production/ AMC's,Business Applications
+OPEX,"NAVEX - Third Party Hotline Subscription, GRC Solution for NH Compliance","25,000",,,,"25,000",,Production/ AMC's,Business Applications
+OPEX,Red Hat & Windows Server RDS Licenses,"6,000","4,941","1,235","2,824","15,000",,Production/ AMC's,Business Applications
+OPEX,CERRA APPLAUSE -Award Management Solution- Flabuless FZ LLC,"20,000","16,471","4,118","9,412","50,000",,Production/ AMC's,Business Applications
+OPEX,Business Memo Automation solution- Cetas,"10,000","8,235","2,059","4,706","25,000",,Production/ AMC's,Business Applications
+OPEX,Sustainability & ESG Automation,"200,000",,,,"200,000",,Production/ AMC's,Business Applications
+OPEX,"Crowd Strike, End Point Detection","68,000","56,000","14,000","32,000","170,000",,Production/ AMC's,Business Applications
+OPEX,AI Use Cases Implementation,"250,000","250,000",,,"500,000",,Production/ AMC's,Business Applications
+OPEX,Data Classification Tool,"50,000","50,000",,,"100,000",,Production/ AMC's,Business Applications
+OPEX,Security Application ( DNS/NDR),"165,000","165,000",,,"330,000",,Production/ AMC's,Business Applications
+OPEX,"GFI, Commvault ",,,,,,,Production/ AMC's,Business Applications
+CAPEX,"New Microsoft Licenses, outlook",,,,,,,Growth,End User Assets
+CAPEX,New SAP Licenses,,,,,,,Growth,End User Assets
+CAPEX,New EPM Licenses,"100,000",,,,"100,000",,Growth,End User Assets
+CAPEX,New Server,,,,,,,Projects,Server & Storage
+CAPEX,"New switches, wireless access points, controllers, ISE, and replacement of end-of-life (EOL) and end-of-support (EOS) devices,….",,,,,,,Projects,Network Components
+CAPEX,New Riverbed (Refreshment),,,,,,,Projects,Network Components
+CAPEX,Desktops & Laptops Refresh,"75,000","7,500","22,500","60,000","165,000",,Projects,End User Assets
+CAPEX,"New MFPs & Photocopiers, Projector","60,000","40,000",,,"100,000",,Growth,End User Assets
+CAPEX,New Smartphones,"30,000","33,000","6,000","9,000","78,000",,Projects,End User Assets
+CAPEX,VMWare,,,,,,,Projects,Network Components
+CAPEX,"Computer Tools, Screens for dashboard presentation & Accessories, Monitors, Docking Stations",,,,,,,Projects,End User Assets
+CAPEX,"Adobe, Visio, MS. Project & AutoCAD Licenses",,,,,,,Projects,End User Assets
+CAPEX,"Refresh Data Center ( EMC Storages, Network Devices,…) ISE,",,,,,,,Projects,Network Components
+CAPEX,Attendance Management System,,,,,,,Projects,Business Applications
+CAPEX,Integration (Enable the communicate) between Inteqnion and Wincos- CFM Production system,"13,800","24,000","3,600","1,800","43,200",,Projects,Business Applications
+CAPEX,CCTV & Access Control system,,,,,,,Projects,Physical Security
+CAPEX,Project Management Software Implementation,,,,,,,Projects,Business Applications
+CAPEX,Two Way Radio Solution,,,,,,,Projects,End User Assets
+CAPEX,ERP Enhancement project- ACR Module ,,,,,,,Projects,Business Applications
+CAPEX,"ERP Enhancement project- Consolidation, Reporting, Planning, Budgeting ",,,,,,,Projects,Business Applications
+CAPEX,ERP Enhancement project- Fiori & Workflow  ,,,,,,,Projects,Business Applications
+CAPEX,Quota Control Project ,,,,,,,Projects,Business Applications
+CAPEX,EPM-TAX Corporate Module (TRCS),"300,000",,,,"300,000",,Projects,Business Applications
+CAPEX,EPM-Treasury Module,"300,000",,,,"300,000",,Projects,Business Applications
+CAPEX,"Network Monitoring, Op Manager Plus Essential Edition - Perpetual Model",,,,,,,Projects,Network Components
+CAPEX,Backup and Storage Refresh (Hardware and Licenses),"160,000","131,765","32,941","75,294","400,000",,Projects,Business Applications
+CAPEX,Datacenter Infra Refresh (Hardware and Licenses),"320,000","263,529","65,882","150,588","800,000",,Projects,Business Applications
+,,"5,271,079","2,984,020","611,451","1,298,382","10,164,932",,,
